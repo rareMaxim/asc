@@ -1,0 +1,46 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"BrMeznMfCu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">ASC</span>\",\"col\":12}},{\"id\":\"WU5Zyh27nX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u041d\u043e\u0432\u0438\u043d\u0438\",\"col\":3}},{\"id\":\"vod-mrSmpx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u041e\u0444\u0456\u0441\u0438 \u0426\u041d\u0410\u041f\",\"col\":3}}]",
+ "creation": "2023-10-06 02:02:09.202837",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "arrow-up-right",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "ASC",
+ "links": [],
+ "modified": "2023-10-06 02:11:50.820210",
+ "modified_by": "Administrator",
+ "module": "Asc Core",
+ "name": "ASC",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "\u041e\u0444\u0456\u0441\u0438 \u0426\u041d\u0410\u041f",
+   "link_to": "ASC Office",
+   "stats_filter": "{\"name\":[\"is\",\"set\"]}",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "\u041d\u043e\u0432\u0438\u043d\u0438",
+   "link_to": "ASC News",
+   "stats_filter": "{\"name\":[\"is\",\"set\"]}",
+   "type": "DocType"
+  }
+ ],
+ "title": "ASC"
+}

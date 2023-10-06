@@ -18,7 +18,11 @@
   "published_on",
   "published",
   "section_break_khbi",
-  "content"
+  "content",
+  "meta_tags_section",
+  "meta_title",
+  "meta_description",
+  "column_break_wbno"
  ],
  "fields": [
   {
@@ -62,6 +66,25 @@
    "fieldname": "published",
    "fieldtype": "Check",
    "label": "\u041e\u043f\u0443\u0431\u043b\u0456\u043a\u043e\u0432\u0430\u043d\u043e"
+  },
+  {
+   "fieldname": "meta_tags_section",
+   "fieldtype": "Section Break",
+   "label": "Meta Tags"
+  },
+  {
+   "fieldname": "meta_description",
+   "fieldtype": "Small Text",
+   "label": "Meta Description"
+  },
+  {
+   "fieldname": "column_break_wbno",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "meta_title",
+   "fieldtype": "Data",
+   "label": "Meta Title"
   }
  ],
  "has_web_view": 1,
@@ -70,7 +93,7 @@
  "is_published_field": "published",
  "links": [],
  "make_attachments_public": 1,
- "modified": "2023-10-05 02:57:40.503416",
+ "modified": "2023-10-06 12:14:37.385699",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC News",
