@@ -40,9 +40,9 @@ function set_fields_from_api(frm, json) {
         'feedback_url': obj.feedback_url,
     });
     frappe.show_alert({
-        message: __('Успішно завантажено з порталу'),
+        message: __('Успішно завантажено з порталу. Не забудь сберігти зміни 😉'),
         indicator: 'green'
-    }, 5);
+    }, 8);
 }
 
 function updateGeolocation(frm, lat, lon) {

@@ -1,0 +1,21 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "\u0421\u0442\u0430\u0442\u0443\u0441 \u0441\u043f\u0456\u0432\u0440\u043e\u0431\u0456\u0442\u043d\u0438\u043a\u0430",
+   "width": "Half"
+  }
+ ],
+ "creation": "2023-10-06 23:38:25.216830",
+ "dashboard_name": "\u0421\u043f\u0456\u0432\u0440\u043e\u0431\u0456\u0442\u043d\u0438\u043a\u0438",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2023-10-06 23:39:04.514121",
+ "modified_by": "Administrator",
+ "module": "Asc Core",
+ "name": "\u0421\u043f\u0456\u0432\u0440\u043e\u0431\u0456\u0442\u043d\u0438\u043a\u0438",
+ "owner": "Administrator"
+}
