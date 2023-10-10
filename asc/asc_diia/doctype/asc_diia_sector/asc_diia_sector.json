@@ -1,36 +1,33 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2023-10-06 15:10:16.358030",
+ "creation": "2023-10-09 12:40:01.826102",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "user",
-  "date"
+  "id",
+  "title"
  ],
  "fields": [
   {
-   "fieldname": "user",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "\u0421\u043f\u0456\u0432\u0440\u043e\u0431\u0456\u0442\u043d\u0438\u043a",
-   "options": "User"
+   "fieldname": "id",
+   "fieldtype": "Data",
+   "label": "id"
   },
   {
-   "fieldname": "date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "\u0414\u0430\u0442\u0430"
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-06 15:12:37.169121",
+ "modified": "2023-10-10 19:22:11.067091",
  "modified_by": "Administrator",
- "module": "Asc Core",
- "name": "ASC Users in Ocupation",
+ "module": "ASC DIia",
+ "name": "ASC Diia Sector",
  "owner": "Administrator",
  "permissions": [
   {

@@ -136,8 +136,9 @@
   },
   {
    "fieldname": "status",
-   "fieldtype": "Data",
-   "label": "\u0421\u0442\u0430\u0442\u0443\u0441"
+   "fieldtype": "Select",
+   "label": "\u0421\u0442\u0430\u0442\u0443\u0441",
+   "options": "\u0414\u0456\u044e\u0447\u0438\u0439\n\u0422\u0438\u043c\u0447\u0430\u0441\u043e\u0432\u043e \u0437\u0430\u043a\u0440\u0438\u0442\u0438\u0439\n\u0417\u0430\u043a\u0440\u0438\u0442\u0438\u0439 \u043d\u0430\u0437\u0430\u0432\u0436\u0434\u0438"
   },
   {
    "fieldname": "onl_consul",
@@ -245,7 +246,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-01 18:20:28.650984",
+ "modified": "2023-10-09 22:41:12.914556",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC Office",
@@ -272,6 +273,14 @@
   {
    "color": "Green",
    "title": "\u0414\u0456\u044e\u0447\u0438\u0439"
+  },
+  {
+   "color": "Yellow",
+   "title": "\u0422\u0438\u043c\u0447\u0430\u0441\u043e\u0432\u043e \u0437\u0430\u043a\u0440\u0438\u0442\u0438\u0439"
+  },
+  {
+   "color": "Red",
+   "title": "\u0417\u0430\u043a\u0440\u0438\u0442\u0438\u0439 \u043d\u0430\u0437\u0430\u0432\u0436\u0434\u0438"
   }
  ],
  "title_field": "title",

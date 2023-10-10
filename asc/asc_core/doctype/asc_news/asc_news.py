@@ -75,8 +75,8 @@ class ASCNews(WebsiteGenerator):
         self.load_likes(context)
 
         context.parents = [
-            {"name": _("Home"), "route": "/"},
-            {"name": "News", "route": "/news"},
+            {"name": ("Home"), "route": "/"},
+            # {"name": "News", "route": "/news"},
             # {"label": context.category.title, "route": context.category.route},
         ]
         

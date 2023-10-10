@@ -8,8 +8,12 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "column_break_hjjx",
+  "user",
+  "column_break_ufyc",
   "status",
+  "section_break_pvtc",
+  "\u043c\u043e\u0431\u0456\u043b\u044c\u043d\u0438\u0439_\u0442\u0435\u043b\u0435\u0444\u043e\u043d",
+  "column_break_hxyh",
   "section_break_pjch",
   "last_name",
   "column_break_ngnl",
@@ -23,10 +27,6 @@
   "tab_3_tab"
  ],
  "fields": [
-  {
-   "fieldname": "column_break_hjjx",
-   "fieldtype": "Column Break"
-  },
   {
    "fieldname": "section_break_pjch",
    "fieldtype": "Section Break"
@@ -90,11 +90,35 @@
   {
    "fieldname": "column_break_erug",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "\u041a\u043e\u0440\u0438\u0441\u0442\u0443\u0432\u0430\u0447",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_ufyc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_pvtc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "\u043c\u043e\u0431\u0456\u043b\u044c\u043d\u0438\u0439_\u0442\u0435\u043b\u0435\u0444\u043e\u043d",
+   "fieldtype": "Data",
+   "label": "\u041c\u043e\u0431\u0456\u043b\u044c\u043d\u0438\u0439 \u0442\u0435\u043b\u0435\u0444\u043e\u043d",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "column_break_hxyh",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-09 02:05:17.760022",
+ "modified": "2023-10-09 19:44:17.373411",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC Employees",
@@ -114,8 +138,8 @@
   }
  ],
  "show_title_field_in_link": 1,
- "sort_field": "modified",
- "sort_order": "DESC",
+ "sort_field": "full_name",
+ "sort_order": "ASC",
  "states": [
   {
    "color": "Green",

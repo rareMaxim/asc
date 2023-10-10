@@ -1,0 +1,19 @@
+{% extends "templates/web.html" %}
+{% set title = heading or "Contact Us" %}
+{% block page_content %}
+
+{% for office in offices %}
+<p>
+
+    <b>{{office.title}}</b>
+    <span class="badge badge-info">{{office.status}}</span>
+    <br>
+    {{office.address}}
+    <br>
+    {{office.tel_consul}}
+
+</p>
+
+{% endfor %}
+
+{% endblock %}
