@@ -1,22 +1,85 @@
-{% extends "templates/web.html" %}
-{% block title %}{{ title or _("News") }}{% endblock %}
-
+{% extends 'templates/asc_web.html' %}
+{% block title %}
+  {{ title or _('News') }}
+{% endblock %}
 {% block page_content %}
-<div class="blog-list-content">
-	<div data-doctype="{{ doctype }}" data-txt="{{ txt or '[notxt]' | e }}">
-		{% if not result -%}
-		<div class="text-muted" style="min-height: 300px;">
-			{{ no_result_message or _("Nothing to show") }}
-		</div>
-		{% else %}
-		<div id="blog-list" class="blog-list result row">
-			{% for item in result %}
-			{{ item }}
-			{% endfor %}
-		</div>
-		{% endif %}
-		<button class="btn btn-light btn-more btn {% if not show_more -%} hidden {%- endif %}">{{ _("Load More") }}</button>
-	</div>
-</div>
+  <section>
+    <div class="container" id="posts-container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="article-level-1"> {{ title or _('News') }}</h1>
+        </div>
+      </div>
 
+      {% if not result -%}
+        <div class="text-muted" style="min-height: 300px;">{{ no_result_message or _('Nothing to show') }}</div>
+      {% else %}
+        <div class="row" id="posts-items-box">
+          {% for item in result %}
+            {{ item }}
+          {% endfor %}
+        </div>
+      {% endif %}
+      <div id="pagination-info" class="hidden d-none" data-total="309" data-currentpage="1" data-lastpage="52"></div>
+    </div>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-4">
+          <a href="javascript:void(0)" class="btn btn_more-news" id="btn_more-news">Більше новин</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <nav aria-label="post page navigation" id="post-navigation">
+      <nav>
+        <ul class="pagination">
+          <li class="disabled" aria-disabled="true" aria-label="pagination.previous">
+            <span aria-hidden="true">&lsaquo;</span>
+          </li>
+
+          <li class="active" aria-current="page">
+            <span>1</span>
+          </li>
+          <li>
+            <a href="http://diia.gov.ua/news?page=2">2</a>
+          </li>
+          <li>
+            <a href="http://diia.gov.ua/news?page=3">3</a>
+          </li>
+          <li>
+            <a href="http://diia.gov.ua/news?page=4">4</a>
+          </li>
+          <li>
+            <a href="http://diia.gov.ua/news?page=5">5</a>
+          </li>
+          <li>
+            <a href="http://diia.gov.ua/news?page=6">6</a>
+          </li>
+          <li>
+            <a href="http://diia.gov.ua/news?page=7">7</a>
+          </li>
+          <li>
+            <a href="http://diia.gov.ua/news?page=8">8</a>
+          </li>
+
+          <li class="disabled" aria-disabled="true">
+            <span>...</span>
+          </li>
+
+          <li>
+            <a href="http://diia.gov.ua/news?page=51">51</a>
+          </li>
+          <li>
+            <a href="http://diia.gov.ua/news?page=52">52</a>
+          </li>
+
+          <li>
+            <a href="http://diia.gov.ua/news?page=2" rel="next" aria-label="pagination.next">&rsaquo;</a>
+          </li>
+        </ul>
+      </nav>
+    </nav>
+  </section>
 {% endblock %}

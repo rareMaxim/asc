@@ -14,7 +14,7 @@ app_license = "mit"
 # app_include_js = "/assets/asc/js/asc.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/asc/css/asc.css"
+# web_include_css = "/assets/asc/css/diia.css"
 # web_include_js = "/assets/asc/js/asc.js"
 
 # include custom scss in every website theme (without file extension ".scss")

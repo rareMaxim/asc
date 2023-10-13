@@ -1,56 +1,42 @@
-{% extends 'templates/web.html' %}
+{% extends 'templates/asc_web.html' %}
 
 {% block meta_block %}
   {% include 'templates/includes/meta_block.html' %}
 {% endblock %}
 
 {% block page_content %}
-  <div class="blog-container">
-    <article class="blog-content" itemscope itemtype="http://schema.org/BlogPosting">
-      <!-- begin blog content -->
-      <div class="blog-header">
-        <div>
-          <a class="mr-2" href="/news">{{ _('News') }}</a>
-          <span class="text-muted">/</span>
-         
-        </div>
-        <h1 itemprop="headline" class="blog-title">{{ title }}</h1>
-        <div class="text-muted">
-          <time datetime="{{ published_on }}">{{ frappe.format_date(published_on) }}</time>
-          {%- if read_time -%}
-            &nbsp;&middot;
-            <span>{{ read_time }} {{ _('min read') }}</span>
-          {%- endif -%}
+  <!-- news post -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="page_title">
+            <div class="page_title-text">{{ title }}</div>
+            <time class="page_title-date" datetime="{{ published_on }}">{{ frappe.format_date(published_on) }}</time>
+            <span class="page_title-date">{{ read_time }} {{ _('min read') }}</span>
+          </div>
         </div>
       </div>
-      <hr class="my-5" />
-      <div itemprop="articleBody" class="from-markdown">{{ content }}</div>
-      <!-- end blog content -->
-    </article>
-    <div class="blog-footer">
-      <div class="blog-feedback">
-        {% if not disable_likes %}
-          {% include 'templates/includes/likes/likes.html' %}
-        {% endif %}
-      </div>
-      {% if not social_links %}
-        <div>
-          {% for link in social_links %}
-            <a href="{{ link.link }}" class="text-muted ml-2 fa fa-{{ link.icon }}" target="_blank"></a>
-          {% endfor %}
+      <div class="row justify-content-lg-between">
+        <div class="col-lg-8">
+          <div class="editor-content editor-content_post">{{ content }}</div>
         </div>
-      {% endif %}
-      <div>
-        {{ _('Published on') }} <time datetime="{{ published_on }}">{{ frappe.format_date(published_on) }}</time>
+        <div class="d-none d-lg-block col-lg-3">
+          <div class="btn-action_wrap">
+            <div class="btn-action_title">Поділитись новиною</div>
+            <div class="btn-action_box">
+              <div class="btn btn-action btn-action_fb" tabindex="0" role="button" aria-pressed="false" data-type="facebook"></div>
+              <div class="btn btn-action btn-action_tw" tabindex="0" role="button" aria-pressed="false" data-type="twitter"></div>
+              <div class="btn btn-action btn-action-tel d-none" tabindex="0" role="button" aria-pressed="false" data-type="telegram"></div>
+            </div>
+          </div>
+          <!-- sidebar -->
+          <!-- /sidebar -->
+        </div>
       </div>
     </div>
+  </section>
 
-    {% if not disable_comments %}
-      <div class="blog-comments">
-        {% include 'templates/includes/comments/comments.html' %}
-      </div>
-    {% endif %}
-  </div>
   <script>
     frappe.ready(() => {
       frappe.set_search_path('/news')

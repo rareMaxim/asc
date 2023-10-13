@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<!--                
+  (c) 2023, Максим Сисоєв and contributors
+  For license information, please see license.txt
+                -->
+<html lang="uk-UA" style="font-size: 16px;">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Meta -->
+    {% block meta_block %}
+      {% include 'templates/includes/meta_block.html' %}
+    {% endblock %}
+
+    <title>
+      {% block title %}
+        {{ title|striptags }}
+      {% endblock %}
+    </title>
+    {% block favicon %}
+      <link rel="shortcut icon" href="{{ (favicon or ' /assets/frappe/images/frappe-favicon.svg')|abs_url }}" type="image/x-icon" />
+    {% endblock %}
+
+    <meta name="theme-color" content="#ffffff" />
+
+    {%- block head -%}
+      {% include 'templates/includes/head.html' %}
+    {%- endblock -%}
+
+    {%- block head_include %}
+      {{ head_include or '' }}
+    {% endblock -%}
+
+    {%- block style %}
+      {% if colocated_css -%}
+        <style></style>
+      {%- endif %}
+    {%- endblock -%}
+
+    <script>
+      window.frappe = {};
+      frappe.ready_events = [];
+      frappe.ready = function(fn) {
+        frappe.ready_events.push(fn);
+      }
+      window.dev_server = {{ dev_server }};
+      window.socketio_port = {{ (frappe.socketio_port or 9000) }};
+      window.show_language_picker = {{ show_language_picker or 'false' }};
+    </script>
+  </head>
+
+  <body id="body" class="">
+    <div class="body-loader"></div>
+
+    <div class="wrapper" id="layout-wrapper">
+      {% include 'templates/includes/navbar/navbar.html' %}
+      {% block content %}
+        {{ content }}
+      {% endblock %}
+      {%- block footer -%}
+        {% include 'templates/includes/footer.html' %}
+      {%- endblock -%}
+    </div>
+  </body>
+
+  <script type="text/javascript" src="/assets/asc/js/jquery.js"></script>
+  <script src="https://diia.gov.ua/plugins/kitsoft/pages/assets/js/ajax.js?v=2.1.16"></script>
+  <script type="text/javascript" src="/assets/asc/js/unkn1.js"></script>
+</html>

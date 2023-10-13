@@ -1,0 +1,81 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-09 12:31:42.908569",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "theme",
+  "column_break_sdsa",
+  "section_break_uvib",
+  "start_at",
+  "column_break_otok",
+  "end_at",
+  "section_break_qsqq",
+  "comment"
+ ],
+ "fields": [
+  {
+   "fieldname": "theme",
+   "fieldtype": "Data",
+   "label": "theme"
+  },
+  {
+   "fieldname": "column_break_sdsa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_uvib",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "start_at",
+   "fieldtype": "Date",
+   "label": "start_at"
+  },
+  {
+   "fieldname": "column_break_otok",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_at",
+   "fieldtype": "Date",
+   "label": "end_at"
+  },
+  {
+   "fieldname": "section_break_qsqq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "comment",
+   "fieldtype": "Small Text",
+   "label": "comment"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-10-10 19:46:41.446558",
+ "modified_by": "Administrator",
+ "module": "ASC DIia",
+ "name": "ASC Diia Thematic Area",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

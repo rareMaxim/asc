@@ -142,7 +142,7 @@ def get_news_list(doctype, txt, filters, limit_start, limit_page_length=20, orde
 
 def get_list_context(context=None):
     return {
-        "title": _("News"),
+        "title": "Новини",
         "get_list": get_news_list,
         # "row_template": "templates/asc_news_row.html",
         "no_breadcrumbs": False,
