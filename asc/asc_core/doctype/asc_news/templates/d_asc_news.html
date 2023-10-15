@@ -1,0 +1,60 @@
+{% extends 'templates/asc_web.html' %}
+
+{% block meta_block %}
+  {% include 'templates/includes/meta_block.html' %}
+{% endblock %}
+
+{% block page_content %}
+  <!-- news post -->
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="page_title">
+            <div class="page_title-text">{{ title }}</div>
+            <time class="page_title-date" datetime="{{ published_on }}">{{ frappe.format_date(published_on) }}</time>
+            <span class="page_title-date">{{ read_time }} {{ _('min read') }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-lg-between">
+        <div class="col-lg-8">
+          <div class="editor-content editor-content_post">{{ content }}</div>
+        </div>
+        <div class="d-none d-lg-block col-lg-3">
+          <div class="btn-action_wrap">
+            <div class="btn-action_title">Поділитись новиною</div>
+            <div class="btn-action_box">
+              <div class="btn btn-action btn-action_fb" tabindex="0" role="button" aria-pressed="false" data-type="facebook"></div>
+              <div class="btn btn-action btn-action_tw" tabindex="0" role="button" aria-pressed="false" data-type="twitter"></div>
+              <div class="btn btn-action btn-action-tel d-none" tabindex="0" role="button" aria-pressed="false" data-type="telegram"></div>
+            </div>
+          </div>
+          <!-- sidebar -->
+          <!-- /sidebar -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    frappe.ready(() => {
+      frappe.set_search_path('/news')
+    
+      // scroll to comment or like section if url contain hash
+      if (window.location.hash) {
+        var hash = window.location.hash
+    
+        if ($(hash).length) {
+          $('html, body').animate(
+            {
+              scrollTop: $(hash).offset().top - 100
+            },
+            900,
+            'swing'
+          )
+        }
+      }
+    })
+  </script>
+{% endblock %}

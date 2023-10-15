@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:id",
  "creation": "2023-10-09 12:31:42.908569",
  "default_view": "List",
  "doctype": "DocType",
@@ -9,6 +10,7 @@
  "field_order": [
   "theme",
   "column_break_sdsa",
+  "id",
   "section_break_uvib",
   "start_at",
   "column_break_otok",
@@ -52,14 +54,21 @@
    "fieldname": "comment",
    "fieldtype": "Small Text",
    "label": "comment"
+  },
+  {
+   "fieldname": "id",
+   "fieldtype": "Data",
+   "label": "id",
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-10 19:46:41.446558",
+ "modified": "2023-10-15 13:08:52.545680",
  "modified_by": "Administrator",
  "module": "ASC DIia",
  "name": "ASC Diia Thematic Area",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -75,7 +84,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "theme"
 }

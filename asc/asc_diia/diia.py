@@ -37,3 +37,12 @@ class DiiaASC(DiiaApiBase):
 
     def get_list(self):
         return self.api_request("GET", "/asc/list/")
+
+
+class DiiaCategories(DiiaApiBase):
+    def get_detail(self, thematic_area_id):
+        url = f"/categories/detail/{thematic_area_id}/"
+        return self.api_request("GET", url)
+
+    def get_list(self):
+        return self.api_request("GET", "/categories/list/")

@@ -1,4 +1,5 @@
-<div class="header_find">
+{% if navbar_search %}
+  <div class="header_find">
     <form class="form form-search-m" action="/searchresult" method="GET" id="form-search-mobile">
       <button class="btn form-search-m_btn"></button>
       <input type="search" name="key" class="input form-search-m_input" placeholder="Пошук" autocomplete="off" />
@@ -6,3 +7,4 @@
     </form>
     <div class="form-search-m_error" id="form-search-mobile-error"></div>
   </div>
+{% endif %}

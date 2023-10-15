@@ -4,7 +4,7 @@
 import json
 import requests
 import frappe
-from frappe.model.document import Document
+from frappe.website.website_generator import WebsiteGenerator
 
 
 @frappe.whitelist()
@@ -39,5 +39,38 @@ def get_from_api(asc_code):
     return str(data_str)
 
 
-class ASCOffice(Document):
+class ASCOffice(WebsiteGenerator):
     pass
+
+
+def get_list(doctype, txt, filters, limit_start, limit_page_length=20, order_by=None):
+    from frappe.www.list import get_list
+
+    user = frappe.session.user
+    ignore_permissions = True
+    if not filters:
+        filters = []
+    filters.append(('ASC Office', 'published', '=', 1))
+    # result = get_list(
+    #     doctype, txt, filters, limit_start, limit_page_length, ignore_permissions=ignore_permissions, order_by=order_by
+    # )
+
+    result = frappe.get_all(doctype, fields=[
+                            "title", "status", "address", "tel_consul"],
+                            limit_start=limit_start,
+                            limit_page_length=limit_page_length,
+                            ignore_permissions=ignore_permissions,
+                            filters=filters,
+                            order_by=order_by)
+    print(result)
+    return result
+
+
+def get_list_context(context=None):
+    return {
+        "title": "Офіси ЦНАП",
+        "get_list": get_list,
+        # "row_template": "templates/asc_news_row.html",
+        "no_breadcrumbs": False,
+        # "order_by": "published_on ASC",
+    }

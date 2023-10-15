@@ -1,15 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2023-10-10 19:21:49.115206",
+ "creation": "2023-10-15 18:42:27.737021",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "title",
   "published",
-  "column_break_zuif",
+  "title",
   "route"
  ],
  "fields": [
@@ -22,11 +21,7 @@
    "default": "0",
    "fieldname": "published",
    "fieldtype": "Check",
-   "label": "published"
-  },
-  {
-   "fieldname": "column_break_zuif",
-   "fieldtype": "Column Break"
+   "label": "Published"
   },
   {
    "fieldname": "route",
@@ -36,10 +31,10 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-15 20:09:21.783288",
+ "modified": "2023-10-15 20:13:10.644810",
  "modified_by": "Administrator",
- "module": "ASC DIia",
- "name": "ASC Diia Category",
+ "module": "Asc Core",
+ "name": "ASC News Category",
  "owner": "Administrator",
  "permissions": [
   {
@@ -55,7 +50,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "title"
 }

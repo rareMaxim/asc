@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "field:asc_id",
  "creation": "2023-09-25 22:01:21.634468",
@@ -10,6 +11,9 @@
  "field_order": [
   "asc_id",
   "title",
+  "column_break_gufb",
+  "published",
+  "route",
   "section_break_swsx",
   "tel_consul",
   "onl_consul",
@@ -242,11 +246,27 @@
    "fieldname": "feedback_url",
    "fieldtype": "Data",
    "label": "\u041f\u043e\u0441\u0438\u043b\u0430\u043d\u043d\u044f \u043d\u0430 \u0444\u043e\u0440\u043c\u0443 \u0437\u0432\u043e\u0440\u043e\u0442\u043d\u044c\u043e\u0433\u043e \u0437\u0432\u2019\u044f\u0437\u043a\u0443"
+  },
+  {
+   "fieldname": "column_break_gufb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "\u041e\u043f\u0443\u0431\u043b\u0456\u043a\u043e\u0432\u0430\u043d\u043e"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-09 22:41:12.914556",
+ "modified": "2023-10-14 09:30:24.542171",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC Office",
@@ -266,6 +286,7 @@
    "write": 1
   }
  ],
+ "route": "offices",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

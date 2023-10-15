@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-15 19:02:03.601777",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "column_break_clyv",
+  "enable_social_sharing",
+  "rate_limits_section",
+  "like_limit",
+  "column_break_gshs",
+  "comment_limit"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "News Title"
+  },
+  {
+   "fieldname": "column_break_clyv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_social_sharing",
+   "fieldtype": "Check",
+   "label": "Enable Social Sharing"
+  },
+  {
+   "fieldname": "rate_limits_section",
+   "fieldtype": "Section Break",
+   "label": "Rate Limits"
+  },
+  {
+   "default": "5",
+   "description": "Like limit per hour",
+   "fieldname": "like_limit",
+   "fieldtype": "Int",
+   "label": "Like limit"
+  },
+  {
+   "fieldname": "column_break_gshs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Comment limit per hour",
+   "fieldname": "comment_limit",
+   "fieldtype": "Int",
+   "label": "Comment limit"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-10-15 19:56:15.860670",
+ "modified_by": "Administrator",
+ "module": "ASC DIia",
+ "name": "ASC News Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

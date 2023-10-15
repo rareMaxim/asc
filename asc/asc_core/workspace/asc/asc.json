@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"BrMeznMfCu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">ASC</span>\",\"col\":12}},{\"id\":\"WU5Zyh27nX\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u041d\u043e\u0432\u0438\u043d\u0438\",\"col\":3}},{\"id\":\"vod-mrSmpx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u041e\u0444\u0456\u0441\u0438 \u0426\u041d\u0410\u041f\",\"col\":3}}]",
+ "content": "[{\"id\":\"BrMeznMfCu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">ASC</span>\",\"col\":12}},{\"id\":\"UeR6DzaKvv\",\"type\":\"card\",\"data\":{\"card_name\":\"\u041d\u043e\u0432\u0438\u043d\u0438\",\"col\":4}},{\"id\":\"vod-mrSmpx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u041e\u0444\u0456\u0441\u0438 \u0426\u041d\u0410\u041f\",\"col\":3}},{\"id\":\"tKEkc_WwCy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0421\u043f\u0456\u0432\u0440\u043e\u0431\u0456\u0442\u043d\u0438\u043a\u0438\",\"col\":3}}]",
  "creation": "2023-10-06 02:02:09.202837",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,8 +12,47 @@
  "indicator_color": "green",
  "is_hidden": 0,
  "label": "ASC",
- "links": [],
- "modified": "2023-10-06 02:11:50.820210",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u041d\u043e\u0432\u0438\u043d\u0438",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u041d\u043e\u0432\u0438\u043d\u0438",
+   "link_count": 0,
+   "link_to": "ASC News",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u0457",
+   "link_count": 0,
+   "link_to": "ASC Diia Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u041d\u0430\u043b\u0430\u0448\u0442\u0443\u0432\u0430\u043d\u043d\u044f",
+   "link_count": 0,
+   "link_to": "News Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2023-10-15 19:04:20.713418",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC",
@@ -26,18 +65,18 @@
  "sequence_id": 1.0,
  "shortcuts": [
   {
-   "color": "Blue",
+   "color": "Grey",
    "doc_view": "List",
-   "label": "\u041e\u0444\u0456\u0441\u0438 \u0426\u041d\u0410\u041f",
-   "link_to": "ASC Office",
+   "label": "\u0421\u043f\u0456\u0432\u0440\u043e\u0431\u0456\u0442\u043d\u0438\u043a\u0438",
+   "link_to": "ASC Employees",
    "stats_filter": "{\"name\":[\"is\",\"set\"]}",
    "type": "DocType"
   },
   {
-   "color": "Green",
+   "color": "Blue",
    "doc_view": "List",
-   "label": "\u041d\u043e\u0432\u0438\u043d\u0438",
-   "link_to": "ASC News",
+   "label": "\u041e\u0444\u0456\u0441\u0438 \u0426\u041d\u0410\u041f",
+   "link_to": "ASC Office",
    "stats_filter": "{\"name\":[\"is\",\"set\"]}",
    "type": "DocType"
   }

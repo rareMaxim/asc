@@ -1,0 +1,16 @@
+{% if not hide_login %}
+  <div class="header_sign-wrap">
+    {% if frappe.session.user == 'Guest' %}
+      <div class="header_sign" id="header_sign">
+        <div class="header_sign-search icn_search js-header_sign-search"></div>
+        <a href="/login" class="btn btn_register">Зареєструватися</a>
+        <a href="/login" class="btn_sign js-btn_sign">Увійти до кабінету</a>
+      </div>
+    {% else %}
+      <div class="header_sign header_sign-auth" id="header_sign-auth">
+        <div class="header_sign-search icn_search js-header_sign-search"></div>
+        <a href="/login" class="btn_sign js-btn_sign">{{ frappe.session.user }}</a>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

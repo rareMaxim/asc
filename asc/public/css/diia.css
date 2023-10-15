@@ -14244,21 +14244,21 @@ body[class*="ios"] .header_bg-gradient {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
-    background-image: url("/assets/img/chatbot/chatbot_viber.svg")
+    background-image: url("/assets/asc/img/chatbot/chatbot_viber.svg")
 }
 
 .icn-chatbot_fb {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
-    background-image: url("/assets/img/chatbot/chatbot/chatbot_fb.svg")
+    background-image: url("/assets/asc/img/chatbot/chatbot_fb.svg")
 }
 
 .icn-chatbot_tl {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
-    background-image: url("/assets/img/chatbot/chatbot/chatbot_telegram.svg")
+    background-image: url("/assets/asc/img/chatbot/chatbot_telegram.svg")
 }
 
 .important-info {
