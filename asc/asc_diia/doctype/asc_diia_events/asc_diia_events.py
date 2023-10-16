@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class ASCNewsSettings(Document):
+class ASCDiiaEvents(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,10 +14,11 @@ class ASCNewsSettings(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		allow_guest_to_comment: DF.Check
-		comment_limit: DF.Int
-		enable_social_sharing: DF.Check
-		like_limit: DF.Int
+		comment: DF.SmallText | None
+		end_at: DF.Datetime | None
+		id: DF.Data | None
+		public_text: DF.Data | None
+		start_at: DF.Datetime | None
 		title: DF.Data | None
 	# end: auto-generated types
 	pass

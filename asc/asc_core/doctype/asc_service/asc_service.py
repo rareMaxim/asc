@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class ASCNewsSettings(Document):
+class ASCService(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,10 +14,8 @@ class ASCNewsSettings(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		allow_guest_to_comment: DF.Check
-		comment_limit: DF.Int
-		enable_social_sharing: DF.Check
-		like_limit: DF.Int
+		id: DF.Data | None
+		identifier: DF.Data | None
 		title: DF.Data | None
 	# end: auto-generated types
 	pass

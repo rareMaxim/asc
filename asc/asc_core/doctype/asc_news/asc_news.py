@@ -192,7 +192,6 @@ def get_news_list(doctype, txt, filters, limit_start, limit_page_length=2, order
                             filters=filters,
                             order_by=order_by)
     print(limit_start, limit_page_length)
-    frappe.msgprint('ddddd')
     return result
 
 
@@ -223,7 +222,6 @@ def get_list_context(context=None):
     list_context = frappe._dict(
         title="Новини",
         get_list=get_news_list,
-        limit_page_length=2,
         # "row_template": "templates/asc_news_row.html",
         no_breadcrumbs=False,
         order_by="published_on DESC",

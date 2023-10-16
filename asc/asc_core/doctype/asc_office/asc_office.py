@@ -56,7 +56,7 @@ def get_list(doctype, txt, filters, limit_start, limit_page_length=20, order_by=
     # )
 
     result = frappe.get_all(doctype, fields=[
-                            "title", "status", "address", "tel_consul"],
+                            "title", "status", "address", "tel_consul", "onl_consul"],
                             limit_start=limit_start,
                             limit_page_length=limit_page_length,
                             ignore_permissions=ignore_permissions,

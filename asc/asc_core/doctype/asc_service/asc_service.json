@@ -2,21 +2,21 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "field:id",
- "creation": "2023-10-10 19:21:49.115206",
+ "creation": "2023-10-16 23:11:51.365510",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "title",
-  "theme",
-  "id"
+  "id",
+  "identifier",
+  "title"
  ],
  "fields": [
   {
    "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Name"
+   "label": "Title"
   },
   {
    "fieldname": "id",
@@ -25,19 +25,17 @@
    "unique": 1
   },
   {
-   "fieldname": "theme",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Theme",
-   "options": "ASC Diia Thematic Area"
+   "fieldname": "identifier",
+   "fieldtype": "Data",
+   "label": "identifier"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-16 22:50:55.825209",
+ "modified": "2023-10-16 23:17:32.606024",
  "modified_by": "Administrator",
- "module": "ASC DIia",
- "name": "ASC Diia Category",
+ "module": "Asc Core",
+ "name": "ASC Service",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
@@ -54,9 +52,7 @@
    "write": 1
   }
  ],
- "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "title_field": "title"
+ "states": []
 }

@@ -10,6 +10,7 @@
   "title",
   "column_break_clyv",
   "enable_social_sharing",
+  "allow_guest_to_comment",
   "rate_limits_section",
   "like_limit",
   "column_break_gshs",
@@ -52,12 +53,18 @@
    "fieldname": "comment_limit",
    "fieldtype": "Int",
    "label": "Comment limit"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_guest_to_comment",
+   "fieldtype": "Check",
+   "label": "allow_guest_to_comment"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2023-10-15 19:56:15.860670",
+ "modified": "2023-10-16 00:45:10.901941",
  "modified_by": "Administrator",
  "module": "ASC DIia",
  "name": "ASC News Settings",

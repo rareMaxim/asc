@@ -1,36 +1,16 @@
-<!-- this is a sample default list template -->
+<div class="col-md-4">
+  <address>
+    <strong>{{ doc.title or doc.name }} <span class="badge badge-secondary">{{ doc.status }}</span></strong><br />
+    {% if doc.address %}
+      {{ doc.address }}<br />
+    {% endif %}
+    <abbr title="Телефон консультанта">Тел:</abbr> {{ doc.tel_consul }}
+  </address>
 
-<div class="col-12">
-  <div class="service-acc_big">
-    <div class="service-acc_big-inner">
-      <div class="col-lg-7">
-        <div class="service-acc_big-title">
-          <div class="service-info_first-label">Назва:</div>
-          <div class="service-info_first-text">
-            <p>{{ doc.title or doc.name }}</p>
-          </div>
-        </div>
-        <div class="service-acc_big-title">
-          <div class="service-info_first-label">Статус:</div>
-          <div class="service-info_first-text">
-            <p>{{ doc.status }}</p>
-          </div>
-        </div>
-		{% if doc.address %}
-        <div class="service-acc_big-title">
-          <div class="service-info_first-label">Адреса:</div>
-          <div class="service-info_first-text">
-            <p>{{ doc.address }}</p>
-          </div>
-        </div>
-		{% endif %}
-        <div class="service-acc_big-title">
-          <div class="service-info_first-label">Телефон:</div>
-          <div class="service-info_first-text">
-            <p>{{ doc.tel_consul }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <address>
+    <strong>Пошта для консультацій</strong><br />
+    <a href="mailto:#">{{ doc.onl_consul }}</a>
+  </address>
 </div>
+
+<!-- this is a sample default list template -->

@@ -2,22 +2,22 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "field:id",
- "creation": "2023-10-10 19:21:49.115206",
+ "creation": "2023-10-16 15:57:12.044260",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "id",
   "title",
-  "theme",
-  "id"
+  "public_text",
+  "column_break_utrd",
+  "start_at",
+  "end_at",
+  "section_break_fjsq",
+  "comment"
  ],
  "fields": [
-  {
-   "fieldname": "title",
-   "fieldtype": "Data",
-   "label": "Name"
-  },
   {
    "fieldname": "id",
    "fieldtype": "Data",
@@ -25,19 +25,46 @@
    "unique": 1
   },
   {
-   "fieldname": "theme",
-   "fieldtype": "Link",
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "fieldname": "start_at",
+   "fieldtype": "Datetime",
+   "label": "Start at"
+  },
+  {
+   "fieldname": "end_at",
+   "fieldtype": "Datetime",
+   "label": "End at"
+  },
+  {
+   "fieldname": "public_text",
+   "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Theme",
-   "options": "ASC Diia Thematic Area"
+   "label": "Public text"
+  },
+  {
+   "fieldname": "column_break_utrd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_fjsq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "comment",
+   "fieldtype": "Small Text",
+   "label": "Comment"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-16 22:50:55.825209",
+ "modified": "2023-10-16 20:17:36.931987",
  "modified_by": "Administrator",
  "module": "ASC DIia",
- "name": "ASC Diia Category",
+ "name": "ASC Diia Events",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
