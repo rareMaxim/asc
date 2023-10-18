@@ -5,22 +5,18 @@
 from frappe.model.document import Document
 
 
-class ASCService(Document):
+class ASCServiceProviderTable(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
 	from typing import TYPE_CHECKING
 
 	if TYPE_CHECKING:
-		from asc.asc_core.doctype.asc_service_provider_table.asc_service_provider_table import ASCServiceProviderTable
 		from frappe.types import DF
 
-		id: DF.Data | None
-		identifier: DF.Data | None
-		keyword: DF.Data | None
-		sector: DF.Link | None
-		service_provider: DF.TableMultiSelect[ASCServiceProviderTable]
-		short_description_plain: DF.SmallText | None
-		title: DF.Data | None
+		parent: DF.Data
+		parentfield: DF.Data
+		parenttype: DF.Data
+		service_provider: DF.Link | None
 	# end: auto-generated types
 	pass

@@ -8,16 +8,21 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "id",
   "identifier",
-  "title"
+  "column_break_ahmw",
+  "keyword",
+  "id",
+  "section_break_zvcy",
+  "title",
+  "column_break_kpwm",
+  "sector",
+  "section_break_zjzt",
+  "column_break_reei",
+  "short_description_plain",
+  "column_break_pfgs",
+  "service_provider"
  ],
  "fields": [
-  {
-   "fieldname": "title",
-   "fieldtype": "Data",
-   "label": "Title"
-  },
   {
    "fieldname": "id",
    "fieldtype": "Data",
@@ -25,14 +30,73 @@
    "unique": 1
   },
   {
+   "columns": 1,
    "fieldname": "identifier",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "identifier"
+  },
+  {
+   "columns": 5,
+   "fieldname": "keyword",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "keyword"
+  },
+  {
+   "columns": 2,
+   "fieldname": "sector",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sector",
+   "options": "ASC Diia Category",
+   "search_index": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "length": 500
+  },
+  {
+   "fieldname": "short_description_plain",
+   "fieldtype": "Small Text",
+   "label": "short_description_plain"
+  },
+  {
+   "fieldname": "column_break_ahmw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zvcy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_kpwm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zjzt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_reei",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_provider",
+   "fieldtype": "Table MultiSelect",
+   "label": "service_provider",
+   "options": "ASC Service Provider Table"
+  },
+  {
+   "fieldname": "column_break_pfgs",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-16 23:17:32.606024",
+ "modified": "2023-10-18 14:18:55.615734",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC Service",
@@ -52,7 +116,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "keyword"
 }

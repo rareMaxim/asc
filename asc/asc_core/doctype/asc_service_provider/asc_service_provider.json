@@ -1,49 +1,40 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:id",
- "creation": "2023-10-10 19:21:49.115206",
+ "creation": "2023-10-17 11:15:18.303296",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "spatial",
   "title",
-  "theme",
-  "id"
+  "shortname"
  ],
  "fields": [
   {
    "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Name"
+   "label": "Title",
+   "length": 240
   },
   {
-   "fieldname": "id",
+   "fieldname": "spatial",
    "fieldtype": "Data",
-   "label": "Id",
-   "unique": 1
+   "label": "spatial"
   },
   {
-   "fieldname": "theme",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Theme",
-   "options": "ASC Diia Thematic Area"
+   "fieldname": "shortname",
+   "fieldtype": "Data",
+   "label": "shortname"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [
-  {
-   "link_doctype": "ASC Service",
-   "link_fieldname": "sector"
-  }
- ],
- "modified": "2023-10-17 08:38:28.103478",
+ "links": [],
+ "modified": "2023-10-18 14:31:17.497806",
  "modified_by": "Administrator",
- "module": "ASC DIia",
- "name": "ASC Diia Category",
- "naming_rule": "By fieldname",
+ "module": "Asc Core",
+ "name": "ASC Service Provider",
  "owner": "Administrator",
  "permissions": [
   {
@@ -59,9 +50,10 @@
    "write": 1
   }
  ],
+ "search_fields": "title",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "title"
+ "title_field": "shortname"
 }

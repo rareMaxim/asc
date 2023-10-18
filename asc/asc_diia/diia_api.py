@@ -59,6 +59,11 @@ class DiiaEvents(DiiaApiBase):
     def get_list(self):
         return self.make_request("GET", "/events/list/")
 
+
+class DiiaRegister(DiiaApiBase):
+    def get_list(self):
+        return self.make_request("GET", "/register/list/")
+
 # Diia to Frappe whitelist adapters
 
 
@@ -130,9 +135,58 @@ def diia_categories_getList():
                 # open a exist document
                 doc_cat = frappe.get_doc("ASC Diia Category", category['id'])
                 catUpdate = catUpdate + 1
-                doc_cat.title = category['name']
-                doc_cat.theme = acc
+            doc_cat.title = category['name']
+            doc_cat.theme = acc
             doc_cat.save()
-        
 
     return f"Успішно отримано з порталу. <br>Створено {cntCreate}. <br>Оновлено {cntUpdate}."
+
+
+@frappe.whitelist()
+def diia_register_getList():
+    cntCreate, cntUpdate = 0, 0
+    services = DiiaRegister().get_list()
+    for service in services['results']:
+        if not frappe.db.get_value("ASC Service", service['id']):
+            # create a new document
+            acc = frappe.new_doc("ASC Service")
+            acc.id = service['id']
+            acc.insert()
+            cntCreate = cntCreate + 1
+        else:
+            # open a exist document
+            acc = frappe.get_doc("ASC Service", service['id'])
+            cntUpdate = cntUpdate + 1
+
+        acc.identifier = service['identifier']
+        acc.keyword = service['keyword']
+        # if frappe.db.get_value("ASC Diia Category", service['id']):
+        acc.sector = service['sector']['id']
+
+        acc.title = service['translations'][0]['name']
+        acc.short_description_plain = service['translations'][0]['short_description_plain']
+        diia_service_provider(acc, service['service_provider'])
+        acc.save()
+
+    return f"Успішно отримано з порталу. <br>Створено {cntCreate}. <br>Оновлено {cntUpdate}."
+
+
+def diia_service_provider(parent_doc, service_providers):
+    parent_doc.service_provider.clear()
+    parent_doc.set("service_provider", [])
+    for service in service_providers:
+        if not frappe.db.get_value("ASC Service Provider", {"title": service['name']}):
+            # create a new document
+            serv_prov = frappe.new_doc("ASC Service Provider")
+            serv_prov.title = service['name']
+            serv_prov.insert()
+        else:
+            # open a exist document
+            serv_prov = frappe.get_doc("ASC Service Provider",  {
+                                       "title": service['name']})
+        serv_prov.spatial = service['spatial']
+        serv_prov.shortname = service['shortname']
+        serv_prov.save()
+        parent_doc.append("service_provider", {
+            "service_provider": serv_prov})
+        parent_doc.save()

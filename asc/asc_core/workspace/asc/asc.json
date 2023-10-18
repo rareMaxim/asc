@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"BrMeznMfCu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">ASC</span>\",\"col\":12}},{\"id\":\"UeR6DzaKvv\",\"type\":\"card\",\"data\":{\"card_name\":\"\u041d\u043e\u0432\u0438\u043d\u0438\",\"col\":4}},{\"id\":\"vod-mrSmpx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u041e\u0444\u0456\u0441\u0438 \u0426\u041d\u0410\u041f\",\"col\":3}},{\"id\":\"tKEkc_WwCy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0421\u043f\u0456\u0432\u0440\u043e\u0431\u0456\u0442\u043d\u0438\u043a\u0438\",\"col\":3}},{\"id\":\"RZd7JIEKs4\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0414\u043e\u0432\u0456\u0434\u043d\u0438\u043a\u0438 \u0414\u0456\u044f\",\"col\":4}}]",
+ "content": "[{\"id\":\"BrMeznMfCu\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>\u0426\u041d\u0410\u041f \u043c. \u041c\u0435\u043b\u0456\u0442\u043e\u043f\u043e\u043b\u044c</b></span>\",\"col\":12}},{\"id\":\"UeR6DzaKvv\",\"type\":\"card\",\"data\":{\"card_name\":\"\u041d\u043e\u0432\u0438\u043d\u0438\",\"col\":4}},{\"id\":\"vod-mrSmpx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u041e\u0444\u0456\u0441\u0438 \u0426\u041d\u0410\u041f\",\"col\":3}},{\"id\":\"tKEkc_WwCy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0421\u043f\u0456\u0432\u0440\u043e\u0431\u0456\u0442\u043d\u0438\u043a\u0438\",\"col\":3}},{\"id\":\"RZd7JIEKs4\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0414\u043e\u0432\u0456\u0434\u043d\u0438\u043a\u0438 \u0414\u0456\u044f\",\"col\":4}}]",
  "creation": "2023-10-06 02:02:09.202837",
  "custom_blocks": [],
  "docstatus": 0,
@@ -55,14 +55,14 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "\u0414\u043e\u0432\u0456\u0434\u043d\u0438\u043a\u0438 \u0414\u0456\u044f",
-   "link_count": 2,
+   "link_count": 4,
    "onboard": 0,
    "type": "Card Break"
   },
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\u0416\u0438\u0442\u0442\u0435\u0432\u0456 \u043f\u043e\u0434\u0456\u0457",
+   "label": "\u0416\u0438\u0442\u0442\u0435\u0432\u0430 \u043f\u043e\u0434\u0456\u044f",
    "link_count": 0,
    "link_to": "ASC Diia Events",
    "link_type": "DocType",
@@ -72,15 +72,35 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "\u0422\u0435\u043c\u0430\u0442\u0438\u0447\u043d\u0456 \u0437\u043e\u043d\u0438",
+   "label": "\u0422\u0435\u043c\u0430\u0442\u0438\u0447\u043d\u0430 \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
    "link_count": 0,
    "link_to": "ASC Diia Thematic Area",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u044f \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
+   "link_count": 0,
+   "link_to": "ASC Diia Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "\u041f\u043e\u0441\u043b\u0443\u0433\u0438",
+   "link_count": 0,
+   "link_to": "ASC Service",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2023-10-16 22:35:46.688124",
+ "modified": "2023-10-18 09:33:38.144018",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC",
