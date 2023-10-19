@@ -16,6 +16,11 @@
   "title",
   "column_break_kpwm",
   "sector",
+  "section_break_hhlm",
+  "service_owner",
+  "column_break_qlga",
+  "section_break_gfku",
+  "related_services",
   "section_break_zjzt",
   "column_break_reei",
   "short_description_plain",
@@ -34,34 +39,34 @@
    "fieldname": "identifier",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "identifier"
+   "label": "\u0406\u0434\u0435\u043d\u0442\u0438\u0444\u0456\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u0441\u043b\u0443\u0433\u0438"
   },
   {
    "columns": 5,
    "fieldname": "keyword",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "keyword"
+   "label": "\u041a\u043e\u0440\u043e\u0442\u043a\u0430 \u043d\u0430\u0437\u0432\u0430"
   },
   {
    "columns": 2,
    "fieldname": "sector",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Sector",
+   "label": "\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u044f \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
    "options": "ASC Diia Category",
    "search_index": 1
   },
   {
    "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Title",
+   "label": "\u041d\u0430\u0437\u0432\u0430 \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
    "length": 500
   },
   {
    "fieldname": "short_description_plain",
    "fieldtype": "Small Text",
-   "label": "short_description_plain"
+   "label": "\u041a\u043e\u0440\u043e\u0442\u043a\u043e \u043f\u0440\u043e \u043f\u043e\u0441\u043b\u0443\u0433\u0443"
   },
   {
    "fieldname": "column_break_ahmw",
@@ -86,17 +91,41 @@
   {
    "fieldname": "service_provider",
    "fieldtype": "Table MultiSelect",
-   "label": "service_provider",
+   "label": "\u0421\u0443\u0431'\u0454\u043a\u0442\u0438 \u043d\u0430\u0434\u0430\u043d\u043d\u044f \u0430\u0434\u043c\u0456\u043d\u0456\u0441\u0442\u0440\u0430\u0442\u0438\u0432\u043d\u043e\u0457 \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
    "options": "ASC Service Provider Table"
   },
   {
    "fieldname": "column_break_pfgs",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_hhlm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "service_owner",
+   "fieldtype": "Link",
+   "label": "owner",
+   "options": "ASC Diia Service Owner"
+  },
+  {
+   "fieldname": "column_break_qlga",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_gfku",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "related_services",
+   "fieldtype": "Table",
+   "label": "related_services",
+   "options": "ASC Diia Related Services"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-18 14:18:55.615734",
+ "modified": "2023-10-20 00:48:31.013056",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC Service",
