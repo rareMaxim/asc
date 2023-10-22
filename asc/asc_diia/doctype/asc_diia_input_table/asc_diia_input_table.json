@@ -1,0 +1,32 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-22 03:02:43.379223",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "service_input"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_input",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "\u041d\u0430\u0437\u0432\u0430",
+   "options": "ASC Service Input"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-10-22 03:03:19.316357",
+ "modified_by": "Administrator",
+ "module": "ASC DIia",
+ "name": "ASC Diia Input Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
