@@ -8,10 +8,13 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "published",
+  "column_break_pttv",
+  "route",
+  "section_break_slqd",
   "identifier",
   "column_break_ahmw",
   "keyword",
-  "id",
   "section_break_zvcy",
   "title",
   "column_break_kpwm",
@@ -19,13 +22,23 @@
   "section_break_hhlm",
   "service_owner",
   "column_break_qlga",
+  "service_status",
   "section_break_gfku",
   "related_services",
+  "events",
+  "produces",
   "section_break_zjzt",
   "column_break_reei",
   "short_description_plain",
   "column_break_pfgs",
-  "service_provider"
+  "debug_tab",
+  "id",
+  "column_break_fumo",
+  "\u043e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u044f_tab",
+  "section_break_ekjq",
+  "service_provider",
+  "section_break_mfma",
+  "input"
  ],
  "fields": [
   {
@@ -38,7 +51,10 @@
    "columns": 1,
    "fieldname": "identifier",
    "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "\u0406\u0434\u0435\u043d\u0442\u0438\u0444\u0456\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u0441\u043b\u0443\u0433\u0438"
   },
   {
@@ -46,7 +62,8 @@
    "fieldname": "keyword",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "\u041a\u043e\u0440\u043e\u0442\u043a\u0430 \u043d\u0430\u0437\u0432\u0430"
+   "label": "\u041a\u043e\u0440\u043e\u0442\u043a\u0430 \u043d\u0430\u0437\u0432\u0430",
+   "length": 800
   },
   {
    "columns": 2,
@@ -61,7 +78,7 @@
    "fieldname": "title",
    "fieldtype": "Data",
    "label": "\u041d\u0430\u0437\u0432\u0430 \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
-   "length": 500
+   "length": 800
   },
   {
    "fieldname": "short_description_plain",
@@ -105,7 +122,7 @@
   {
    "fieldname": "service_owner",
    "fieldtype": "Link",
-   "label": "owner",
+   "label": "\u0426\u0435\u043d\u0442\u0440\u0430\u043b\u044c\u043d\u0438\u0439 \u043e\u0440\u0433\u0430\u043d \u0432\u0438\u043a\u043e\u043d\u0430\u0432\u0447\u043e\u0457 \u0432\u043b\u0430\u0434\u0438, \u0449\u043e \u0444\u043e\u0440\u043c\u0443\u0454 \u0430\u0431\u043e \u0440\u0435\u0430\u043b\u0456\u0437\u0443\u0454 \u0434\u0435\u0440\u0436\u0430\u0432\u043d\u0443 \u043f\u043e\u043b\u0456\u0442\u0438\u043a\u0443 \u0443 \u0432\u0456\u0434\u043f\u043e\u0432\u0456\u0434\u043d\u0456\u0439 \u0441\u0444\u0435\u0440\u0456, \u0456\u043d\u0448\u0438\u0439 \u0434\u0435\u0440\u0436\u0430\u0432\u043d\u0438\u0439 \u043e\u0440\u0433\u0430\u043d",
    "options": "ASC Diia Service Owner"
   },
   {
@@ -121,11 +138,78 @@
    "fieldtype": "Table",
    "label": "related_services",
    "options": "ASC Diia Related Services"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "\u0410\u043a\u0442\u0438\u0432\u043d\u0430"
+  },
+  {
+   "fieldname": "column_break_pttv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "\u041c\u0430\u0440\u0448\u0440\u0443\u0442"
+  },
+  {
+   "fieldname": "section_break_slqd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "service_status",
+   "fieldtype": "Link",
+   "label": "Status",
+   "options": "ASC Diia Service Status"
+  },
+  {
+   "fieldname": "events",
+   "fieldtype": "Table",
+   "label": "\u0416\u0438\u0442\u0442\u0454\u0432\u0430 \u043f\u043e\u0434\u0456\u044f",
+   "options": "ASC Diia Service Events Table"
+  },
+  {
+   "fieldname": "produces",
+   "fieldtype": "Table",
+   "label": "\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u0438",
+   "options": "ASC Diia Service Produces Table"
+  },
+  {
+   "fieldname": "debug_tab",
+   "fieldtype": "Tab Break",
+   "label": "Debug"
+  },
+  {
+   "fieldname": "column_break_fumo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "\u043e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u044f_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u041e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u044f"
+  },
+  {
+   "fieldname": "section_break_ekjq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_mfma",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "input",
+   "fieldtype": "Table",
+   "label": "\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438, \u043d\u0435\u043e\u0431\u0445\u0456\u0434\u043d\u0456 \u0434\u043b\u044f \u043e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u044f \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
+   "options": "ASC Diia Input Table"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "published",
  "links": [],
- "modified": "2023-10-20 00:48:31.013056",
+ "modified": "2023-10-24 12:00:48.574343",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC Service",

@@ -10,8 +10,8 @@
       <!-- begin blog content -->
       <div class="blog-header">
         <div>
-          <!--  <a class="mr-2" href="/news">{{ _('News') }}</a> 
-          <span class="text-muted">/</span>  -->
+          <!--         <a class="mr-2" href="/news">{{ _('News') }}</a> 
+          <span class="text-muted">/</span>         -->
           <a class="ml-2" href="/{{ category.route }}">{{ category.title }}</a>
         </div>
         <h1 itemprop="headline" class="blog-title">{{ title }}</h1>
@@ -24,7 +24,10 @@
         </div>
       </div>
       <hr class="my-5" />
-      <div itemprop="articleBody" class="from-markdown">{{ content }}</div>
+      <div itemprop="articleBody" class="from-markdown">
+        <img src="{{ cover_image }}" alt="{{ title }} - Cover Image" /> <br />
+        {{ content }}
+      </div>
       <!-- end blog content -->
     </article>
     <div class="blog-footer">

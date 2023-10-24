@@ -1,6 +1,6 @@
 {% extends 'templates/web.html' %}
 {% block title %}
-  {{ title or _('News') }}
+  {{ news_title or _('News') }}
 {% endblock %}
 
 {% block page_content %}
@@ -8,7 +8,7 @@
     <div class="col-md-8">   
       <div class="hero">
         <div class="hero-content">
-          <h1>{{ title or _('News') }}</h1>
+          <h1>{{ news_title or _('News') }}</h1>
         </div>
       </div>
 

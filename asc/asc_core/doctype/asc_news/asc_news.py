@@ -103,7 +103,7 @@ class ASCNews(WebsiteGenerator):
         }
 
         # if meta image is not present, then first image inside the blog will be set as the meta image
-        context.metatags["image"] = self.meta_image or self.cover_image or None
+        context.metatags["image"] = self.cover_image or None
 
         self.load_comments(context)
         self.load_likes(context)
@@ -179,7 +179,10 @@ def get_news_list(doctype, txt, filters, limit_start, limit_page_length=2, order
     user = frappe.session.user
     ignore_permissions = True
     if not filters:
-        filters = []
+        filters = {}
+    filters.update({"published": 1})
+
+    # filters.popitem()
     # result = get_list(
     #     doctype, txt, filters, limit_start, limit_page_length, ignore_permissions=ignore_permissions, order_by=order_by
     # )
@@ -220,12 +223,18 @@ def get_news_categories():
 
 def get_list_context(context=None):
     list_context = frappe._dict(
-        title="Новини",
+        news_title="Новини",
         get_list=get_news_list,
         # "row_template": "templates/asc_news_row.html",
         no_breadcrumbs=False,
         order_by="published_on DESC",
     )
+    category_name = frappe.utils.escape_html(
+        frappe.local.form_dict.blog_category or frappe.local.form_dict.category
+    )
+    if category_name:
+        category = frappe.get_doc("ASC News Category", category_name)
+        list_context.news_title = category.title
     blog_settings = frappe.get_doc(
         "ASC News Settings").as_dict(no_default_fields=True)
     list_context.update(blog_settings)
