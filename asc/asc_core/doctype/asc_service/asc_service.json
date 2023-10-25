@@ -8,9 +8,6 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "published",
-  "column_break_pttv",
-  "route",
   "section_break_slqd",
   "identifier",
   "column_break_ahmw",
@@ -38,7 +35,10 @@
   "section_break_ekjq",
   "service_provider",
   "section_break_mfma",
-  "input"
+  "input",
+  "web_site_tab",
+  "published",
+  "route"
  ],
  "fields": [
   {
@@ -146,10 +146,6 @@
    "label": "\u0410\u043a\u0442\u0438\u0432\u043d\u0430"
   },
   {
-   "fieldname": "column_break_pttv",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "\u041c\u0430\u0440\u0448\u0440\u0443\u0442"
@@ -203,13 +199,18 @@
    "fieldtype": "Table",
    "label": "\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438, \u043d\u0435\u043e\u0431\u0445\u0456\u0434\u043d\u0456 \u0434\u043b\u044f \u043e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u044f \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
    "options": "ASC Diia Input Table"
+  },
+  {
+   "fieldname": "web_site_tab",
+   "fieldtype": "Tab Break",
+   "label": "Web-\u0441\u0430\u0439\u0442"
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2023-10-24 12:00:48.574343",
+ "modified": "2023-10-24 19:43:43.994109",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC Service",

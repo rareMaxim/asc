@@ -1,0 +1,108 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "creation": "2023-10-24 21:02:06.530391",
+ "default_view": "List",
+ "description": "\u041d\u043e\u0440\u043c\u0430\u0442\u0438\u0432\u043d\u0456 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "convocation",
+  "session",
+  "date",
+  "number",
+  "file",
+  "column_break_glla",
+  "published",
+  "route"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fieldname": "number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u041d\u043e\u043c\u0435\u0440"
+  },
+  {
+   "fieldname": "file",
+   "fieldtype": "Attach",
+   "label": "\u0424\u0430\u0439\u043b"
+  },
+  {
+   "columns": 3,
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "\u041d\u0430\u0437\u0432\u0430",
+   "length": 700
+  },
+  {
+   "fieldname": "column_break_glla",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "\u041e\u043f\u0443\u0431\u043b\u0456\u043a\u043e\u0432\u0430\u043d\u043e"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "\u041c\u0430\u0440\u0448\u0440\u0443\u0442"
+  },
+  {
+   "fieldname": "convocation",
+   "fieldtype": "Data",
+   "label": "\u0421\u043a\u043b\u0438\u043a\u0430\u043d\u043d\u044f"
+  },
+  {
+   "columns": 1,
+   "fieldname": "session",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0421\u0435\u0441\u0456\u044f"
+  },
+  {
+   "columns": 1,
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "\u0414\u0430\u0442\u0430"
+  }
+ ],
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "is_published_field": "published",
+ "links": [],
+ "make_attachments_public": 1,
+ "modified": "2023-10-25 01:11:08.395780",
+ "modified_by": "Administrator",
+ "module": "Asc Core",
+ "name": "ASC Regulatory Document",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "regulatory",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

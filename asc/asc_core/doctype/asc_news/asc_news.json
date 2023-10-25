@@ -14,6 +14,7 @@
   "title",
   "category",
   "route",
+  "cover_image",
   "column_break_uaeq",
   "published_on",
   "read_time",
@@ -23,8 +24,8 @@
   "section_break_khbi",
   "content_type",
   "content",
-  "markdown_editor_xuos",
-  "html_editor_lqbj",
+  "content_md",
+  "content_html",
   "meta_tags_section",
   "meta_title",
   "meta_description",
@@ -92,6 +93,7 @@
    "fieldname": "category",
    "fieldtype": "Link",
    "in_list_view": 1,
+   "in_standard_filter": 1,
    "label": "Category",
    "options": "ASC News Category"
   },
@@ -112,28 +114,35 @@
    "label": "Disable Likes"
   },
   {
-   "depends_on": "eval:doc.content_type === 'Markdown'",
-   "fieldname": "markdown_editor_xuos",
-   "fieldtype": "Markdown Editor"
-  },
-  {
-   "fieldname": "html_editor_lqbj",
-   "fieldtype": "HTML Editor"
-  },
-  {
    "default": "Rich Text",
    "fieldname": "content_type",
    "fieldtype": "Select",
    "label": "Content Type",
    "options": "Markdown\nRich Text\nHTML"
+  },
+  {
+   "fieldname": "cover_image",
+   "fieldtype": "Attach Image",
+   "label": "\u0417\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u043d\u044f \u043f\u0443\u0431\u043b\u0456\u043a\u0430\u0446\u0456\u0457"
+  },
+  {
+   "depends_on": "eval:doc.content_type === 'Markdown'",
+   "fieldname": "content_md",
+   "fieldtype": "Markdown Editor"
+  },
+  {
+   "depends_on": "eval:doc.content_type === 'HTML'",
+   "fieldname": "content_html",
+   "fieldtype": "HTML Editor"
   }
  ],
  "has_web_view": 1,
+ "image_field": "cover_image",
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
  "make_attachments_public": 1,
- "modified": "2023-10-15 23:09:48.463905",
+ "modified": "2023-10-24 20:04:57.557126",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC News",

@@ -31,14 +31,14 @@ class ASCNews(WebsiteGenerator):
 
     if TYPE_CHECKING:
         from frappe.types import DF
-
         category: DF.Link | None
         content: DF.TextEditor | None
+        content_html: DF.HTMLEditor | None
+        content_md: DF.MarkdownEditor | None
         content_type: DF.Literal["Markdown", "Rich Text", "HTML"]
+        cover_image: DF.AttachImage | None
         disable_comments: DF.Check
         disable_likes: DF.Check
-        html_editor_lqbj: DF.HTMLEditor | None
-        markdown_editor_xuos: DF.MarkdownEditor | None
         meta_description: DF.SmallText | None
         meta_title: DF.Data | None
         published: DF.Check
@@ -85,7 +85,7 @@ class ASCNews(WebsiteGenerator):
         if not cint(self.published):
             raise Exception("This News has not been published yet!")
 
-        context.no_breadcrumbs = True
+        context.no_breadcrumbs = False
 
         context.updated = global_date_format(self.published_on)
         context.cover_image = self.cover_image
@@ -114,7 +114,7 @@ class ASCNews(WebsiteGenerator):
 
         context.parents = [
             {"name": _("Home"), "route": "/"},
-            {"name": "News", "route": "/news"},
+            # {"name": "News", "route": "/news"},
             {"label": context.category.title, "route": context.category.route},
         ]
 
@@ -175,8 +175,6 @@ class ASCNews(WebsiteGenerator):
 
 def get_news_list(doctype, txt, filters, limit_start, limit_page_length=2, order_by=None):
     from frappe.www.list import get_list
-
-    user = frappe.session.user
     ignore_permissions = True
     if not filters:
         filters = {}
@@ -187,13 +185,14 @@ def get_news_list(doctype, txt, filters, limit_start, limit_page_length=2, order
     #     doctype, txt, filters, limit_start, limit_page_length, ignore_permissions=ignore_permissions, order_by=order_by
     # )
 
-    result = frappe.get_all(doctype, fields=[
-                            "title", "route", "cover_image", "published_on", "read_time"],
-                            limit_start=limit_start,
-                            limit_page_length=limit_page_length,
-                            ignore_permissions=ignore_permissions,
-                            filters=filters,
-                            order_by=order_by)
+    result = get_list(doctype, fields=[
+        "title", "route", "cover_image", "published_on", "read_time"],
+        limit_start=limit_start,
+        limit_page_length=limit_page_length,
+        ignore_permissions=ignore_permissions,
+        filters=filters,
+        txt=txt,
+        order_by=order_by)
     print(limit_start, limit_page_length)
     return result
 
@@ -223,7 +222,7 @@ def get_news_categories():
 
 def get_list_context(context=None):
     list_context = frappe._dict(
-        news_title="Новини",
+        news_title="Публікації",
         get_list=get_news_list,
         # "row_template": "templates/asc_news_row.html",
         no_breadcrumbs=False,
@@ -243,4 +242,5 @@ def get_list_context(context=None):
     list_context.update(news_settings)
     if news_settings.browse_by_category:
         list_context.news_categories = get_news_categories()
+    list_context.parents = [{"name": _("Home"), "route": "/"}]
     return list_context
