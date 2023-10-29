@@ -1,29 +1,20 @@
 {% extends 'templates/web.html' %}
 {% block title %}
-  {{ title or _('News') }}
+  {{ title }}
 {% endblock %}
 {% block header %}
   <h3 class="my-account-header">{{ title }}</h3>
 {% endblock %}
 
 {% block page_content %}
-  <div class="website-list" data-doctype="{{ doctype }}" data-txt="{{ txt or ('[notxt]'|e) }}">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Назва</th>
-          <th scope="col">Дата</th>
-          <th scope="col">Номер</th>
-          <th scope="col">Скликання</th>
-          <th scope="col">Сесія</th>
-        </tr>
-      </thead>
-      <tbody>
+  <div class="website-list py-5" data-doctype="{{ doctype }}" data-txt="{{ txt or ('[notxt]'|e) }}">
+    <div class="container">
+      <div id="thematic-area-list" class="row result">
         {% for item in result %}
           {{ item }}
         {% endfor %}
-      </tbody>
-    </table>
+      </div>
+    </div>
     <div class="more-block py-6 {% if not show_more -%}{%- endif %}">
       <button class="btn btn-light btn-more btn-sm">{{ _('More') }}</button>
     </div>
@@ -34,7 +25,7 @@
   <script>
 	frappe.ready(function() {
 		var next_start = {{ next_start or 0 }};
-		var result_wrapper = $(".website-list .result");
+		var result_wrapper = $(".website-list .container .result");
 	
 		$(".website-list .btn-more").on("click", function() {
 			var btn = $(this);

@@ -124,14 +124,13 @@ class FrpDiiaCategories():
             doc_cat = frappe.new_doc(self.SECTOR_DOCTYPE)
             doc_cat.id = category['id']
             doc_cat.insert()
-            self.category_create += 1
         else:
             # open a exist document
             doc_cat = frappe.get_doc(self.SECTOR_DOCTYPE, category['id'])
-            self.category_update += 1
         doc_cat.title = category['name']
-        doc_cat.theme = doc_them_area
+        doc_cat.thematic_area = doc_them_area
         doc_cat.save()
+        return doc_cat
 
     def populate_categories(self, doc_them_area, categories):
         for category in categories:
@@ -143,11 +142,9 @@ class FrpDiiaCategories():
             doc = frappe.new_doc(self.THEMATIC_DOCTYPE)
             doc.id = them_area['id']
             doc.insert()
-            is_new = True
         else:
             # open a exist document
             doc = frappe.get_doc(self.THEMATIC_DOCTYPE, them_area['id'])
-            is_new = False
         if them_area['start_at']:
             start_at = datetime.datetime.strptime(
                 (them_area['start_at']), '%Y-%m-%dT%H:%M:%S%z')
@@ -158,25 +155,15 @@ class FrpDiiaCategories():
                 (them_area['end_at']), '%Y-%m-%dT%H:%M:%S%z')
             doc.end_at = end_at.strftime("%Y-%m-%d %H:%M:%S")
 
-        doc.theme = them_area['theme']
+        doc.title = them_area['theme']
         doc.comment = them_area['comment']
         doc.save()
-        return doc, is_new
+        return doc
 
     def populate_them_areas(self, them_areas):
-        self.theme_create, self.theme_update = 0, 0
-        self.category_create, self.category_update = 0, 0
         for them_area in them_areas:
-            doc_them, isNew = self.populate_them_area(them_area)
-            if isNew:
-                self.theme_create += 1
-            else:
-                self.theme_update += 1
+            doc_them = self.populate_them_area(them_area)
             self.populate_categories(doc_them, them_area['categories'])
-        return frappe._dict({
-            "theme_create":    self.theme_create,    "theme_update":    self.theme_update,
-            "category_create": self.category_create, "category_update": self.category_update,
-        })
 
 
 @frappe.whitelist()
@@ -184,8 +171,6 @@ def diia_categories_getList():
     them_areas = DiiaCategories().get_list()
     frp_cat = FrpDiiaCategories()
     data = frp_cat.populate_them_areas(them_areas)
-
-    return f"Успішно отримано з порталу. <br>Створено {data.theme_create}. <br>Оновлено {data.theme_update}."
 
 
 class FrpDiiaRegister():

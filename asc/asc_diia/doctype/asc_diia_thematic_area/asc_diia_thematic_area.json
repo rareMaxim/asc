@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "field:id",
  "creation": "2023-10-09 12:31:42.908569",
@@ -8,7 +9,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "theme",
+  "title",
   "column_break_sdsa",
   "id",
   "section_break_uvib",
@@ -16,14 +17,13 @@
   "column_break_otok",
   "end_at",
   "section_break_qsqq",
-  "comment"
+  "comment",
+  "tab_website",
+  "route",
+  "column_break_govq",
+  "published"
  ],
  "fields": [
-  {
-   "fieldname": "theme",
-   "fieldtype": "Data",
-   "label": "theme"
-  },
   {
    "fieldname": "column_break_sdsa",
    "fieldtype": "Column Break"
@@ -35,7 +35,8 @@
   {
    "fieldname": "start_at",
    "fieldtype": "Date",
-   "label": "start_at"
+   "in_list_view": 1,
+   "label": "\u041f\u043e\u0447\u0430\u0442\u043e\u043a"
   },
   {
    "fieldname": "column_break_otok",
@@ -44,32 +45,65 @@
   {
    "fieldname": "end_at",
    "fieldtype": "Date",
-   "label": "end_at"
+   "label": "\u0417\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044f"
   },
   {
    "fieldname": "section_break_qsqq",
    "fieldtype": "Section Break"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "comment",
    "fieldtype": "Small Text",
-   "label": "comment"
+   "label": "\u041e\u043f\u0438\u0441"
   },
   {
    "fieldname": "id",
    "fieldtype": "Data",
    "label": "id",
    "unique": 1
+  },
+  {
+   "fieldname": "tab_website",
+   "fieldtype": "Tab Break",
+   "label": "Web-\u0441\u0430\u0439\u0442"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "\u041c\u0430\u0440\u0448\u0440\u0443\u0442"
+  },
+  {
+   "fieldname": "column_break_govq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "\u041e\u043f\u0443\u0431\u043b\u0456\u043a\u043e\u0432\u0430\u043d\u043e"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "published",
  "links": [
   {
    "link_doctype": "ASC Diia Category",
    "link_fieldname": "theme"
+  },
+  {
+   "link_doctype": "ASC Service",
+   "link_fieldname": "thematic_area"
   }
  ],
- "modified": "2023-10-16 22:41:25.594296",
+ "modified": "2023-10-29 03:12:53.786564",
  "modified_by": "Administrator",
  "module": "ASC DIia",
  "name": "ASC Diia Thematic Area",
@@ -89,9 +123,10 @@
    "write": 1
   }
  ],
+ "route": "thematic_area",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "theme"
+ "title_field": "title"
 }

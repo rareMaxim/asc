@@ -15,6 +15,7 @@
   "section_break_zvcy",
   "title",
   "column_break_kpwm",
+  "thematic_area",
   "sector",
   "section_break_hhlm",
   "service_owner",
@@ -55,7 +56,7 @@
    "in_global_search": 1,
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "\u0406\u0434\u0435\u043d\u0442\u0438\u0444\u0456\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u0441\u043b\u0443\u0433\u0438"
+   "label": "\u0406\u0434\u0435\u043d\u0442\u0438\u0444\u0456\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u0441\u043b\u0443\u0433\u0438 "
   },
   {
    "columns": 5,
@@ -204,13 +205,20 @@
    "fieldname": "web_site_tab",
    "fieldtype": "Tab Break",
    "label": "Web-\u0441\u0430\u0439\u0442"
+  },
+  {
+   "fieldname": "thematic_area",
+   "fieldtype": "Link",
+   "label": "\u0422\u0435\u043c\u0430\u0442\u0438\u0447\u043d\u0430 \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
+   "options": "ASC Diia Thematic Area",
+   "search_index": 1
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2023-10-24 19:43:43.994109",
+ "modified": "2023-10-29 03:15:51.949120",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC Service",
@@ -230,6 +238,7 @@
    "write": 1
   }
  ],
+ "route": "services",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header" id="heading{{ doc.name }}">
+    <h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ doc.name }}" aria-expanded="false" aria-controls="collapse{{ doc.name }}">{{ doc.title }}</button></h5>
+  </div>
+  <div id="collapse{{ doc.name }}" class="collapse" aria-labelledby="heading{{ doc.name }}" data-parent="#accordion">
+    <div class="card-body">
+      {% for item in doc.services %}
+        <div>
+          <a href="{{ item.route }}">{{ item.title or item.name }}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

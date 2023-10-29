@@ -33,6 +33,7 @@ class ASCService(WebsiteGenerator):
 		service_provider: DF.TableMultiSelect[ASCServiceProviderTable]
 		service_status: DF.Link | None
 		short_description_plain: DF.SmallText | None
+		thematic_area: DF.Link | None
 		title: DF.Data | None
 	# end: auto-generated types
 	pass

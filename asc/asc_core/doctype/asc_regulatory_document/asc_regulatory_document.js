@@ -5,9 +5,6 @@ frappe.ui.form.on("ASC Regulatory Document", {
 	refresh(frm) {
 
 	},
-	title: function (frm) {
-		frm.trigger("set_route");
-	},
 	convocation(frm) {
 		frm.trigger("set_route");
 	},
