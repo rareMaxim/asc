@@ -30,7 +30,7 @@ def get_services_list(doctype, txt, filters, limit_start, limit_page_length=5, o
         filters = {}
     filters.update({"published": 1})
     result = get_list(doctype, fields=[
-        "title", "name",],
+        "title", "name", "route"],
         limit_start=limit_start,
         limit_page_length=limit_page_length,
         ignore_permissions=ignore_permissions,
@@ -58,7 +58,7 @@ def get_sector_list(doctype, txt, filters, limit_start, limit_page_length=5, ord
     if not filters:
         filters = {}
     filters.update({"published": 1})
-    result = get_list(doctype, fields=[
+    tmp_result = get_list(doctype, fields=[
         "title", "route", "name"],
         limit_start=limit_start,
         limit_page_length=limit_page_length,
@@ -66,9 +66,12 @@ def get_sector_list(doctype, txt, filters, limit_start, limit_page_length=5, ord
         filters=filters,
         txt=txt,
         order_by=order_by)
-
-    for sector in result:
+    result = []
+    for sector in tmp_result:
         sector.services = get_services(sector)
+        if len(sector.services) > 0:
+            result.append(sector)
+
     return result
 
 

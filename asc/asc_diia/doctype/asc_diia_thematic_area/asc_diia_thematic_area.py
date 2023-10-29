@@ -3,6 +3,7 @@
 
 # import frappe
 
+import frappe
 from frappe.website.website_generator import WebsiteGenerator
 
 
@@ -23,7 +24,10 @@ class ASCDiiaThematicArea(WebsiteGenerator):
         start_at: DF.Date | None
         title: DF.Data | None
     # end: auto-generated types
-    pass
+
+    def set_route(self):
+        # Override route since it has to been templated
+        self.route = "thematic_area/" + self.name
 
 
 def get_thematic_area_list(doctype, txt, filters, limit_start, limit_page_length=5, order_by=None):
@@ -32,7 +36,7 @@ def get_thematic_area_list(doctype, txt, filters, limit_start, limit_page_length
     if not filters:
         filters = {}
     filters.update({"published": 1})
-    result = get_list(doctype, fields=[
+    tmp_result = get_list(doctype, fields=[
         "title", "name",  "comment",],
         limit_start=limit_start,
         limit_page_length=limit_page_length,
@@ -40,6 +44,14 @@ def get_thematic_area_list(doctype, txt, filters, limit_start, limit_page_length
         filters=filters,
         txt=txt,
         order_by=order_by)
+    result = []
+    
+    # Відображення тематичних областей тільки в яких є активні послуги
+    for them_area in tmp_result:
+        serv_count = frappe.db.count("ASC Service", filters={
+            "published": 1, "thematic_area": them_area.name})
+        if serv_count > 0:
+            result.append(them_area)
     return result
 
 

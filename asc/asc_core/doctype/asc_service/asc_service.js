@@ -8,7 +8,7 @@ frappe.ui.form.on("ASC Service", {
 	thematic_area(frm) {
 		frm.set_query('sector', function (doc) {
 			if (doc.thematic_area) {
-				return { filters: { theme: frm.doc.thematic_area } }
+				return { filters: { thematic_area: frm.doc.thematic_area } }
 			}
 			else {
 				return { filters: {} }
@@ -16,10 +16,10 @@ frappe.ui.form.on("ASC Service", {
 		})
 	},
 	sector(frm) {
-		frappe.db.get_value("ASC Diia Category", { name: frm.doc.sector }, "theme",
+		frappe.db.get_value("ASC Diia Category", { name: frm.doc.sector }, "thematic_area",
 			(r) => {
-				if (r && r.theme) {
-					frm.set_value("thematic_area", r.theme);
+				if (r && r.thematic_area) {
+					frm.set_value("thematic_area", r.thematic_area);
 				}
 			}
 		);
