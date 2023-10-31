@@ -65,6 +65,14 @@ class DiiaRegister(DiiaApiBase):
     def get_list(self):
         return self.make_request("GET", "/register/list/")
 
+    def get_detail(self, service_id: str):
+        url = f"/register/detail/{service_id}/"
+        return self.make_request("GET", url)
+
+    def download(self):
+        # https://guide.diia.gov.ua/register/download/json/
+        return self.make_request("GET", "/register/download/json/")
+
 # Diia to Frappe whitelist adapters
 
 
@@ -231,11 +239,9 @@ class FrpDiiaRegister():
             acc = frappe.new_doc(self.SERVICE_DOCTYPE)
             acc.id = service['id']
             acc.insert()
-            self.service_create += 1
         else:
             # open a exist document
             acc = frappe.get_doc(self.SERVICE_DOCTYPE, service['id'])
-            self.service_update += 1
 
         acc.identifier = service['identifier']
         acc.title = service['name']
@@ -257,12 +263,9 @@ class FrpDiiaRegister():
             acc = frappe.new_doc(self.SERVICE_DOCTYPE)
             acc.id = service['id']
             acc.insert()
-            self.service_create += 1
         else:
             # open a exist document
             acc = frappe.get_doc(self.SERVICE_DOCTYPE, service['id'])
-            self.service_update += 1
-
         acc.identifier = service['identifier']
         acc.keyword = service['keyword']
         if service['sector']:
@@ -293,3 +296,11 @@ def diia_register_getList():
     frp_services = FrpDiiaRegister()
     data = frp_services.fill_services(services)
     return f"Успішно отримано з порталу. <br>Створено {data.service_create}. <br>Оновлено {data.service_update}."
+
+
+@frappe.whitelist()
+def diia_register_getDetail(service_id):
+    service = DiiaRegister().get_detail(service_id)
+    frp_services = FrpDiiaRegister()
+    data = frp_services.fill_service(service)
+    return f"Успішно отримано з порталу"

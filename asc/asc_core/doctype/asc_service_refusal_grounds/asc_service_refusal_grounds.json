@@ -1,0 +1,32 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-29 23:35:11.894639",
+ "description": "\u041f\u0456\u0434\u0441\u0442\u0430\u0432\u0438 \u0434\u043b\u044f \u0432\u0456\u0434\u043c\u043e\u0432\u0438 \u0443 \u043d\u0430\u0434\u0430\u043d\u043d\u0456 \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "refusal_ground"
+ ],
+ "fields": [
+  {
+   "fieldname": "refusal_ground",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "\u041f\u0456\u0434\u0441\u0442\u0430\u0432\u0438 \u0434\u043b\u044f \u0432\u0456\u0434\u043c\u043e\u0432\u0438 \u0443 \u043d\u0430\u0434\u0430\u043d\u043d\u0456 \u043f\u043e\u0441\u043b\u0443\u0433\u0438"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-10-29 23:35:11.894639",
+ "modified_by": "Administrator",
+ "module": "Asc Core",
+ "name": "ASC Service Refusal Grounds",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

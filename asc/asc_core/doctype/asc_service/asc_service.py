@@ -2,38 +2,99 @@
 # For license information, please see license.txt
 
 # import frappe
+import frappe
+from frappe.utils.data import cint
 from frappe.website.website_generator import WebsiteGenerator
 
 
 class ASCService(WebsiteGenerator):
-	# begin: auto-generated types
-	# This code is auto-generated. Do not modify anything in this block.
+    # begin: auto-generated types
+    # This code is auto-generated. Do not modify anything in this block.
 
-	from typing import TYPE_CHECKING
+    from typing import TYPE_CHECKING
 
-	if TYPE_CHECKING:
-		from asc.asc_core.doctype.asc_service_provider_table.asc_service_provider_table import ASCServiceProviderTable
-		from asc.asc_diia.doctype.asc_diia_input_table.asc_diia_input_table import ASCDiiaInputTable
-		from asc.asc_diia.doctype.asc_diia_related_services.asc_diia_related_services import ASCDiiaRelatedServices
-		from asc.asc_diia.doctype.asc_diia_service_events_table.asc_diia_service_events_table import ASCDiiaServiceEventsTable
-		from asc.asc_diia.doctype.asc_diia_service_produces_table.asc_diia_service_produces_table import ASCDiiaServiceProducesTable
-		from frappe.types import DF
+    if TYPE_CHECKING:
+        from asc.asc_core.doctype.asc_applicant_type_table.asc_applicant_type_table import ASCApplicantTypeTable
+        from asc.asc_core.doctype.asc_regulatory_documents_table.asc_regulatory_documents_table import ASCRegulatoryDocumentsTable
+        from asc.asc_core.doctype.asc_service_provider_table.asc_service_provider_table import ASCServiceProviderTable
+        from asc.asc_core.doctype.asc_service_refusal_grounds.asc_service_refusal_grounds import ASCServiceRefusalGrounds
+        from asc.asc_diia.doctype.asc_diia_input_table.asc_diia_input_table import ASCDiiaInputTable
+        from asc.asc_diia.doctype.asc_diia_related_services.asc_diia_related_services import ASCDiiaRelatedServices
+        from asc.asc_diia.doctype.asc_diia_service_events_table.asc_diia_service_events_table import ASCDiiaServiceEventsTable
+        from asc.asc_diia.doctype.asc_diia_service_produces_table.asc_diia_service_produces_table import ASCDiiaServiceProducesTable
+        from frappe.types import DF
 
-		events: DF.Table[ASCDiiaServiceEventsTable]
-		id: DF.Data | None
-		identifier: DF.Data | None
-		input: DF.Table[ASCDiiaInputTable]
-		keyword: DF.Data | None
-		produces: DF.Table[ASCDiiaServiceProducesTable]
-		published: DF.Check
-		related_services: DF.Table[ASCDiiaRelatedServices]
-		route: DF.Data | None
-		sector: DF.Link | None
-		service_owner: DF.Link | None
-		service_provider: DF.TableMultiSelect[ASCServiceProviderTable]
-		service_status: DF.Link | None
-		short_description_plain: DF.SmallText | None
-		thematic_area: DF.Link | None
-		title: DF.Data | None
-	# end: auto-generated types
-	pass
+        access_link: DF.Data | None
+        applicant_type: DF.TableMultiSelect[ASCApplicantTypeTable]
+        events: DF.Table[ASCDiiaServiceEventsTable]
+        id: DF.Data | None
+        identifier: DF.Data | None
+        input: DF.Table[ASCDiiaInputTable]
+        keyword: DF.Data | None
+        legal_base: DF.SmallText | None
+        produces: DF.Table[ASCDiiaServiceProducesTable]
+        published: DF.Check
+        refusal_grounds: DF.Table[ASCServiceRefusalGrounds]
+        regulatory_documents: DF.Table[ASCRegulatoryDocumentsTable]
+        related_services: DF.Table[ASCDiiaRelatedServices]
+        route: DF.Data | None
+        sector: DF.Link | None
+        service_owner: DF.Link | None
+        service_provider: DF.Table[ASCServiceProviderTable]
+        service_status: DF.Link | None
+        short_description_plain: DF.SmallText | None
+        thematic_area: DF.Link | None
+        title: DF.Data | None
+    # end: auto-generated types
+
+    @frappe.whitelist()
+    def make_route(self):
+        if not self.route:
+            return (
+                "services"
+                + "/"
+                + self.scrub(self.identifier)
+            )
+
+    def get_service_provider_as_list(self, service_provider):
+        result = []
+        for provider in service_provider:
+            title = frappe.get_value(
+                "ASC Service Provider", provider.service_provider, "title")
+            result.append(title)
+        return result
+
+    def get_doc_input_as_list(self, input):
+        result = []
+        for doc in input:
+            title = frappe.get_value(
+                "ASC Service Input", doc.service_input, "title")
+            result.append(title)
+        return result
+
+    def get_related_services_as_list(self, related_services):
+        result = []
+        for service in related_services:
+            print(frappe.as_json(service))
+            title = frappe.get_value(
+                "ASC Service", service.service, "title")
+            route = frappe.get_value(
+                "ASC Service", service.service, "route")
+            result.append({"title": title, "route": route})
+        return result
+
+    def get_context(self, context):
+        # this is for double precaution. usually it wont reach this code if not published
+        if not cint(self.published):
+            raise Exception("This service has not been published yet!")
+        context.no_breadcrumbs = False
+        context.parents = [
+            {"name": frappe._("Home"), "route": "/"},
+            # {"name": "News", "route": "/news"},
+            {"label": "Меню послуг", "route": "/thematic_area"},
+        ]
+        context.service_provider = self.get_service_provider_as_list(
+            self.service_provider)
+        context.input = self.get_doc_input_as_list(self.input)
+        context.related_services = self.get_related_services_as_list(
+            self.related_services)

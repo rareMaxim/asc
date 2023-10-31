@@ -3,7 +3,6 @@
 
 frappe.ui.form.on("ASC News", {
     refresh(frm) {
-        console.log(frappe);
         frm.trigger("add_publish_button");
 
     },
