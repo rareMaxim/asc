@@ -10,11 +10,11 @@
   <div class="website-list py-5" data-doctype="{{ doctype }}" data-txt="{{ txt or ('[notxt]'|e) }}">
     <div class="container">
       <div id="sector-area-list" class="row result">
-		<div id="accordion">
-        {% for item in result %}
-          {{ item }}
-        {% endfor %}
-		</div>
+        <div id="accordion">
+          {% for item in result %}
+            {{ item }}
+          {% endfor %}
+        </div>
       </div>
     </div>
     <div class="more-block py-6 {% if not show_more -%}{%- endif %}">

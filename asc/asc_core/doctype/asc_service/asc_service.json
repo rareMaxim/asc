@@ -11,16 +11,18 @@
   "section_break_slqd",
   "identifier",
   "column_break_ahmw",
+  "service_status",
+  "section_break_zkbx",
   "keyword",
-  "section_break_zvcy",
+  "column_break_pssg",
   "title",
-  "column_break_kpwm",
+  "section_break_zvcy",
   "thematic_area",
+  "column_break_kpwm",
   "sector",
   "section_break_hhlm",
   "service_owner",
   "column_break_qlga",
-  "service_status",
   "section_break_gfku",
   "related_services",
   "events",
@@ -33,9 +35,10 @@
   "id",
   "column_break_fumo",
   "\u043e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u044f_tab",
-  "section_break_ekjq",
   "access_link",
+  "column_break_siyq",
   "applicant_type",
+  "section_break_ekjq",
   "service_provider",
   "section_break_yqle",
   "legal_base",
@@ -47,6 +50,7 @@
   "regulatory_documents",
   "web_site_tab",
   "published",
+  "column_break_plzo",
   "route"
  ],
  "fields": [
@@ -62,7 +66,7 @@
    "fieldtype": "Data",
    "in_filter": 1,
    "in_global_search": 1,
-   "in_list_view": 1,
+   "in_preview": 1,
    "in_standard_filter": 1,
    "label": "\u0406\u0434\u0435\u043d\u0442\u0438\u0444\u0456\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u0441\u043b\u0443\u0433\u0438 "
   },
@@ -145,13 +149,14 @@
   {
    "fieldname": "related_services",
    "fieldtype": "Table",
-   "label": "related_services",
+   "label": "\u041f\u043e\u0432'\u044f\u0437\u0430\u043d\u0456 \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
    "options": "ASC Diia Related Services"
   },
   {
    "default": "0",
    "fieldname": "published",
    "fieldtype": "Check",
+   "in_list_view": 1,
    "label": "\u0410\u043a\u0442\u0438\u0432\u043d\u0430"
   },
   {
@@ -261,13 +266,35 @@
    "fieldtype": "Table",
    "label": "regulatory_documents",
    "options": "ASC Regulatory Documents Table"
+  },
+  {
+   "fieldname": "section_break_zkbx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_pssg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_siyq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_plzo",
+   "fieldtype": "Column Break"
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
- "links": [],
- "modified": "2023-10-30 11:33:37.839471",
+ "links": [
+  {
+   "group": "\u0412\u0430\u0440\u0442\u0456\u0441\u0442\u044c",
+   "link_doctype": "ASC Cost",
+   "link_fieldname": "service"
+  }
+ ],
+ "modified": "2023-11-01 16:01:23.496307",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC Service",
@@ -288,6 +315,7 @@
   }
  ],
  "route": "services",
+ "search_fields": "identifier",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",

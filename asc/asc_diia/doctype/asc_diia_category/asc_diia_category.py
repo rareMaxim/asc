@@ -42,6 +42,9 @@ def get_services_list(doctype, txt, filters, limit_start, limit_page_length=5, o
 
 def get_services(sector):
     text = None
+    # this is for double precaution. usually it wont reach this code if not published
+    if not (sector.name):
+        raise Exception("This section has not been published yet!")
     filters = {"sector": sector.name}
     limit_start = 0
     limit_page_length = 20
@@ -88,6 +91,8 @@ def get_list_context(context=None):
     )
 
     list_context.parents = [{"name": _("Home"), "route": "/"}]
+    if not "thematic_area" in frappe.form_dict.keys():
+        raise Exception("This section has not been published yet!")
     if frappe.form_dict["thematic_area"]:
         list_context.parents.append(
             {"name": _("Меню послуг"), "route": "/thematic_area"})

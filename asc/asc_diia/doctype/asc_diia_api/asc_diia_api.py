@@ -82,8 +82,8 @@ def populate_service_json(service):
         applicant_name = get_applicant_type_name(applicant)
         service_doc.append("applicant_type", {
                            "applicant_type": applicant_name})
-
-    print(frappe.as_json(service_doc, ensure_ascii=False))
+    service_doc.access_link = service["access_link"]
+    # print(frappe.as_json(service_doc, ensure_ascii=False))
     service_doc.save()
 
 

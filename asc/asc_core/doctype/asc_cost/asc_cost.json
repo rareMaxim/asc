@@ -1,0 +1,117 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-31 20:10:55.578951",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_mdlt",
+  "title",
+  "service",
+  "column_break_lvfn",
+  "identifier",
+  "section_break_mmhx",
+  "cost",
+  "duration_section",
+  "duration_verbose",
+  "column_break_bglx",
+  "duration_type",
+  "column_break_nrnd",
+  "duration_value"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_mdlt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "identifier",
+   "fieldtype": "Small Text",
+   "label": "\u041e\u043f\u0438\u0441 \u043d\u0430 \u0441\u0430\u0439\u0442\u0456"
+  },
+  {
+   "fieldname": "duration_section",
+   "fieldtype": "Section Break",
+   "label": "\u0422\u0435\u0440\u043c\u0456\u043d \u043d\u0430\u0434\u0430\u043d\u043d\u044f \u043f\u043e\u0441\u043b\u0443\u0433\u0438"
+  },
+  {
+   "fieldname": "column_break_nrnd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service",
+   "fieldtype": "Link",
+   "label": "\u041f\u043e\u0441\u043b\u0443\u0433\u0430",
+   "options": "ASC Service",
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_lvfn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "duration_verbose",
+   "fieldtype": "Data",
+   "label": "verbose"
+  },
+  {
+   "fieldname": "column_break_bglx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "duration_type",
+   "fieldtype": "Select",
+   "label": "\u0422\u0438\u043f",
+   "options": "\u0420\u043e\u0431\u043e\u0447\u0456 \u0434\u043d\u0456\n\u041a\u0430\u043b\u0435\u043d\u0434\u0430\u0440\u043d\u0456 \u0434\u043d\u0456"
+  },
+  {
+   "description": "\u0414\u043b\u044f \u0437\u0440\u0443\u0447\u043d\u043e\u0433\u043e \u043f\u043e\u0448\u0443\u043a\u0443",
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "\u041d\u0430\u0437\u0432\u0430"
+  },
+  {
+   "fieldname": "section_break_mmhx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cost",
+   "fieldtype": "Table",
+   "label": "cost",
+   "options": "ASC Cost Table"
+  },
+  {
+   "fieldname": "duration_value",
+   "fieldtype": "Float",
+   "label": "\u0417\u043d\u0430\u0447\u0435\u043d\u043d\u044f"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-10-31 22:30:38.140591",
+ "modified_by": "Administrator",
+ "module": "Asc Core",
+ "name": "ASC Cost",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

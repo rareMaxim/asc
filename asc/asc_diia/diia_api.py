@@ -304,3 +304,11 @@ def diia_register_getDetail(service_id):
     frp_services = FrpDiiaRegister()
     data = frp_services.fill_service(service)
     return f"Успішно отримано з порталу"
+
+
+@frappe.whitelist()
+def diia_register_getDetailFromDownload(service_id):
+    service = DiiaRegister().get_detail(service_id)
+    frp_services = FrpDiiaRegister()
+    data = frp_services.fill_service(service)
+    return f"Успішно отримано з порталу"

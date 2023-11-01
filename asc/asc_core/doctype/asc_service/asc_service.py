@@ -56,6 +56,12 @@ class ASCService(WebsiteGenerator):
                 + self.scrub(self.identifier)
             )
 
+    def before_save(self):
+        if not(self.thematic_area) and (self.sector):
+            them_area = frappe.get_value(
+                "ASC Diia Category", self.sector, "thematic_area")
+            self.thematic_area = them_area
+
     def get_service_provider_as_list(self, service_provider):
         result = []
         for provider in service_provider:

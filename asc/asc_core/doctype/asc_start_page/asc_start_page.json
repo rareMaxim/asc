@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-11-01 19:58:41.202130",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "\u043d\u0430\u0437\u0432\u0430"
+ ],
+ "fields": [
+  {
+   "fieldname": "\u043d\u0430\u0437\u0432\u0430",
+   "fieldtype": "Data",
+   "label": "\u041d\u0430\u0437\u0432\u0430"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-01 19:58:41.202130",
+ "modified_by": "Administrator",
+ "module": "Asc Core",
+ "name": "ASC Start Page",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

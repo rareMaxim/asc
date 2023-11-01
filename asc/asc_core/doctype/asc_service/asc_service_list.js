@@ -13,6 +13,15 @@ function BtnGetFromApi(listview) {
 
 frappe.listview_settings["ASC Service"] = {
     hide_name_column: true,
+    add_fields: ["identifier", "published"],
+    get_indicator: function (doc) {
+        console.log(doc);
+		if (doc.published) {
+			return [doc.identifier, "green", "published,=,Yes"];
+		} else {
+			return [doc.identifier, "gray", "published,=,Yes"];
+		}
+	},
     refresh: function (listview) {
         listview.page.add_inner_button("Отримати з порталу", function () {
             BtnGetFromApi(listview);
