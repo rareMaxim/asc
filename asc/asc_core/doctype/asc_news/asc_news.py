@@ -173,17 +173,12 @@ class ASCNews(WebsiteGenerator):
         self.read_time = ceil(total_words / 250)
 
 
-def get_news_list(doctype, txt, filters, limit_start, limit_page_length=2, order_by=None):
+def get_news_list(doctype, txt=None, filters={}, limit_start=0, limit_page_length=20, order_by=None):
     from frappe.www.list import get_list
     ignore_permissions = True
     if not filters:
         filters = {}
     filters.update({"published": 1})
-
-    # filters.popitem()
-    # result = get_list(
-    #     doctype, txt, filters, limit_start, limit_page_length, ignore_permissions=ignore_permissions, order_by=order_by
-    # )
 
     result = get_list(doctype, fields=[
         "title", "route", "cover_image", "published_on", "read_time"],
@@ -193,7 +188,6 @@ def get_news_list(doctype, txt, filters, limit_start, limit_page_length=2, order
         filters=filters,
         txt=txt,
         order_by=order_by)
-    print(limit_start, limit_page_length)
     return result
 
 

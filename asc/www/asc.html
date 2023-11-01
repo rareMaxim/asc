@@ -17,4 +17,9 @@
 		</div>
 	</div>
 </div>
+<section class="main-item_news-section">
+	{% import "/asc_core/doctype/asc_news/templates/asc_news_macro.html" as macros %}
+	{{ macros.render_5_news(last_news) }}
+
+</section>
 {% endblock %}
