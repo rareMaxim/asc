@@ -10,10 +10,12 @@
   <div class="website-list py-5" data-doctype="{{ doctype }}" data-txt="{{ txt or ('[notxt]'|e) }}">
     <div class="container">
       <div id="sector-area-list" class="row result">
-        <div id="accordion">
-          {% for item in result %}
-            {{ item }}
-          {% endfor %}
+        <div class="col-12">
+          <div id="accordion">
+            {% for item in result %}
+              {{ item }}
+            {% endfor %}
+          </div>
         </div>
       </div>
     </div>

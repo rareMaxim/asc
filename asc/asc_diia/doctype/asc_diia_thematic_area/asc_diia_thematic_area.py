@@ -30,8 +30,9 @@ class ASCDiiaThematicArea(WebsiteGenerator):
         self.route = "thematic_area/" + self.name
 
 
-def get_thematic_area_list(doctype, txt, filters, limit_start, limit_page_length=5, order_by=None):
+def get_thematic_area_list(doctype, txt=None, filters={}, limit_start=0, limit_page_length=20, order_by=None):
     from frappe.www.list import get_list
+    print(doctype)
     ignore_permissions = True
     if not filters:
         filters = {}
@@ -45,7 +46,7 @@ def get_thematic_area_list(doctype, txt, filters, limit_start, limit_page_length
         txt=txt,
         order_by=order_by)
     result = []
-    
+
     # Відображення тематичних областей тільки в яких є активні послуги
     for them_area in tmp_result:
         serv_count = frappe.db.count("ASC Service", filters={

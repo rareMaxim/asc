@@ -1,0 +1,20 @@
+{% extends 'templates/web.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block header %}
+<h3 class="my-account-header">{{ title }}</h3>
+{% endblock %}
+
+{% block page_content %}
+{% import "/asc_diia/doctype/asc_diia_thematic_area/templates/thematic_area_card.html" as macros %}
+<div class="website-list py-5">
+	<div class="container">
+		<div id="thematic-area-list" class="row">
+			{% for area in thematic_areas %}
+			{{ macros.render_thematic_area_card(area) }}
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock %}

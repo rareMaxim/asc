@@ -74,7 +74,7 @@ def get_sector_list(doctype, txt, filters, limit_start, limit_page_length=5, ord
         sector.services = get_services(sector)
         if len(sector.services) > 0:
             result.append(sector)
-
+    result[0].collapse = True
     return result
 
 

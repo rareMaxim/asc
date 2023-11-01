@@ -1,0 +1,10 @@
+{% macro render_thematic_area_card(doc) %}
+  <div class="col-lg-4 d-flex align-items-stretch">
+    <div class="card mb-4 box-shadow">
+      <a href="/sector/?thematic_area={{ doc.name }}" class="card-body">
+        <h5 class="card-title">{{ doc.title or doc.name }}</h5>
+        <p class="card-text text-decoration-none">{{ doc.comment }}</p>
+      </a>
+    </div>
+  </div>
+{% endmacro %}
