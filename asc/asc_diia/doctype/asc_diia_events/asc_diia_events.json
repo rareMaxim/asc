@@ -8,10 +8,11 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "id",
   "title",
   "public_text",
+  "event_type",
   "column_break_utrd",
+  "id",
   "start_at",
   "end_at",
   "section_break_fjsq",
@@ -27,7 +28,7 @@
   {
    "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Title"
+   "label": "\u041d\u0430\u0437\u0432\u0430"
   },
   {
    "fieldname": "start_at",
@@ -43,7 +44,7 @@
    "fieldname": "public_text",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Public text"
+   "label": "\u041f\u0443\u0431\u043b\u0456\u0447\u043d\u0438\u0439 \u0442\u0435\u043a\u0441\u0442"
   },
   {
    "fieldname": "column_break_utrd",
@@ -57,11 +58,24 @@
    "fieldname": "comment",
    "fieldtype": "Small Text",
    "label": "Comment"
+  },
+  {
+   "fieldname": "event_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "\u0422\u0438\u043f",
+   "options": "ASC Diia Events Type"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2023-10-16 20:17:36.931987",
+ "links": [
+  {
+   "link_doctype": "ASC Service",
+   "link_fieldname": "event",
+   "table_fieldname": "events"
+  }
+ ],
+ "modified": "2023-11-02 12:19:01.587598",
  "modified_by": "Administrator",
  "module": "ASC DIia",
  "name": "ASC Diia Events",

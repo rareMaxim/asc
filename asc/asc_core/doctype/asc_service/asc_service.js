@@ -1,12 +1,21 @@
 // Copyright (c) 2023, Максим Сисоєв and contributors
 // For license information, please see license.txt
-
-function UpdateServiceFromDiia(service_id) {
+//apps/asc/asc/asc_diia/doctype/asc_diia_api/asc_diia_api.py
+function UpdateServiceFromDiia(frm, service_id) {
 	frappe.call({
 		method: "asc.asc_diia.diia_api.diia_register_getDetail",
 		args: { service_id: service_id },
 		callback: (r) => {
-			frappe.show_alert(r.message, 15);
+			frappe.show_alert("Level 1 = ok");
+			frappe.call({
+				method: "asc.asc_diia.doctype.asc_diia_api.asc_diia_api.download_dump",
+				args: { id: service_id },
+				callback: (r) => {
+					frm.reload_doc();
+					frappe.show_alert("Level 2 = ok");
+
+				}
+			});
 		}
 	});
 }
@@ -14,7 +23,7 @@ function UpdateServiceFromDiia(service_id) {
 frappe.ui.form.on("ASC Service", {
 	refresh(frm) {
 		frm.add_custom_button(__('Оновити з порталу Дія'), function () {
-			UpdateServiceFromDiia(frm.doc.name)
+			UpdateServiceFromDiia(frm, frm.doc.name)
 		}, __("Портал Дія"));
 	},
 	thematic_area(frm) {

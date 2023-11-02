@@ -57,7 +57,7 @@ class ASCService(WebsiteGenerator):
             )
 
     def before_save(self):
-        if not(self.thematic_area) and (self.sector):
+        if not (self.thematic_area) and (self.sector):
             them_area = frappe.get_value(
                 "ASC Diia Category", self.sector, "thematic_area")
             self.thematic_area = them_area
@@ -81,12 +81,19 @@ class ASCService(WebsiteGenerator):
     def get_related_services_as_list(self, related_services):
         result = []
         for service in related_services:
-            print(frappe.as_json(service))
             title = frappe.get_value(
                 "ASC Service", service.service, "title")
             route = frappe.get_value(
                 "ASC Service", service.service, "route")
             result.append({"title": title, "route": route})
+        return result
+
+    def get_applicant_type_as_list(self, applicant_types):
+        result = []
+        for type in applicant_types:
+            title = frappe.get_value(
+                "ASC Applicant Type", type.applicant_type, "title")
+            result.append(title)
         return result
 
     def get_context(self, context):
@@ -104,3 +111,5 @@ class ASCService(WebsiteGenerator):
         context.input = self.get_doc_input_as_list(self.input)
         context.related_services = self.get_related_services_as_list(
             self.related_services)
+        context.applicant_type = self.get_applicant_type_as_list(
+            self.applicant_type)

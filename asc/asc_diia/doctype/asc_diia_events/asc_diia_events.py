@@ -16,6 +16,7 @@ class ASCDiiaEvents(Document):
 
 		comment: DF.SmallText | None
 		end_at: DF.Datetime | None
+		event_type: DF.Link | None
 		id: DF.Data | None
 		public_text: DF.Data | None
 		start_at: DF.Datetime | None

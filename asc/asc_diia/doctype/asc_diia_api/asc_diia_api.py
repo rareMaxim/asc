@@ -59,7 +59,6 @@ def get_applicant_type_name(title: str):
     applicant = frappe.get_value("ASC Applicant Type", {
                                  "title": title}, "name")
     if applicant:
-        print(applicant)
         return applicant
     else:
         doc = frappe.new_doc("ASC Applicant Type")
@@ -68,26 +67,54 @@ def get_applicant_type_name(title: str):
         return doc.name
 
 
+def parse_regulatory_documents(reg_docs):
+
+    return
+
+
+def get_id_from_identifier(identifier: str) -> str:
+    return frappe.get_value("ASC Service", {"identifier": identifier}, "id")
+
+
+def get_identifier_from_id(id: str) -> str:
+    return frappe.get_value("ASC Service", {"id": id}, "identifier")
+
+
+def get_service(id: str = None, identifier: str = None) -> Document:
+    if identifier:
+        id = get_id_from_identifier(identifier)
+    if not id:
+        return None
+    result = frappe.get_doc("ASC Service", id)
+    return result
+
+
 def populate_service_json(service):
-    identifier = service["identifier"]
-    if not frappe.get_value("ASC Service", {"identifier": identifier}, "identifier"):
-        return
-    service_doc = frappe.get_doc("ASC Service", {"identifier": identifier})
+    # Пошук послуги в БД
+    # identifier = service["identifier"]
+    # if not frappe.get_value("ASC Service", {"identifier": identifier}, "identifier"):
+    #     return
+    # service_doc = frappe.get_doc("ASC Service", {"identifier": identifier})
+    service_doc = get_service(identifier=service["identifier"])
+    # legal_base - Умови і випадки надання
     service_doc.legal_base = service["legal_base"]
+    # refusal_grounds - Підстави для відмови у наданні послуги
     service_doc.set("refusal_grounds", [])
     for ref_grnd in service["refusal_grounds"]:
         service_doc.append("refusal_grounds", {"refusal_ground": ref_grnd})
+    # applicant_type - Категорія суб'єкта звернення
     service_doc.set("applicant_type", [])
     for applicant in service["applicant_type"]:
         applicant_name = get_applicant_type_name(applicant)
         service_doc.append("applicant_type", {
                            "applicant_type": applicant_name})
+    # access_link - Адреса доступу до послуги у електронному вигляді
     service_doc.access_link = service["access_link"]
     # print(frappe.as_json(service_doc, ensure_ascii=False))
     service_doc.save()
 
 
-def populate_from_json(filename: str):
+def populate_from_json(filename: str, id: str = None, identifier: str = None):
     import json
     _file = frappe.get_doc("File", {"file_url": filename})
     full_name = _file.get_full_path()
@@ -97,21 +124,28 @@ def populate_from_json(filename: str):
     # returns JSON object as
     # a dictionary
     data = json.load(f)
-    for service in data["entries"]:
-        populate_service_json(service)
-        break
+    if id:
+        identifier = get_identifier_from_id(id)
+    print(f"id = {id}, ident = {identifier}, file = {filename}")
+    if identifier:
+        for service in data["entries"]:
+            if identifier == service["identifier"]:
+                populate_service_json(service)
+                break
+    else:
+        for service in data["entries"]:
+            populate_service_json(service)
 
 
 @frappe.whitelist()
-def download_dump():
+def download_dump(id: str = None, identifier: str = None):
+
     file = str(frappe.get_value("ASC Diia Api", None, "diia_api_dump_file"))
     if not file.endswith(".json"):
         raise Error("Unknown file format")
     if file.startswith("http"):
         download_file(file)
     elif file.startswith("/files/") or file.startswith("/private/"):
-        populate_from_json(file)
+        populate_from_json(file, id=id, identifier=identifier)
     else:
         raise Error("Unknown file format")
-
-    print(file)

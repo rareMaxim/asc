@@ -18,8 +18,14 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2023-10-29 23:43:57.412696",
+ "links": [
+  {
+   "link_doctype": "ASC Service",
+   "link_fieldname": "title",
+   "table_fieldname": "applicant_type"
+  }
+ ],
+ "modified": "2023-11-02 16:54:14.091944",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC Applicant Type",
