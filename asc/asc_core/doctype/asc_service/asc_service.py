@@ -31,7 +31,7 @@ class ASCService(WebsiteGenerator):
         identifier: DF.Data | None
         input: DF.Table[ASCDiiaInputTable]
         keyword: DF.Data | None
-        legal_base: DF.SmallText | None
+        legal_base: DF.TextEditor | None
         produces: DF.Table[ASCDiiaServiceProducesTable]
         published: DF.Check
         refusal_grounds: DF.Table[ASCServiceRefusalGrounds]

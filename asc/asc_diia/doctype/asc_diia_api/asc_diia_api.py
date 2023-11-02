@@ -2,7 +2,7 @@
 # For license information, please see license.txt
 
 # import frappe
-import datetime
+from asc.asc_core.doctype.asc_service.asc_service import ASCService
 import requests
 import frappe
 from frappe.model.document import Document
@@ -67,9 +67,14 @@ def get_applicant_type_name(title: str):
         return doc.name
 
 
-def parse_regulatory_documents(reg_docs):
-
-    return
+def update_regulatory_documents(service_doc: ASCService, json_reg_docs):
+    exist_reg_doc = []
+    for reg_doc in service_doc.regulatory_documents:
+        exist_reg_doc.append(reg_doc.get("title"))
+    for reg_doc in json_reg_docs:
+        if not reg_doc in exist_reg_doc:
+            service_doc.append("regulatory_documents", {
+                "title": reg_doc})
 
 
 def get_id_from_identifier(identifier: str) -> str:
@@ -87,6 +92,17 @@ def get_service(id: str = None, identifier: str = None) -> Document:
         return None
     result = frappe.get_doc("ASC Service", id)
     return result
+
+
+def update_refusal_appeal_person(service_doc: ASCService, json_refusal_appeal_person):
+    exist_refusal_appeal_person = []
+    for ref_pers in service_doc.refusal_appeal_person:
+        exist_refusal_appeal_person.append(ref_pers.get("title"))
+    for ref_pers in json_refusal_appeal_person:
+        if not ref_pers in exist_refusal_appeal_person:
+            
+            service_doc.append("refusal_appeal_person", {
+                "title": ref_pers})
 
 
 def populate_service_json(service):
@@ -108,6 +124,7 @@ def populate_service_json(service):
         applicant_name = get_applicant_type_name(applicant)
         service_doc.append("applicant_type", {
                            "applicant_type": applicant_name})
+    update_regulatory_documents(service_doc, service["regulatory_documents"])
     # access_link - Адреса доступу до послуги у електронному вигляді
     service_doc.access_link = service["access_link"]
     # print(frappe.as_json(service_doc, ensure_ascii=False))

@@ -23,17 +23,12 @@
   "section_break_hhlm",
   "service_owner",
   "column_break_qlga",
+  "id",
   "section_break_gfku",
-  "related_services",
   "events",
-  "produces",
   "section_break_zjzt",
   "column_break_reei",
   "short_description_plain",
-  "column_break_pfgs",
-  "debug_tab",
-  "id",
-  "column_break_fumo",
   "\u043e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u044f_tab",
   "access_link",
   "column_break_siyq",
@@ -42,16 +37,20 @@
   "service_provider",
   "section_break_yqle",
   "legal_base",
-  "section_break_mfma",
-  "input",
   "tab_5_tab",
-  "refusal_grounds",
   "column_break_fthl",
-  "regulatory_documents",
+  "input",
+  "produces",
   "web_site_tab",
   "published",
   "column_break_plzo",
-  "route"
+  "route",
+  "refusal_tab",
+  "refusal_grounds",
+  "regulatory_tab",
+  "regulatory_documents",
+  "related_services_tab",
+  "related_services"
  ],
  "fields": [
   {
@@ -125,10 +124,6 @@
    "options": "ASC Service Provider Table"
   },
   {
-   "fieldname": "column_break_pfgs",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "section_break_hhlm",
    "fieldtype": "Section Break"
   },
@@ -187,25 +182,12 @@
    "options": "ASC Diia Service Produces Table"
   },
   {
-   "fieldname": "debug_tab",
-   "fieldtype": "Tab Break",
-   "label": "Debug"
-  },
-  {
-   "fieldname": "column_break_fumo",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "\u043e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u044f_tab",
    "fieldtype": "Tab Break",
    "label": "\u041e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u044f"
   },
   {
    "fieldname": "section_break_ekjq",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "section_break_mfma",
    "fieldtype": "Section Break"
   },
   {
@@ -253,6 +235,7 @@
   {
    "fieldname": "applicant_type",
    "fieldtype": "Table MultiSelect",
+   "in_filter": 1,
    "label": "\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u044f \u0441\u0443\u0431'\u0454\u043a\u0442\u0430 \u0437\u0432\u0435\u0440\u043d\u0435\u043d\u043d\u044f",
    "options": "ASC Applicant Type Table"
   },
@@ -264,7 +247,7 @@
   {
    "fieldname": "regulatory_documents",
    "fieldtype": "Table",
-   "label": "regulatory_documents",
+   "label": "\u041d\u043e\u0440\u043c\u0430\u0442\u0438\u0432\u043d\u0456 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438",
    "options": "ASC Regulatory Documents Table"
   },
   {
@@ -282,6 +265,21 @@
   {
    "fieldname": "column_break_plzo",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "refusal_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u0412\u0456\u0434\u043c\u043e\u0432\u0430"
+  },
+  {
+   "fieldname": "regulatory_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u041d\u043e\u0440\u043c\u0430\u0442\u0438\u0432\u043a\u0430"
+  },
+  {
+   "fieldname": "related_services_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u041f\u043e\u0432'\u044f\u0437\u0430\u043d\u0456 \u043f\u043e\u0441\u043b\u0443\u0433\u0438"
   }
  ],
  "has_web_view": 1,
@@ -294,7 +292,7 @@
    "link_fieldname": "service"
   }
  ],
- "modified": "2023-11-02 16:34:46.510311",
+ "modified": "2023-11-03 00:17:15.448076",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC Service",
