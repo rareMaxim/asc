@@ -34,12 +34,12 @@
   "column_break_siyq",
   "applicant_type",
   "section_break_ekjq",
+  "input",
   "service_provider",
   "section_break_yqle",
   "legal_base",
   "tab_5_tab",
   "column_break_fthl",
-  "input",
   "produces",
   "web_site_tab",
   "published",
@@ -292,7 +292,7 @@
    "link_fieldname": "service"
   }
  ],
- "modified": "2023-11-03 00:17:15.448076",
+ "modified": "2023-11-03 10:10:12.354710",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC Service",

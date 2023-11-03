@@ -14,7 +14,6 @@ class ASCDiiaServiceProducesTable(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		description: DF.SmallText | None
 		parent: DF.Data
 		parentfield: DF.Data
 		parenttype: DF.Data

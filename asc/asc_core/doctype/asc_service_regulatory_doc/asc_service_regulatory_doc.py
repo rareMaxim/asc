@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class ASCRegulatoryDocumentsTable(Document):
+class ASCServiceRegulatoryDoc(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,9 +14,7 @@ class ASCRegulatoryDocumentsTable(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		parent: DF.Data
-		parentfield: DF.Data
-		parenttype: DF.Data
-		reg_doc: DF.Link
+		title: DF.Data | None
+		url: DF.Data | None
 	# end: auto-generated types
 	pass

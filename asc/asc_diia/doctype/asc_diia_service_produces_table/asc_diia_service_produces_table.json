@@ -6,8 +6,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "title",
-  "description"
+  "title"
  ],
  "fields": [
   {
@@ -17,18 +16,12 @@
    "label": "\u041d\u0430\u0437\u0432\u0430",
    "length": 240,
    "reqd": 1
-  },
-  {
-   "fieldname": "description",
-   "fieldtype": "Small Text",
-   "in_list_view": 1,
-   "label": "description"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-10-21 16:17:52.208305",
+ "modified": "2023-11-03 10:15:26.087201",
  "modified_by": "Administrator",
  "module": "ASC DIia",
  "name": "ASC Diia Service Produces Table",

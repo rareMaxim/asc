@@ -96,6 +96,13 @@ class ASCService(WebsiteGenerator):
             result.append(title)
         return result
 
+    def get_produces_as_list(self, produces):
+        result = []
+        for produce in produces:
+            title = produce.get("title")
+            result.append(title)
+        return result
+
     def get_context(self, context):
         # this is for double precaution. usually it wont reach this code if not published
         if not cint(self.published):
@@ -113,3 +120,14 @@ class ASCService(WebsiteGenerator):
             self.related_services)
         context.applicant_type = self.get_applicant_type_as_list(
             self.applicant_type)
+        context.produces = self.get_produces_as_list(self.produces)
+        context.costs = self.get_coast()
+
+    def get_coast(self):
+        cost_list = frappe.get_list("ASC Cost", filters={"service": self.name})
+        result = []
+        for cost in cost_list:
+            doc = frappe.get_doc("ASC Cost", cost).as_dict()
+            result.append(doc)
+        print(result)
+        return result
