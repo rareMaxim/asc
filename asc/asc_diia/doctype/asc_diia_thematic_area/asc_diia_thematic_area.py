@@ -32,7 +32,6 @@ class ASCDiiaThematicArea(WebsiteGenerator):
 
 def get_thematic_area_list(doctype, txt=None, filters={}, limit_start=0, limit_page_length=20, order_by=None):
     from frappe.www.list import get_list
-    print(doctype)
     ignore_permissions = True
     if not filters:
         filters = {}

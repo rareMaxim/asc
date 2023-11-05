@@ -23,8 +23,8 @@ website_route_rules = [
 # app_include_js = "/assets/asc/js/asc.js"
 
 # include js, css files in header of web template
-# web_include_css = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-# web_include_js = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+web_include_css = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+web_include_js = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "asc/public/scss/website"

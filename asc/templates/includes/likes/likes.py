@@ -12,7 +12,6 @@ from frappe.website.utils import clear_cache
 @frappe.whitelist(allow_guest=True)
 @rate_limit(key="reference_name", limit=get_like_limit, seconds=60 * 60)
 def like(reference_doctype, reference_name, like, route=""):
-    print(reference_doctype, reference_name, like, route)
     like = frappe.parse_json(like)
     ref_doc = frappe.get_doc(reference_doctype, reference_name)
     if ref_doc.disable_likes == 1:

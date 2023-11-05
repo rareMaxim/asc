@@ -15,4 +15,4 @@ def get_context(context):
     context.last_news = get_news_list(
         doctype="ASC News", limit_start=0, limit_page_length=5, filters={'category': 'новини'})
     context.title = "Меню послуг"
-    # print(context.thematic_areas)
+    # 

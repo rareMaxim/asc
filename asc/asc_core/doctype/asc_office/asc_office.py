@@ -9,34 +9,30 @@ from frappe.website.website_generator import WebsiteGenerator
 
 @frappe.whitelist()
 def get_from_api(asc_code):
-    url = f'https://guide.diia.gov.ua/api/v1/asc/detail/{asc_code}/'
-    headers = {'content-type': 'application/json'}
+    url = f"https://guide.diia.gov.ua/api/v1/asc/detail/{asc_code}/"
+    headers = {"content-type": "application/json"}
     params = {
-        'format': 'json',
-        'accept': 'application/json',
+        "format": "json",
+        "accept": "application/json",
     }
     r = requests.get(url, headers=headers, params=params)
     jsonStringA = r.text
     #
-    url = f'https://guide.diia.gov.ua/asc/download/json/'
-    headers = {'content-type': 'application/json'}
+    url = "https://guide.diia.gov.ua/asc/download/json/"
+    headers = {"content-type": "application/json"}
     params = {
-        'format': 'json',
-        'accept': 'application/json',
+        "format": "json",
+        "accept": "application/json",
     }
     r = requests.get(url, headers=headers, params=params)
 
-    asc = json.loads(r.text)['entries']
+    asc = json.loads(r.text)["entries"]
     for LInfo in asc:
-        if LInfo['code'] == int(asc_code):
+        if LInfo["code"] == int(asc_code):
             jsonStringB = json.dumps(LInfo)
 
     jsonMerged = {**json.loads(jsonStringB), **json.loads(jsonStringA)}
-
-    print(jsonMerged)
-    data_str = json.dumps(jsonMerged)
-
-    return str(data_str)
+    return json.dumps(jsonMerged)
 
 
 class ASCOffice(WebsiteGenerator):
@@ -50,20 +46,16 @@ def get_list(doctype, txt, filters, limit_start, limit_page_length=20, order_by=
     ignore_permissions = True
     if not filters:
         filters = []
-    filters.append(('ASC Office', 'published', '=', 1))
-    # result = get_list(
-    #     doctype, txt, filters, limit_start, limit_page_length, ignore_permissions=ignore_permissions, order_by=order_by
-    # )
-
-    result = frappe.get_all(doctype, fields=[
-                            "title", "status", "address", "tel_consul", "onl_consul"],
-                            limit_start=limit_start,
-                            limit_page_length=limit_page_length,
-                            ignore_permissions=ignore_permissions,
-                            filters=filters,
-                            order_by=order_by)
-    print(result)
-    return result
+    filters.append(("ASC Office", "published", "=", 1))
+    return frappe.get_all(
+        doctype,
+        fields=["title", "status", "address", "tel_consul", "onl_consul"],
+        limit_start=limit_start,
+        limit_page_length=limit_page_length,
+        ignore_permissions=ignore_permissions,
+        filters=filters,
+        order_by=order_by,
+    )
 
 
 def get_list_context(context=None):

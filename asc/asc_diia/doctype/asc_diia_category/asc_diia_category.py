@@ -23,52 +23,60 @@ class ASCDiiaCategory(WebsiteGenerator):
     pass
 
 
-def get_services_list(doctype, txt, filters, limit_start, limit_page_length=5, order_by=None):
+def get_services_list(
+    doctype, txt, filters, limit_start, limit_page_length=5, order_by=None
+):
     from frappe.www.list import get_list
+
     ignore_permissions = True
     if not filters:
         filters = {}
     filters.update({"published": 1})
-    result = get_list(doctype, fields=[
-        "title", "name", "route"],
+    return get_list(
+        doctype,
+        fields=["title", "keyword", "name", "route"],
         limit_start=limit_start,
         limit_page_length=limit_page_length,
         ignore_permissions=ignore_permissions,
         filters=filters,
         txt=txt,
-        order_by=order_by)
-    return result
+        order_by=order_by,
+    )
 
 
 def get_services(sector):
     text = None
     # this is for double precaution. usually it wont reach this code if not published
     if not (sector.name):
-        raise Exception("This section has not been published yet!")
+        raise PermissionError("This section has not been published yet!")
     filters = {"sector": sector.name}
     limit_start = 0
     limit_page_length = 20
     order_by = "title ASC"
-    result = get_services_list("ASC Service", text, filters,
-                               limit_start, limit_page_length, order_by)
-    return result
+    return get_services_list(
+        "ASC Service", text, filters, limit_start, limit_page_length, order_by
+    )
 
 
-def get_sector_list(doctype, txt, filters, limit_start, limit_page_length=5, order_by=None):
+def get_sector_list(
+    doctype, txt, filters, limit_start, limit_page_length=5, order_by=None
+):
     from frappe.www.list import get_list
+
     ignore_permissions = True
-    print(filters)
     if not filters:
         filters = {}
     filters.update({"published": 1})
-    tmp_result = get_list(doctype, fields=[
-        "title", "route", "name"],
+    tmp_result = get_list(
+        doctype,
+        fields=["title", "route", "name"],
         limit_start=limit_start,
         limit_page_length=limit_page_length,
         ignore_permissions=ignore_permissions,
         filters=filters,
         txt=txt,
-        order_by=order_by)
+        order_by=order_by,
+    )
     result = []
     for sector in tmp_result:
         sector.services = get_services(sector)
@@ -91,11 +99,13 @@ def get_list_context(context=None):
     )
 
     list_context.parents = [{"name": _("Home"), "route": "/"}]
-    if not "thematic_area" in frappe.form_dict.keys():
-        raise Exception("This section has not been published yet!")
+    if "thematic_area" not in frappe.form_dict.keys():
+        raise PermissionError("This section has not been published yet!")
     if frappe.form_dict["thematic_area"]:
         list_context.parents.append(
-            {"name": _("Меню послуг"), "route": "/thematic_area"})
+            {"name": _("Меню послуг"), "route": "/thematic_area"}
+        )
         list_context.title = frappe.get_value(
-            "ASC Diia Thematic Area", frappe.form_dict["thematic_area"], "title")
+            "ASC Diia Thematic Area", frappe.form_dict["thematic_area"], "title"
+        )
     return list_context

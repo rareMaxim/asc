@@ -28,12 +28,7 @@ class ASCRegulatoryDocument(WebsiteGenerator):
     @frappe.whitelist()
     def make_route(self):
         if not self.route:
-            return 'regulatory/'+(self.scrub(
-
-                str(self.convocation)+"-" +
-                str(self.session)+"-" +
-                str(self.number))
-            )
+            return f'regulatory/{self.scrub(f"{str(self.convocation)}-{str(self.session)}-{str(self.number)}")}'
             
     def get_context(self, context):
         context.no_breadcrumbs = False
@@ -52,21 +47,16 @@ def get_regulatory_list(doctype, txt, filters, limit_start, limit_page_length=2,
         filters = {}
     filters.update({"published": 1})
 
-    # filters.popitem()
-    # result = get_list(
-    #     doctype, txt, filters, limit_start, limit_page_length, ignore_permissions=ignore_permissions, order_by=order_by
-    # )
-
-    result = get_list(doctype, fields=[
-        "title", "route", "convocation", "session", "date", "number"],
+    return get_list(
+        doctype,
+        fields=["title", "route", "convocation", "session", "date", "number"],
         limit_start=limit_start,
         limit_page_length=limit_page_length,
         ignore_permissions=ignore_permissions,
         filters=filters,
         txt=txt,
-        order_by=order_by)
-    print(limit_start, limit_page_length)
-    return result
+        order_by=order_by,
+    )
 
 
 def get_list_context(context=None):
