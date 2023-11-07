@@ -5,7 +5,7 @@
 import frappe
 from frappe import _
 from frappe.rate_limiter import rate_limit
-from asc.asc_core.doctype.asc_news_settings.asc_news_settings import get_like_limit
+from asc.asc_web.doctype.asc_news_settings.asc_news_settings import get_like_limit
 from frappe.website.utils import clear_cache
 
 
@@ -57,7 +57,7 @@ def add_like(reference_doctype, reference_name):
     like.comment_email = user
     like.reference_doctype = reference_doctype
     like.reference_name = reference_name
-    like.content = "Liked by: " + user
+    like.content = f"Liked by: {user}"
     if user == "Guest":
         like.ip_address = frappe.local.request_ip
     like.save(ignore_permissions=True)

@@ -2,8 +2,8 @@
 # For license information, please see license.txt
 
 # import frappe
-from asc.asc_core.doctype.asc_cost.asc_cost import ASCCost
-from asc.asc_core.doctype.asc_service.asc_service import ASCService
+from asc.asc_web.doctype.asc_cost.asc_cost import ASCCost
+from asc.asc_web.doctype.asc_service.asc_service import ASCService
 import requests
 import frappe
 from frappe.model.document import Document
@@ -140,13 +140,10 @@ def get_identifier_from_id(id: str) -> str:
     return frappe.get_value("ASC Service", {"id": id}, "identifier")
 
 
-def get_service(id: str = None, identifier: str = None) -> Document:
+def get_service(idx: str = None, identifier: str = None) -> Document:
     if identifier:
-        id = get_id_from_identifier(identifier)
-    if not id:
-        return None
-    result = frappe.get_doc("ASC Service", id)
-    return result
+        idx = get_id_from_identifier(identifier)
+    return frappe.get_doc("ASC Service", idx) if idx else None
 
 
 def update_refusal_appeal_person(service_doc: ASCService, json_refusal_appeal_person):

@@ -2,8 +2,8 @@
 import frappe
 from frappe import _
 
-from asc.asc_diia.doctype.asc_diia_thematic_area.asc_diia_thematic_area import get_thematic_area_list
-from asc.asc_core.doctype.asc_news.asc_news import get_news_list
+from asc.asc_web.doctype.asc_diia_thematic_area.asc_diia_thematic_area import get_thematic_area_list
+from asc.asc_web.doctype.asc_news.asc_news import get_news_list
 
 sitemap = 1
 

@@ -1,0 +1,94 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-15 19:02:03.601777",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "column_break_clyv",
+  "browse_by_category",
+  "enable_social_sharing",
+  "allow_guest_to_comment",
+  "rate_limits_section",
+  "like_limit",
+  "column_break_gshs",
+  "comment_limit"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "News Title"
+  },
+  {
+   "fieldname": "column_break_clyv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_social_sharing",
+   "fieldtype": "Check",
+   "label": "Enable Social Sharing"
+  },
+  {
+   "fieldname": "rate_limits_section",
+   "fieldtype": "Section Break",
+   "label": "Rate Limits"
+  },
+  {
+   "default": "5",
+   "description": "Like limit per hour",
+   "fieldname": "like_limit",
+   "fieldtype": "Int",
+   "label": "Like limit"
+  },
+  {
+   "fieldname": "column_break_gshs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Comment limit per hour",
+   "fieldname": "comment_limit",
+   "fieldtype": "Int",
+   "label": "Comment limit"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_guest_to_comment",
+   "fieldtype": "Check",
+   "label": "Allow Guest to Comments"
+  },
+  {
+   "default": "0",
+   "fieldname": "browse_by_category",
+   "fieldtype": "Check",
+   "label": "Browse by Category"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-10-15 23:26:50.509230",
+ "modified_by": "Administrator",
+ "module": "Asc Web",
+ "name": "ASC News Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

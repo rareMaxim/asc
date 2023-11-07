@@ -1,0 +1,323 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:id",
+ "creation": "2023-10-16 23:11:51.365510",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_slqd",
+  "identifier",
+  "column_break_ahmw",
+  "service_status",
+  "section_break_zkbx",
+  "keyword",
+  "column_break_pssg",
+  "title",
+  "section_break_zvcy",
+  "thematic_area",
+  "column_break_kpwm",
+  "sector",
+  "section_break_hhlm",
+  "service_owner",
+  "column_break_qlga",
+  "id",
+  "section_break_gfku",
+  "events",
+  "section_break_zjzt",
+  "column_break_reei",
+  "short_description_plain",
+  "\u043e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u044f_tab",
+  "access_link",
+  "column_break_siyq",
+  "applicant_type",
+  "section_break_ekjq",
+  "input",
+  "service_provider",
+  "section_break_yqle",
+  "legal_base",
+  "tab_5_tab",
+  "column_break_fthl",
+  "produces",
+  "web_site_tab",
+  "published",
+  "column_break_plzo",
+  "route",
+  "refusal_tab",
+  "refusal_grounds",
+  "regulatory_tab",
+  "regulatory_documents",
+  "related_services_tab",
+  "related_services"
+ ],
+ "fields": [
+  {
+   "fieldname": "id",
+   "fieldtype": "Data",
+   "label": "Id",
+   "unique": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "identifier",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "\u0406\u0434\u0435\u043d\u0442\u0438\u0444\u0456\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u0441\u043b\u0443\u0433\u0438 "
+  },
+  {
+   "columns": 5,
+   "fieldname": "keyword",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u041a\u043e\u0440\u043e\u0442\u043a\u0430 \u043d\u0430\u0437\u0432\u0430",
+   "length": 800
+  },
+  {
+   "columns": 2,
+   "fieldname": "sector",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u044f \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
+   "options": "ASC Diia Category",
+   "search_index": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "\u041d\u0430\u0437\u0432\u0430 \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
+   "length": 800
+  },
+  {
+   "fieldname": "short_description_plain",
+   "fieldtype": "Small Text",
+   "label": "\u041a\u043e\u0440\u043e\u0442\u043a\u043e \u043f\u0440\u043e \u043f\u043e\u0441\u043b\u0443\u0433\u0443"
+  },
+  {
+   "fieldname": "column_break_ahmw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zvcy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_kpwm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_zjzt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_reei",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "service_provider",
+   "fieldtype": "Table",
+   "label": "\u0421\u0443\u0431'\u0454\u043a\u0442\u0438 \u043d\u0430\u0434\u0430\u043d\u043d\u044f \u0430\u0434\u043c\u0456\u043d\u0456\u0441\u0442\u0440\u0430\u0442\u0438\u0432\u043d\u043e\u0457 \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
+   "options": "ASC Service Provider Table"
+  },
+  {
+   "fieldname": "section_break_hhlm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "service_owner",
+   "fieldtype": "Link",
+   "label": "\u0426\u0435\u043d\u0442\u0440\u0430\u043b\u044c\u043d\u0438\u0439 \u043e\u0440\u0433\u0430\u043d \u0432\u0438\u043a\u043e\u043d\u0430\u0432\u0447\u043e\u0457 \u0432\u043b\u0430\u0434\u0438, \u0449\u043e \u0444\u043e\u0440\u043c\u0443\u0454 \u0430\u0431\u043e \u0440\u0435\u0430\u043b\u0456\u0437\u0443\u0454 \u0434\u0435\u0440\u0436\u0430\u0432\u043d\u0443 \u043f\u043e\u043b\u0456\u0442\u0438\u043a\u0443 \u0443 \u0432\u0456\u0434\u043f\u043e\u0432\u0456\u0434\u043d\u0456\u0439 \u0441\u0444\u0435\u0440\u0456, \u0456\u043d\u0448\u0438\u0439 \u0434\u0435\u0440\u0436\u0430\u0432\u043d\u0438\u0439 \u043e\u0440\u0433\u0430\u043d",
+   "options": "ASC Diia Service Owner"
+  },
+  {
+   "fieldname": "column_break_qlga",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_gfku",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "related_services",
+   "fieldtype": "Table",
+   "label": "\u041f\u043e\u0432'\u044f\u0437\u0430\u043d\u0456 \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
+   "options": "ASC Diia Related Services"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "\u0410\u043a\u0442\u0438\u0432\u043d\u0430"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "\u041c\u0430\u0440\u0448\u0440\u0443\u0442"
+  },
+  {
+   "fieldname": "section_break_slqd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "service_status",
+   "fieldtype": "Link",
+   "label": "Status",
+   "options": "ASC Diia Service Status"
+  },
+  {
+   "fieldname": "events",
+   "fieldtype": "Table",
+   "label": "\u0416\u0438\u0442\u0442\u0454\u0432\u0430 \u043f\u043e\u0434\u0456\u044f",
+   "options": "ASC Diia Service Events Table"
+  },
+  {
+   "fieldname": "produces",
+   "fieldtype": "Table",
+   "label": "\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u0438",
+   "options": "ASC Diia Service Produces Table"
+  },
+  {
+   "fieldname": "\u043e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u044f_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u041e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u044f"
+  },
+  {
+   "fieldname": "section_break_ekjq",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "input",
+   "fieldtype": "Table",
+   "label": "\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438, \u043d\u0435\u043e\u0431\u0445\u0456\u0434\u043d\u0456 \u0434\u043b\u044f \u043e\u0442\u0440\u0438\u043c\u0430\u043d\u043d\u044f \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
+   "options": "ASC Diia Input Table"
+  },
+  {
+   "fieldname": "web_site_tab",
+   "fieldtype": "Tab Break",
+   "label": "Web-\u0441\u0430\u0439\u0442"
+  },
+  {
+   "fieldname": "thematic_area",
+   "fieldtype": "Link",
+   "label": "\u0422\u0435\u043c\u0430\u0442\u0438\u0447\u043d\u0430 \u043e\u0431\u043b\u0430\u0441\u0442\u044c",
+   "options": "ASC Diia Thematic Area",
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_yqle",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "legal_base",
+   "fieldtype": "Text Editor",
+   "label": "\u0423\u043c\u043e\u0432\u0438 \u0456 \u0432\u0438\u043f\u0430\u0434\u043a\u0438 \u043d\u0430\u0434\u0430\u043d\u043d\u044f"
+  },
+  {
+   "fieldname": "tab_5_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u0420\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442"
+  },
+  {
+   "fieldname": "refusal_grounds",
+   "fieldtype": "Table",
+   "label": "\u041f\u0456\u0434\u0441\u0442\u0430\u0432\u0438 \u0434\u043b\u044f \u0432\u0456\u0434\u043c\u043e\u0432\u0438 \u0443 \u043d\u0430\u0434\u0430\u043d\u043d\u0456 \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
+   "options": "ASC Service Refusal Grounds"
+  },
+  {
+   "fieldname": "column_break_fthl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "applicant_type",
+   "fieldtype": "Table MultiSelect",
+   "in_filter": 1,
+   "label": "\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0456\u044f \u0441\u0443\u0431'\u0454\u043a\u0442\u0430 \u0437\u0432\u0435\u0440\u043d\u0435\u043d\u043d\u044f",
+   "options": "ASC Applicant Type Table"
+  },
+  {
+   "fieldname": "access_link",
+   "fieldtype": "Data",
+   "label": "\u0410\u0434\u0440\u0435\u0441\u0430 \u0434\u043e\u0441\u0442\u0443\u043f\u0443 \u0434\u043e \u043f\u043e\u0441\u043b\u0443\u0433\u0438 \u0443 \u0435\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u043c\u0443 \u0432\u0438\u0433\u043b\u044f\u0434\u0456",
+   "options": "URL"
+  },
+  {
+   "fieldname": "regulatory_documents",
+   "fieldtype": "Table",
+   "label": "\u041d\u043e\u0440\u043c\u0430\u0442\u0438\u0432\u043d\u0456 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438",
+   "options": "ASC Regulatory Documents Table"
+  },
+  {
+   "fieldname": "section_break_zkbx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_pssg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_siyq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_plzo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "refusal_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u0412\u0456\u0434\u043c\u043e\u0432\u0430"
+  },
+  {
+   "fieldname": "regulatory_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u041d\u043e\u0440\u043c\u0430\u0442\u0438\u0432\u043a\u0430"
+  },
+  {
+   "fieldname": "related_services_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u041f\u043e\u0432'\u044f\u0437\u0430\u043d\u0456 \u043f\u043e\u0441\u043b\u0443\u0433\u0438"
+  }
+ ],
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "is_published_field": "published",
+ "links": [
+  {
+   "group": "\u0412\u0430\u0440\u0442\u0456\u0441\u0442\u044c",
+   "link_doctype": "ASC Cost",
+   "link_fieldname": "service"
+  }
+ ],
+ "modified": "2023-11-05 22:55:24.358530",
+ "modified_by": "Administrator",
+ "module": "Asc Web",
+ "name": "ASC Service",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "services",
+ "search_fields": "identifier",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "keyword"
+}

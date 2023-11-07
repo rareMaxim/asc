@@ -1,0 +1,175 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2023-10-06 15:10:16.358030",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "column_break_ufyc",
+  "status",
+  "section_break_pvtc",
+  "phone",
+  "column_break_hxyh",
+  "office",
+  "section_break_pjch",
+  "last_name",
+  "column_break_ngnl",
+  "first_name",
+  "column_break_erug",
+  "middle_name",
+  "tab_2_tab",
+  "full_name",
+  "short_name",
+  "column_break_ntki",
+  "tab_3_tab"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_pjch",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "user.last_name",
+   "fetch_if_empty": 1,
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "\u041f\u0440\u0438\u0437\u0432\u0438\u0449\u0435"
+  },
+  {
+   "fetch_from": "user.first_name",
+   "fetch_if_empty": 1,
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "\u0406\u043c'\u044f"
+  },
+  {
+   "fetch_from": "user.middle_name",
+   "fetch_if_empty": 1,
+   "fieldname": "middle_name",
+   "fieldtype": "Data",
+   "label": "\u041f\u043e \u0411\u0430\u0442\u044c\u043a\u043e\u0432\u0456"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Debug"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "\u041f\u043e\u0432\u043d\u0435 \u0456\u043c'\u044f"
+  },
+  {
+   "fieldname": "short_name",
+   "fieldtype": "Data",
+   "label": "\u0421\u043a\u043e\u0440\u043e\u0447\u0435\u043d\u0435 \u0456\u043c'\u044f"
+  },
+  {
+   "fieldname": "column_break_ntki",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tab_3_tab",
+   "fieldtype": "Tab Break",
+   "label": "\u0413\u0440\u0430\u0444\u0456\u043a \u043f\u0440\u0438\u0441\u0443\u0442\u043d\u043e\u0441\u0442\u0456",
+   "show_dashboard": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "\u0421\u0442\u0430\u043d",
+   "options": "\u0420\u043e\u0431\u043e\u0447\u0456 \u0434\u043d\u0456\n\u0414\u0438\u0441\u0442\u0430\u043d\u0446\u0456\u0439\u043d\u043e\n\u041f\u0440\u043e\u0441\u0442\u0456\u0439\n\u041f\u0440\u0438\u0437\u0443\u043f\u0438\u043d\u0435\u043d\u043e\n\u0417\u0432\u0456\u043b\u044c\u043d\u0435\u043d\u043e"
+  },
+  {
+   "fieldname": "column_break_ngnl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_erug",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "\u041a\u043e\u0440\u0438\u0441\u0442\u0443\u0432\u0430\u0447",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_ufyc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_pvtc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_hxyh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "\u041c\u043e\u0431\u0456\u043b\u044c\u043d\u0438\u0439 \u0442\u0435\u043b\u0435\u0444\u043e\u043d",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "office",
+   "fieldtype": "Link",
+   "label": "\u041e\u0444\u0456\u0441 \u0426\u041d\u0410\u041f",
+   "options": "ASC Office"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-06 21:35:50.340276",
+ "modified_by": "Administrator",
+ "module": "Asc Web",
+ "name": "ASC Employees",
+ "nsm_parent_field": "parent_asc_employees",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "full_name",
+ "sort_order": "ASC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "\u0420\u043e\u0431\u043e\u0447\u0456 \u0434\u043d\u0456"
+  },
+  {
+   "color": "Light Blue",
+   "title": "\u0414\u0438\u0441\u0442\u0430\u043d\u0446\u0456\u0439\u043d\u043e"
+  },
+  {
+   "color": "Yellow",
+   "title": "\u041f\u0440\u043e\u0441\u0442\u0456\u0439"
+  },
+  {
+   "color": "Orange",
+   "title": "\u041f\u0440\u0438\u0437\u0443\u043f\u0438\u043d\u0435\u043d\u043e"
+  },
+  {
+   "color": "Red",
+   "title": "\u0417\u0432\u0456\u043b\u044c\u043d\u0435\u043d\u043e"
+  }
+ ],
+ "title_field": "full_name",
+ "translated_doctype": 1
+}
