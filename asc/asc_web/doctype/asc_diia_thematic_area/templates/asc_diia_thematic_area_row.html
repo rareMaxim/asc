@@ -1,4 +1,8 @@
-{% import "/asc_web/doctype/asc_diia_thematic_area/templates/thematic_area_card.html" as macros %}
+{% import '/asc_web/doctype/asc_diia_thematic_area/templates/thematic_area_card.html' as macros %}
 
-{{ macros.render_thematic_area_card(doc) }}
+{%- set title = doc.title or doc.name -%}
+{%- set content = doc.comment -%}
+{%- set url = '/sector/?thematic_area=' + doc.name -%}
+{%- set image = '' -%}
 
+{{ macros.card(title, content, url, image) }}

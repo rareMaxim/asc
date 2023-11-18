@@ -16,7 +16,8 @@
    "fieldname": "verbose",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "\u041d\u0430\u0437\u0432\u0430"
+   "label": "\u041d\u0430\u0437\u0432\u0430",
+   "length": 240
   },
   {
    "default": "UAH",
@@ -44,9 +45,9 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-11-03 23:39:59.095122",
+ "modified": "2023-11-18 13:04:15.542957",
  "modified_by": "Administrator",
- "module": "Asc Web",
+ "module": "ASC Web",
  "name": "ASC Cost Table",
  "owner": "Administrator",
  "permissions": [],

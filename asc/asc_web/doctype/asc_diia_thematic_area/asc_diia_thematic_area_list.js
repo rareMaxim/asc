@@ -3,7 +3,7 @@
 
 function BtnGetFromApi(listview) {
     frappe.call({
-        method: "asc.asc_web.diia_api.diia_categories_getList",
+        method: "asc.asc_diia.diia_api.diia_categories_getList",
         callback: (r) => {
             frappe.show_alert(r.message, 15);
             listview.refresh();

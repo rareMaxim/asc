@@ -14,13 +14,13 @@ class ASCService(WebsiteGenerator):
 
     if TYPE_CHECKING:
         from asc.asc_web.doctype.asc_applicant_type_table.asc_applicant_type_table import ASCApplicantTypeTable
-        from asc.asc_web.doctype.asc_service_provider_table.asc_service_provider_table import ASCServiceProviderTable
-        from asc.asc_web.doctype.asc_service_refusal_grounds.asc_service_refusal_grounds import ASCServiceRefusalGrounds
         from asc.asc_web.doctype.asc_diia_input_table.asc_diia_input_table import ASCDiiaInputTable
         from asc.asc_web.doctype.asc_diia_related_services.asc_diia_related_services import ASCDiiaRelatedServices
         from asc.asc_web.doctype.asc_diia_service_events_table.asc_diia_service_events_table import ASCDiiaServiceEventsTable
         from asc.asc_web.doctype.asc_diia_service_produces_table.asc_diia_service_produces_table import ASCDiiaServiceProducesTable
         from asc.asc_web.doctype.asc_regulatory_documents_table.asc_regulatory_documents_table import ASCRegulatoryDocumentsTable
+        from asc.asc_web.doctype.asc_service_provider_table.asc_service_provider_table import ASCServiceProviderTable
+        from asc.asc_web.doctype.asc_service_refusal_grounds.asc_service_refusal_grounds import ASCServiceRefusalGrounds
         from frappe.types import DF
 
         access_link: DF.Data | None

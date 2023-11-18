@@ -118,15 +118,10 @@ def update_cost(service_doc: ASCService, json_variations):
         #
         cost_doc.set("cost", [])
         for cost in variation["costs"]:
-            cost_doc.append(
-                "cost",
-                {
-                    "verbose": cost["verbose"],
-                    "currency": cost["currency"],
-                    "value": cost["value"],
-                    "type": cost["type"],
-                },
-            )
+            data_dict = {}
+            for data in cost.keys():
+                data_dict |= {data: cost[data]}
+            cost_doc.append("cost", data_dict)
         if not cost_doc_in_db:
             cost_doc.insert()
         cost_doc.save()

@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class TestASCDiiaSector(FrappeTestCase):
-    pass
+class TestASCFileType(FrappeTestCase):
+	pass
