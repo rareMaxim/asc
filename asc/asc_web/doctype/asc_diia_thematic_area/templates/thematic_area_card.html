@@ -1,17 +1,5 @@
-{% macro render_thematic_area_card(doc) %}
-  <div class="col-lg-4 d-flex align-items-stretch">
-    <div class="card border-primary mb-4">
-      <div class="card-body">
-        <h5 class="card-title">{{ doc.title or doc.name }}</h5>
-        <p class="card-text text-decoration-none">{{ doc.comment }}</p>
-        <a href="/sector/?thematic_area={{ doc.name }}" class="stretched-link"></a>
-      </div>
-    </div>
-  </div>
-{% endmacro %}
-
 {%- macro card(title, content, url, image) -%}
-  <div class="mt-6 col-12 col-sm-6 col-lg-3">
+  <div class="mt-6 col-12 col-sm-6 col-lg-4">
     <div class="card card-sm h-100">
       <div class="card-body">
         <h3 class="card-title mt-0">{{ title }}</h3>

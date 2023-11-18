@@ -67,7 +67,7 @@ def get_sector_list(
     if not filters:
         filters = {}
     filters.update({"published": 1})
-    tmp_result = get_list(
+    return get_list(
         doctype,
         fields=["title", "route", "name"],
         limit_start=limit_start,
@@ -77,13 +77,6 @@ def get_sector_list(
         txt=txt,
         order_by=order_by,
     )
-    result = []
-    for sector in tmp_result:
-        sector.services = get_services(sector)
-        if len(sector.services) > 0:
-            result.append(sector)
-    result[0].collapse = True
-    return result
 
 
 def get_list_context(context=None):

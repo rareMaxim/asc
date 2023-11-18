@@ -7,71 +7,28 @@
 {% endblock %}
 
 {% block page_content %}
-  <div class="website-list py-5" data-doctype="{{ doctype }}" data-txt="{{ txt or ('[notxt]'|e) }}">
+  <section class="section" data-section-idx="1" data-section-template="Section with Collapsible Content">
     <div class="container">
-      <div id="sector-area-list" class="row result">
-        <div class="col-12">
-          <div class="accordion" id="accordion">
-            {% for item in result %}
-              {{ item }}
-            {% endfor %}
-          </div>
+      <div class="section-with-collapsible-content">
+        <div class="collapsible-items">
+          {% for item in result %}
+            {{ item }}
+          {% endfor %}
         </div>
       </div>
     </div>
-    <div class="more-block py-6 {% if not show_more -%}{%- endif %}">
-      <button class="btn btn-light btn-more btn-sm">{{ _('More') }}</button>
-    </div>
-  </div>
+  </section>
 {% endblock %}
 
 {% block script %}
-  <script>
-	frappe.ready(function() {
-		var next_start = {{ next_start or 0 }};
-		var result_wrapper = $(".website-list .result");
-	
-		$(".website-list .btn-more").on("click", function() {
-			var btn = $(this);
-			var data = $.extend(frappe.utils.get_query_params(), {
-				doctype: "{{ doctype }}",
-				txt: "{{ txt or '' }}",
-				limit_start: next_start,
-				pathname: location.pathname,
-			});
-			data.web_form_name = frappe.web_form_name;
-			data.pathname = location.pathname;
-			btn.prop("disabled", true);
-			return $.ajax({
-				url:"/api/method/frappe.www.list.get",
-				data: data,
-				statusCode: {
-					200: function(data) {
-						var data = data.message;
-						next_start = data.next_start;
-						$.each(data.result, function(i, d) {
-							$(d).appendTo(result_wrapper);
-						});
-						toggle_more(data.show_more);
-					}
-				}
-			}).always(function() {
-				btn.prop("disabled", false);
-			});
-		});
-		var toggle_more = function(show) {
-			if (!show) {
-				$(".website-list .more-block").addClass("hide");
-			}
-		};
-	
-		if($('.navbar-header .navbar-toggle:visible').length === 1)
-		{
-			$('.page-head h1').addClass('list-head').click(function(){
-				window.history.back();
-			 });
-		}
-	});
-	
-</script>
+  <script data-web-template="Section with Collapsible Content">
+    $(() => {
+      $('.collapsible-content').on('hide.bs.collapse', function () {
+        $(this).prev('.collapsible-title').find('.collapsible-icon').removeClass('is-opened')
+      })
+      $('.collapsible-content').on('show.bs.collapse', function () {
+        $(this).prev('.collapsible-title').find('.collapsible-icon').addClass('is-opened')
+      })
+    })
+  </script>
 {% endblock %}

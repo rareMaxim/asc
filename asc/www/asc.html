@@ -2,21 +2,29 @@
 {% block title %}
 {{ title }}
 {% endblock %}
-{% block header %}
-<h3 class="my-account-header">{{ title }}</h3>
-{% endblock %}
+
 
 {% block page_content %}
 {% import "/asc_web/doctype/asc_diia_thematic_area/templates/thematic_area_card.html" as macros %}
-<div class="website-list py-5">
-	<div class="container">
-		<div id="thematic-area-list" class="row">
-			{% for area in thematic_areas %}
-			{{ macros.render_thematic_area_card(area) }}
-			{% endfor %}
+
+<div class="container">
+	<div class="section-with-cards">
+		<h2 class="section-title">{{ title }}</h2>
+		<p class="section-description">Оберіть категорію, яка вас цікавить</p>
+		<div class="mt-6">
+			<div class="row mt-n6">
+				{% for area in thematic_areas %}
+				{%- set title = area.title or area.name -%}
+				{%- set content = area.comment -%}
+				{%- set url = '/sector/?thematic_area=' + area.name -%}
+				{%- set image = '' -%}
+				{{ macros.card(title, content, url, image) }}
+				{% endfor %}
+			</div>
 		</div>
 	</div>
 </div>
+
 <section class="container ">
 	{% import "/asc_web/doctype/asc_news/templates/asc_news_macro.html" as macros %}
 	{{ macros.render_5_news(last_news) }}
