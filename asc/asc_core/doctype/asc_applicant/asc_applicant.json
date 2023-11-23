@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-11-21 22:33:38.559792",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "applicantphone",
+  "sex",
+  "applicantsocialstatus"
+ ],
+ "fields": [
+  {
+   "description": "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u043d\u0438\u0439 \u043d\u043e\u043c\u0435\u0440 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0443 \u043a\u043b\u0456\u0454\u043d\u0442\u0430 \u0443 \u0444\u043e\u0440\u043c\u0430\u0442\u0456 +38XXXXXXXXXX",
+   "fieldname": "applicantphone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0422\u0435\u043b\u0435\u0444\u043e\u043d",
+   "length": 13,
+   "options": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sex",
+   "fieldtype": "Link",
+   "label": "\u0421\u0442\u0430\u0442\u044c",
+   "options": "Gender"
+  },
+  {
+   "description": "\u0406\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0456\u044f \u043f\u0440\u043e \u0441\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0438\u0439 \u0441\u0442\u0430\u0442\u0443\u0441 \u043a\u043b\u0456\u0454\u043d\u0442\u0430",
+   "fieldname": "applicantsocialstatus",
+   "fieldtype": "Link",
+   "label": "\u0421\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0438\u0439 \u0441\u0442\u0430\u0442\u0443\u0441",
+   "options": "ASC Applicant SocialStatus"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-21 22:52:52.276790",
+ "modified_by": "Administrator",
+ "module": "Asc Core",
+ "name": "ASC Applicant",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

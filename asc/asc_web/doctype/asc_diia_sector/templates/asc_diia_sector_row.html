@@ -9,11 +9,13 @@
   <div class="collapse collapsible-content from-markdown" id="id-{{ doc.name }}">
     <div>
       <ul>
-        {% for item in doc.services %}
-          <li>
-            <a href="/{{ item.route }}">{{ item.keyword or item.title or item.name }}</a>
-          </li>
-        {% endfor %}
+        {% if doc.services %}
+          {% for item in doc.services %}
+            <li>
+              <a href="/{{ item.route }}">{{ item.keyword or item.title or item.name }}</a>
+            </li>
+          {% endfor %}
+        {% endif %}
       </ul>
     </div>
   </div>
