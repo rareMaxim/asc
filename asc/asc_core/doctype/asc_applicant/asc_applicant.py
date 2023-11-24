@@ -16,6 +16,12 @@ class ASCApplicant(Document):
 
 		applicantphone: DF.Data
 		applicantsocialstatus: DF.Link | None
+		birth_day: DF.Date | None
+		first_name: DF.Data | None
+		inn: DF.Data | None
+		last_name: DF.Data | None
+		middle_name: DF.Data | None
 		sex: DF.Link | None
+		номер_єддр: DF.Data | None
 	# end: auto-generated types
 	pass
