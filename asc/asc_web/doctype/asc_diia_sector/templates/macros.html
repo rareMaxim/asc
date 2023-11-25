@@ -1,0 +1,30 @@
+{% macro collapse(title, items) %}
+  <section class="section" data-section-idx="1" data-section-template="Section with Collapsible Content">
+    <div class="container">
+      <div class="section-with-collapsible-content">
+        <div class="collapsible-items">
+          {% for item in items %}
+            {{ collapse_item(item) }}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endmacro %}
+
+{% macro collapse_item(uid, title, content) %}
+  <div class="collapsible-item">
+    <a aria-controls="id-{{ uid }}" aria-expanded="false" class="collapsible-title" data-toggle="collapse" href="#id-{{ uid }}" role="button">
+      <div class="collapsible-item-title">{{ title }}</div>
+      <svg class="collapsible-icon" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
+        <path class="vertical" d="M8 4V12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"></path>
+        <path class="horizontal" d="M4 8H12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"></path>
+      </svg>
+    </a>
+    <div class="collapse collapsible-content from-markdown" id="id-{{ uid }}">
+      <div>
+        <ul>{{ content }}</ul>
+      </div>
+    </div>
+  </div>
+{% endmacro %}

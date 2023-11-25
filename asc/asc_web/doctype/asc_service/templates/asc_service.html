@@ -35,108 +35,179 @@
         </div>
       </div>
     </div>
-
-    <div id="accordion">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h5 class="mb-0"><button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Як отримати і що для цього потрібно</button></h5>
-        </div>
-
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-          <div class="card-body">
-            <strong>Де отримати</strong>
-            <div>
-              <ul>
-                {% for provider in service_provider %}
-                  <li>{{ provider }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-            <strong>Як замовити послугу:</strong>
-            <div>
-              <p>Подати заяву на отримання послуги заявник може особисто або через законного представника.</p>
-            </div>
-
-            <strong>Хто може звернутися:</strong>
-            <div>
-              <ul>
-                {% for applicant in applicant_type %}
-                  <li>{{ applicant }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-            <strong>Документи, що необхідно надати для отримання послуги:</strong>
-            <div>
-              <ol>
-                {% for doc in input %}
-                  <li>{{ doc }}</li>
-                {% endfor %}
-              </ol>
-            </div>
-            <div>
-              <strong>Умови і випадки надання</strong>
-              <p>{{ legal_base }}</p>
-            </div>
-            <strong>Результат та способи отримання результату</strong>
-            <div>
-              {% for produce in produces %}
-                <li>{{ produce }}</li>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Строк та вартість надання послуги</button></h5>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-          <div class="card-body">
-            <div class="container">
-              {% for cost in costs %}
-                <div class="row">
-                  <div class="col-sm">
-                    <strong>{{ cost.identifier }}</strong>
-                    <br />
-                    <i>Адміністративний збір</i>
-                    {%- for cost_data in cost.cost -%}
-                      <p>
-                        <b>{{ cost_data.verbose }}</b>
-                      </p>
-                    {%- endfor -%}
+    <section class="section" data-section-idx="1" data-section-template="Section with Collapsible Content">
+      <div class="container">
+        <div class="section-with-collapsible-content">
+          <div class="collapsible-items">
+            <div class="collapsible-item">
+              <a aria-controls="id-1" aria-expanded="false" class="collapsible-title" data-toggle="collapse" href="#id-1" role="button">
+                <div class="collapsible-item-title">Як отримати і що для цього потрібно</div>
+                <svg class="collapsible-icon" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path class="vertical" d="M8 4V12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"></path>
+                  <path class="horizontal" d="M4 8H12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"></path>
+                </svg>
+              </a>
+              <div class="collapse collapsible-content from-markdown" id="id-1">
+                <div>
+                  <strong>Де отримати</strong>
+                  <div>
+                    <ul>
+                      {% for provider in service_provider %}
+                        <li>{{ provider }}</li>
+                      {% endfor %}
+                    </ul>
                   </div>
-                  <div class="col-sm">
-                    {% if cost.duration_verbose %}
-                      <br />
-                      Строк надання
-                      <br />
-                      <b>{{ cost.duration_verbose }}</b>
-                    {% endif %}
+                  <strong>Як замовити послугу:</strong>
+                  <div>
+                    <p>Подати заяву на отримання послуги заявник може особисто або через законного представника.</p>
+                  </div>
+
+                  <strong>Хто може звернутися:</strong>
+                  <div>
+                    <ul>
+                      {% for applicant in applicant_type %}
+                        <li>{{ applicant }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  <strong>Документи, що необхідно надати для отримання послуги:</strong>
+                  <div>
+                    <ol>
+                      {% for doc in input %}
+                        <li>{{ doc }}</li>
+                      {% endfor %}
+                    </ol>
+                  </div>
+                  <div>
+                    <strong>Умови і випадки надання</strong>
+                    <p>{{ legal_base }}</p>
+                  </div>
+                  <strong>Результат та способи отримання результату</strong>
+                  <div>
+                    {% for produce in produces %}
+                      <li>{{ produce }}</li>
+                    {% endfor %}
                   </div>
                 </div>
-              {% endfor %}
+              </div>
+            </div>
+
+            <div class="collapsible-item">
+              <a aria-controls="id-2" aria-expanded="false" class="collapsible-title" data-toggle="collapse" href="#id-2" role="button">
+                <div class="collapsible-item-title">Строк та вартість надання послуги</div>
+                <svg class="collapsible-icon" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path class="vertical" d="M8 4V12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"></path>
+                  <path class="horizontal" d="M4 8H12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"></path>
+                </svg>
+              </a>
+              <div class="collapse collapsible-content from-markdown" id="id-2">
+                <div>
+                  {% for cost in costs %}
+                    <div class="row">
+                      <div class="col-sm">
+                        <strong>{{ cost.identifier }}</strong>
+                        <br />
+                        <i>Адміністративний збір</i>
+                        {%- for cost_data in cost.cost -%}
+                          <p>
+                            <b>{{ cost_data.verbose }}</b>
+                          </p>
+                        {%- endfor -%}
+                      </div>
+                      <div class="col-sm">
+                        {% if cost.duration_verbose %}
+                          <br />
+                          Строк надання
+                          <br />
+                          <b>{{ cost.duration_verbose }}</b>
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+
+            <div class="collapsible-item">
+              <a aria-controls="id-3" aria-expanded="false" class="collapsible-title" data-toggle="collapse" href="#id-3" role="button">
+                <div class="collapsible-item-title">Куди звернутися, якщо відмовлено у наданні послуги?</div>
+                <svg class="collapsible-icon" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path class="vertical" d="M8 4V12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"></path>
+                  <path class="horizontal" d="M4 8H12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"></path>
+                </svg>
+              </a>
+              <div class="collapse collapsible-content from-markdown" id="id-3">
+                <div>
+                  <strong>Підстави для відмови у наданні послуги</strong>
+                  <div>
+                    <ul>
+                      {% for item in refusal_grounds %}
+                        <li>{{ item.refusal_ground }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="collapsible-item">
+              <a aria-controls="id-4" aria-expanded="false" class="collapsible-title" data-toggle="collapse" href="#id-4" role="button">
+                <div class="collapsible-item-title">Нормативна база</div>
+                <svg class="collapsible-icon" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path class="vertical" d="M8 4V12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"></path>
+                  <path class="horizontal" d="M4 8H12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"></path>
+                </svg>
+              </a>
+              <div class="collapse collapsible-content from-markdown" id="id-4">
+                <div>
+                  <div class="card-body">
+                    <div class="container">
+                      <div class="row">
+                        {% for reg_doc in regulatory_documents %}
+                          <div class="col-6">
+                            <ul>
+                              {% if reg_doc.url %}
+                                <a href="{{ reg_doc.url }}"><li>{{ reg_doc.title }}</li></a>
+                              {% else %}
+                                <li>{{ reg_doc.title }}</li>
+                              {% endif %}
+                            </ul>
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="collapsible-item">
+              <a aria-controls="id-5" aria-expanded="false" class="collapsible-title" data-toggle="collapse" href="#id-5" role="button">
+                <div class="collapsible-item-title">Пов'язані послуги</div>
+                <svg class="collapsible-icon" height="24" viewbox="0 0 16 16" width="24" xmlns="http://www.w3.org/2000/svg">
+                  <path class="vertical" d="M8 4V12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"></path>
+                  <path class="horizontal" d="M4 8H12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1.5"></path>
+                </svg>
+              </a>
+              <div class="collapse collapsible-content from-markdown" id="id-5">
+                <div>
+                  <div class="card-body">
+                    {% for service in related_services %}
+                      <ul>
+                        <li>
+                          <a href="/{{ service.route }}">{{ service.title }}</a>
+                        </li>
+                      </ul>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-header" id="headingThree">
-          <h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Куди звернутися, якщо відмовлено у наданні послуги?</button></h5>
-        </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-          <div class="card-body">
-            <strong>Підстави для відмови у наданні послуги</strong>
-            <div>
-              <ul>
-                {% for item in refusal_grounds %}
-                  <li>{{ item.refusal_ground }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--         
+    </section>
+
+    <!--                           
       <div class="card">
         <div class="card-header" id="heading4">
           <h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">Часті питання та відповіді</button></h5>
@@ -145,49 +216,19 @@
           <div class="card-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</div>
         </div>
       </div>
-               -->
-      <div class="card">
-        <div class="card-header" id="heading5">
-          <h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">Нормативна база</button></h5>
-        </div>
-        <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion">
-          <div class="card-body">
-            <div class="container">
-              <div class="row">
-                {% for reg_doc in regulatory_documents %}
-                  <div class="col-6">
-                    <ul>
-                      {% if reg_doc.url %}
-                        <a href="{{ reg_doc.url }}"><li>{{ reg_doc.title }}</li></a>
-                      {% else %}
-                        <li>{{ reg_doc.title }}</li>
-                      {% endif %}
-                    </ul>
-                  </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="heading6">
-          <h5 class="mb-0"><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">Пов'язані послуги</button></h5>
-        </div>
-        <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion">
-          <div class="card-body">
-            {% for service in related_services %}
-              <ul>
-                <li>
-                  <a href="/{{ service.route }}">{{ service.title }}</a>
-                </li>
-              </ul>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-    </div>
+                                 -->
   </div>
 {% endblock %}
 
-<!-- this is a sample default web page template -->
+{% block script %}
+  <script data-web-template="Section with Collapsible Content">
+    $(() => {
+      $('.collapsible-content').on('hide.bs.collapse', function () {
+        $(this).prev('.collapsible-title').find('.collapsible-icon').removeClass('is-opened')
+      })
+      $('.collapsible-content').on('show.bs.collapse', function () {
+        $(this).prev('.collapsible-title').find('.collapsible-icon').addClass('is-opened')
+      })
+    })
+  </script>
+{% endblock %}
