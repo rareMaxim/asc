@@ -91,7 +91,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-18 12:43:11.575447",
+ "modified": "2023-11-27 13:05:05.660784",
  "modified_by": "Administrator",
  "module": "ASC Web",
  "name": "ASC Cost",
@@ -108,6 +108,15 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Guest",
+   "share": 1
   }
  ],
  "show_title_field_in_link": 1,
