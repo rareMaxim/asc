@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "field:id",
  "creation": "2023-10-16 23:11:51.365510",
@@ -74,6 +75,7 @@
    "columns": 5,
    "fieldname": "keyword",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "in_list_view": 1,
    "label": "\u041a\u043e\u0440\u043e\u0442\u043a\u0430 \u043d\u0430\u0437\u0432\u0430",
    "length": 800
@@ -90,6 +92,7 @@
   {
    "fieldname": "title",
    "fieldtype": "Data",
+   "in_global_search": 1,
    "label": "\u041d\u0430\u0437\u0432\u0430 \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
    "length": 800
   },
@@ -302,7 +305,7 @@
    "link_fieldname": "service"
   }
  ],
- "modified": "2023-11-18 10:45:53.379739",
+ "modified": "2023-11-28 23:57:31.816840",
  "modified_by": "Administrator",
  "module": "ASC Web",
  "name": "ASC Service",
