@@ -18,7 +18,11 @@ frappe.ui.form.on("ASC Appeal", {
         }
     },
     refresh(frm) {
-        console.log("test");
+
+        frm.set_query('service', function (doc) {
+            return { filters: { published: 1 } }
+        });
+
         fill_default_office(frm);
     },
 });

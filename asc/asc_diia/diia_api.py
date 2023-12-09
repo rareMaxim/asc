@@ -32,7 +32,7 @@ class Error(Exception):
 
 
 class DiiaApiBase(object):
-    def make_request(self, method, path, **kwargs):
+    def make_request(self, method: str, path: str, **kwargs):
         headers = {"Glory": "Ukraine"}
         return api_request(method, path, headers=headers, **kwargs)
 
@@ -92,7 +92,7 @@ class FrpDiiaEvents:
         if not frappe.db.get_value(self.EVENT_DOCTYPE, event["id"]):
             # create a new document
             doc = frappe.new_doc(self.EVENT_DOCTYPE)
-            doc.id = event["id"]
+            doc.name = event["id"]
             doc.insert()
             self.count_create += 1
         else:
@@ -131,7 +131,7 @@ class FrpDiiaCategories:
         if not frappe.db.get_value(self.SECTOR_DOCTYPE, category["id"]):
             # create a new document
             doc_cat = frappe.new_doc(self.SECTOR_DOCTYPE)
-            doc_cat.id = category["id"]
+            doc_cat.name = category["id"]
             doc_cat.insert()
         else:
             # open a exist document
@@ -149,7 +149,7 @@ class FrpDiiaCategories:
         if not frappe.db.get_value(self.THEMATIC_DOCTYPE, them_area["id"]):
             # create a new document
             doc = frappe.new_doc(self.THEMATIC_DOCTYPE)
-            doc.id = them_area["id"]
+            doc.name = them_area["id"]
             doc.insert()
         else:
             # open a exist document
@@ -244,7 +244,7 @@ class FrpDiiaRegister:
         if not frappe.db.get_value(self.SERVICE_DOCTYPE, service["id"]):
             # create a new document
             acc = frappe.new_doc(self.SERVICE_DOCTYPE)
-            acc.id = service["id"]
+            acc.name = service["id"]
             acc.insert()
         else:
             # open a exist document
@@ -268,7 +268,7 @@ class FrpDiiaRegister:
         if not frappe.db.get_value(self.SERVICE_DOCTYPE, service["id"]):
             # create a new document
             acc = frappe.new_doc(self.SERVICE_DOCTYPE)
-            acc.id = service["id"]
+            acc.name = service["id"]
             acc.insert()
         else:
             # open a exist document

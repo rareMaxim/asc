@@ -23,4 +23,5 @@ class ASCCost(Document):
 		service: DF.Link | None
 		title: DF.Data | None
 	# end: auto-generated types
+
 	pass

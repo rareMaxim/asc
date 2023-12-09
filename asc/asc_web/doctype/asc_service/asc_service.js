@@ -48,6 +48,9 @@ frappe.ui.form.on("ASC Service", {
 	identifier(frm) {
 		frm.trigger("set_route");
 	},
+	as_jsn(frm) {
+		console.log(frm.doc);
+	},
 	set_route(frm) {
 		// if (frm.doc.route) return;
 		if (frm.doc.identifier) {

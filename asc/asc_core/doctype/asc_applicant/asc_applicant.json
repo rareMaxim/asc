@@ -6,35 +6,28 @@
  "engine": "InnoDB",
  "field_order": [
   "\u0437\u0430\u044f\u0432\u043d\u0438\u043a_section",
-  "last_name",
-  "column_break_hkpo",
-  "first_name",
-  "column_break_bsig",
-  "middle_name",
+  "full_name",
   "section_break_nfnu",
   "birth_day",
   "column_break_tttq",
   "inn",
   "column_break_iswe",
-  "\u043d\u043e\u043c\u0435\u0440_\u0454\u0434\u0434\u0440",
+  "unzr",
   "section_break_dnrr",
-  "applicantphone",
+  "phone",
   "section_break_hjmc",
   "sex",
   "column_break_zaap",
-  "applicantsocialstatus"
+  "social_status",
+  "debug_tab",
+  "section_break_febp",
+  "last_name",
+  "column_break_affg",
+  "first_name",
+  "column_break_syox",
+  "middle_name"
  ],
  "fields": [
-  {
-   "description": "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u043d\u0438\u0439 \u043d\u043e\u043c\u0435\u0440 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0443 \u043a\u043b\u0456\u0454\u043d\u0442\u0430 \u0443 \u0444\u043e\u0440\u043c\u0430\u0442\u0456 +38XXXXXXXXXX",
-   "fieldname": "applicantphone",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "\u0422\u0435\u043b\u0435\u0444\u043e\u043d",
-   "length": 13,
-   "options": "Phone",
-   "reqd": 1
-  },
   {
    "fieldname": "sex",
    "fieldtype": "Link",
@@ -42,34 +35,22 @@
    "options": "Gender"
   },
   {
-   "description": "\u0406\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0456\u044f \u043f\u0440\u043e \u0441\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0438\u0439 \u0441\u0442\u0430\u0442\u0443\u0441 \u043a\u043b\u0456\u0454\u043d\u0442\u0430",
-   "fieldname": "applicantsocialstatus",
-   "fieldtype": "Link",
-   "label": "\u0421\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0438\u0439 \u0441\u0442\u0430\u0442\u0443\u0441",
-   "options": "ASC Applicant SocialStatus"
-  },
-  {
    "fieldname": "last_name",
    "fieldtype": "Data",
+   "is_virtual": 1,
    "label": "\u041f\u0440\u0438\u0437\u0432\u0438\u0449\u0435"
   },
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
+   "is_virtual": 1,
    "label": "\u0406\u043c'\u044f"
   },
   {
    "fieldname": "middle_name",
    "fieldtype": "Data",
+   "is_virtual": 1,
    "label": "\u041f\u043e-\u0431\u0430\u0442\u044c\u043a\u043e\u0432\u0456"
-  },
-  {
-   "fieldname": "column_break_hkpo",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_bsig",
-   "fieldtype": "Column Break"
   },
   {
    "fieldname": "section_break_hjmc",
@@ -108,18 +89,58 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "\u043d\u043e\u043c\u0435\u0440_\u0454\u0434\u0434\u0440",
+   "fieldname": "column_break_zaap",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "unzr",
    "fieldtype": "Data",
    "label": "\u041d\u043e\u043c\u0435\u0440 \u0404\u0414\u0414\u0420"
   },
   {
-   "fieldname": "column_break_zaap",
+   "description": "\u041a\u043e\u043d\u0442\u0430\u043a\u0442\u043d\u0438\u0439 \u043d\u043e\u043c\u0435\u0440 \u0442\u0435\u043b\u0435\u0444\u043e\u043d\u0443 \u043a\u043b\u0456\u0454\u043d\u0442\u0430 \u0443 \u0444\u043e\u0440\u043c\u0430\u0442\u0456 +38XXXXXXXXXX",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0422\u0435\u043b\u0435\u0444\u043e\u043d",
+   "length": 13,
+   "options": "Phone",
+   "reqd": 1
+  },
+  {
+   "description": "\u0406\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0456\u044f \u043f\u0440\u043e \u0441\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0438\u0439 \u0441\u0442\u0430\u0442\u0443\u0441 \u043a\u043b\u0456\u0454\u043d\u0442\u0430",
+   "fieldname": "social_status",
+   "fieldtype": "Link",
+   "label": "\u0421\u043e\u0446\u0456\u0430\u043b\u044c\u043d\u0438\u0439 \u0441\u0442\u0430\u0442\u0443\u0441",
+   "options": "ASC Applicant SocialStatus"
+  },
+  {
+   "fieldname": "debug_tab",
+   "fieldtype": "Tab Break",
+   "label": "Debug"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "\u041f\u043e\u0432\u043d\u0435 \u0456\u043c'\u044f"
+  },
+  {
+   "fieldname": "section_break_febp",
+   "fieldtype": "Section Break",
+   "label": "\u041f\u0406\u0411"
+  },
+  {
+   "fieldname": "column_break_affg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_syox",
    "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-23 19:56:23.178992",
+ "modified": "2023-12-03 01:09:59.608296",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC Applicant",
@@ -138,7 +159,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "full_name"
 }

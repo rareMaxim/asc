@@ -26,7 +26,6 @@ class ASCService(WebsiteGenerator):
         access_link: DF.Data | None
         applicant_type: DF.TableMultiSelect[ASCApplicantTypeTable]
         events: DF.Table[ASCDiiaServiceEventsTable]
-        id: DF.Data | None
         identifier: DF.Data | None
         input: DF.Table[ASCDiiaInputTable]
         keyword: DF.Data | None
@@ -41,6 +40,7 @@ class ASCService(WebsiteGenerator):
         service_owner: DF.Link | None
         service_provider: DF.Table[ASCServiceProviderTable]
         service_status: DF.Link | None
+        service_subject: DF.Link | None
         short_description_plain: DF.SmallText | None
         thematic_area: DF.Link | None
         title: DF.Data | None

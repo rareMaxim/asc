@@ -2,7 +2,6 @@
  "actions": [],
  "allow_guest_to_view": 1,
  "allow_rename": 1,
- "autoname": "field:id",
  "creation": "2023-10-16 23:11:51.365510",
  "default_view": "List",
  "doctype": "DocType",
@@ -25,7 +24,7 @@
   "column_break_sdlp",
   "service_owner",
   "column_break_qlga",
-  "id",
+  "service_subject",
   "section_break_gfku",
   "events",
   "section_break_zjzt",
@@ -45,6 +44,7 @@
   "produces",
   "web_site_tab",
   "published",
+  "as_jsn",
   "column_break_plzo",
   "route",
   "refusal_tab",
@@ -55,12 +55,6 @@
   "related_services"
  ],
  "fields": [
-  {
-   "fieldname": "id",
-   "fieldtype": "Data",
-   "label": "Id",
-   "unique": 1
-  },
   {
    "columns": 1,
    "fieldname": "identifier",
@@ -135,7 +129,7 @@
    "fieldname": "service_owner",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "service_owner",
+   "label": "\u0420\u043e\u0437\u043f\u043e\u0440\u044f\u0434\u043d\u0438\u043a \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
    "options": "ASC Diia Service Owner"
   },
   {
@@ -290,6 +284,17 @@
   {
    "fieldname": "column_break_sdlp",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "as_jsn",
+   "fieldtype": "Button",
+   "label": "AsJson"
+  },
+  {
+   "fieldname": "service_subject",
+   "fieldtype": "Link",
+   "label": "\u0421\u0443\u0431'\u0454\u043a\u0442 \u043d\u0430\u0434\u0430\u043d\u043d\u044f \u0430\u0434\u043c\u0456\u043d\u0456\u0441\u0442\u0440\u0430\u0442\u0438\u0432\u043d\u043e\u0457 \u043f\u043e\u0441\u043b\u0443\u0433\u0438",
+   "options": "ASC Diia Service Owner"
   }
  ],
  "has_web_view": 1,
@@ -305,7 +310,7 @@
    "link_fieldname": "service"
   }
  ],
- "modified": "2023-11-28 23:57:31.816840",
+ "modified": "2023-12-03 01:55:18.020771",
  "modified_by": "Administrator",
  "module": "ASC Web",
  "name": "ASC Service",

@@ -80,7 +80,7 @@
   {
    "fieldname": "cost",
    "fieldtype": "Table",
-   "label": "cost",
+   "label": "\u0412\u0430\u0440\u0442\u0456\u0441\u0442\u044c",
    "options": "ASC Cost Table"
   },
   {
@@ -91,7 +91,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-27 13:05:05.660784",
+ "modified": "2023-12-03 00:22:09.467674",
  "modified_by": "Administrator",
  "module": "ASC Web",
  "name": "ASC Cost",

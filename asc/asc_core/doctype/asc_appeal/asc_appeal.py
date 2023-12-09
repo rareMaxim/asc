@@ -31,16 +31,14 @@ class ASCAppeal(Document):
 
 
 def get_employee_by_user(user=None):
-    print(f"user = {user}")
     user = user if user else frappe.session.user
-    return frappe.get_doc("ASC Employees", {"user": user})
+    if frappe.db.exists("ASC Employees", {"user": user}):
+        return frappe.get_doc("ASC Employees", {"user": user})
+    else:
+        return None
 
 
 @frappe.whitelist()
 def get_office_by_user(user=None) -> ASCOffice:
-    print(f"user = {user}")
     employee = get_employee_by_user(user)
-    if not employee:
-        print("not found asc office")
-        return
-    return frappe.get_doc("ASC Office", employee.office)
+    return frappe.get_doc("ASC Office", employee.office) if employee else None
