@@ -1,0 +1,210 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-11-12 00:13:29.930508",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_hmdc",
+  "title",
+  "is_work",
+  "dynamic_link_ocjf",
+  "dt",
+  "employee",
+  "color",
+  "repeat_this_event",
+  "column_break_htjk",
+  "start_date",
+  "starts_on",
+  "ends_on",
+  "event_type",
+  "all_day",
+  "section_break_zozu",
+  "repeat_on",
+  "repeat_till",
+  "column_break_ujaz",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday",
+  "sunday"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_hmdc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "\u041d\u0430\u0437\u0432\u0430"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_work",
+   "fieldtype": "Check",
+   "label": "\u041f\u0440\u0430\u0446\u044e\u0454"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "\u0421\u043f\u0456\u0432\u0440\u043e\u0431\u0456\u0442\u043d\u0438\u043a",
+   "options": "ASC Employees"
+  },
+  {
+   "fetch_from": "event_type.color",
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "label": "color"
+  },
+  {
+   "default": "0",
+   "fieldname": "repeat_this_event",
+   "fieldtype": "Check",
+   "label": "Repeat this Event"
+  },
+  {
+   "fieldname": "column_break_htjk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "\u0414\u0430\u0442\u0430"
+  },
+  {
+   "fieldname": "starts_on",
+   "fieldtype": "Time",
+   "label": "starts_on"
+  },
+  {
+   "fieldname": "ends_on",
+   "fieldtype": "Time",
+   "label": "ends_on"
+  },
+  {
+   "fieldname": "event_type",
+   "fieldtype": "Link",
+   "label": "\u0422\u0438\u043f \u0440\u043e\u0437\u043a\u043b\u0430\u0434\u0443",
+   "options": "ASC Schedule Type"
+  },
+  {
+   "default": "0",
+   "fetch_from": ".",
+   "fieldname": "all_day",
+   "fieldtype": "Check",
+   "label": "all_day"
+  },
+  {
+   "fieldname": "section_break_zozu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "repeat_this_event",
+   "fieldname": "repeat_on",
+   "fieldtype": "Select",
+   "label": "Repeat On",
+   "options": "\nDaily\nWeekly\nMonthly\nYearly"
+  },
+  {
+   "depends_on": "repeat_this_event",
+   "description": "Leave blank to repeat always",
+   "fieldname": "repeat_till",
+   "fieldtype": "Date",
+   "label": "Repeat Till"
+  },
+  {
+   "fieldname": "column_break_ujaz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.repeat_this_event && doc.repeat_on===\"Weekly\"",
+   "fieldname": "monday",
+   "fieldtype": "Check",
+   "label": "Monday"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.repeat_this_event && doc.repeat_on===\"Weekly\"",
+   "fieldname": "tuesday",
+   "fieldtype": "Check",
+   "label": "Tuesday"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.repeat_this_event && doc.repeat_on===\"Weekly\"",
+   "fieldname": "wednesday",
+   "fieldtype": "Check",
+   "label": "Wednesday"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.repeat_this_event && doc.repeat_on===\"Weekly\"",
+   "fieldname": "thursday",
+   "fieldtype": "Check",
+   "label": "Thursday"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.repeat_this_event && doc.repeat_on===\"Weekly\"",
+   "fieldname": "friday",
+   "fieldtype": "Check",
+   "label": "Friday"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.repeat_this_event && doc.repeat_on===\"Weekly\"",
+   "fieldname": "saturday",
+   "fieldtype": "Check",
+   "label": "Saturday"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.repeat_this_event && doc.repeat_on===\"Weekly\"",
+   "fieldname": "sunday",
+   "fieldtype": "Check",
+   "label": "Sunday"
+  },
+  {
+   "fieldname": "dynamic_link_ocjf",
+   "fieldtype": "Dynamic Link",
+   "options": "dt"
+  },
+  {
+   "fieldname": "dt",
+   "fieldtype": "Link",
+   "options": "DocType"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_calendar_and_gantt": 1,
+ "links": [],
+ "modified": "2023-12-15 13:37:37.108419",
+ "modified_by": "Administrator",
+ "module": "ASC Schedule",
+ "name": "ASC Shedule Item",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}

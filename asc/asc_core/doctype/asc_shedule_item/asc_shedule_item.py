@@ -55,6 +55,7 @@ class ASCSheduleItem(Document):
         tuesday: DF.Check
         wednesday: DF.Check
     # end: auto-generated types
+
     pass
 
 
