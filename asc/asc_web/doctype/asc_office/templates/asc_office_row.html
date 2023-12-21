@@ -1,3 +1,13 @@
+{% import '/asc_web/doctype/asc_office/templates/asc_office_card.html' as macros %}
+
+{%- set title = doc.title or doc.name -%}
+{%- set content = '' -%}
+{%- set phone = doc.tel_consul -%}
+{%- set url = doc.route -%}
+{%- set image = '' -%}
+
+{{ macros.card(title, content, url, image, phone) }}
+<!--    this is a sample default list template
 <div class="col-md-4">
   <address>
     <strong>{{ doc.title or doc.name }} <span class="badge badge-secondary">{{ doc.status }}</span></strong><br />
@@ -13,4 +23,4 @@
   </address>
 </div>
 
-<!-- this is a sample default list template -->
+    -->

@@ -75,6 +75,7 @@ class ASCOffice(WebsiteGenerator):
         title: DF.Data | None
         workers_total: DF.Int
     # end: auto-generated types
+
     pass
 
 
@@ -88,7 +89,7 @@ def get_list(doctype, txt, filters, limit_start, limit_page_length=20, order_by=
     filters.append(("ASC Office", "published", "=", 1))
     return frappe.get_all(
         doctype,
-        fields=["title", "status", "address", "tel_consul", "onl_consul"],
+        fields=["title", "status", "address", "tel_consul", "onl_consul", "route"],
         limit_start=limit_start,
         limit_page_length=limit_page_length,
         ignore_permissions=ignore_permissions,

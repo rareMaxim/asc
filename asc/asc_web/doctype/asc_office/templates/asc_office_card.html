@@ -1,0 +1,12 @@
+{%- macro card(title, content, url, image, phone) -%}
+  <div class="mt-6 col-12 col-sm-6 col-lg-4">
+    <div class="card card-sm h-100">
+      <div class="card-body">
+        <h3 class="card-title mt-0">{{ title }}</h3>
+        <p class="card-text"><a href="tel:{{phone}}" rel="noreferrer">Телефон: {{phone or ''}}</a></p>
+        <p class="card-text">{{ content }}</p>
+      </div>
+      <a class="stretched-link" href="{{ url }}"></a>
+    </div>
+  </div>
+{%- endmacro -%}

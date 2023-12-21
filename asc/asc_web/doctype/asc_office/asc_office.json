@@ -11,9 +11,6 @@
  "field_order": [
   "asc_id",
   "title",
-  "column_break_gufb",
-  "published",
-  "route",
   "section_break_swsx",
   "tel_consul",
   "onl_consul",
@@ -47,7 +44,12 @@
   "pandus",
   "dis_sanit",
   "braille_mat",
-  "pram_place"
+  "pram_place",
+  "web_tab",
+  "column_break_gufb",
+  "published",
+  "route",
+  "column_break_tnvh"
  ],
  "fields": [
   {
@@ -261,19 +263,29 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route"
+  },
+  {
+   "fieldname": "web_tab",
+   "fieldtype": "Tab Break",
+   "label": "Web"
+  },
+  {
+   "fieldname": "column_break_tnvh",
+   "fieldtype": "Column Break"
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "published",
  "links": [
   {
    "link_doctype": "ASC Employees",
    "link_fieldname": "office"
   }
  ],
- "modified": "2023-11-06 21:36:26.826902",
+ "modified": "2023-12-18 11:12:41.043166",
  "modified_by": "Administrator",
- "module": "Asc Web",
+ "module": "ASC Web",
  "name": "ASC Office",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
