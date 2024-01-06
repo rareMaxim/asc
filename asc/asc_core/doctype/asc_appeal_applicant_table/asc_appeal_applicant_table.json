@@ -1,0 +1,56 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-01-07 01:15:31.169121",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "applicant",
+  "uid",
+  "address",
+  "phone"
+ ],
+ "fields": [
+  {
+   "fieldname": "applicant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "\u041d\u0430\u0437\u0432\u0430 \u0441\u0443\u0431'\u0454\u043a\u0442\u0430 \u0437\u0432\u0435\u0440\u043d\u0435\u043d\u043d\u044f",
+   "options": "ASC Applicant"
+  },
+  {
+   "fetch_from": "applicant.inn",
+   "fieldname": "uid",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0406\u041f\u041d/\u0404\u0414\u0420\u041f\u041e\u0423"
+  },
+  {
+   "fetch_from": ".",
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0410\u0434\u0440\u0435\u0441\u0430"
+  },
+  {
+   "fetch_from": "applicant.phone",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "\u0422\u0435\u043b\u0435\u0444\u043e\u043d"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-01-07 01:25:50.067333",
+ "modified_by": "Administrator",
+ "module": "Asc Core",
+ "name": "ASC Appeal Applicant Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

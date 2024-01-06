@@ -13,7 +13,9 @@
   "column_break_thmo",
   "appeal_reg_date_time",
   "answer_receive_datetime",
-  "tab_2_tab"
+  "tab_2_tab",
+  "select_applicant",
+  "applicants"
  ],
  "fields": [
   {
@@ -70,11 +72,22 @@
    "fieldname": "tab_2_tab",
    "fieldtype": "Tab Break",
    "label": "\u0417\u0430\u044f\u0432\u043d\u0438\u043a"
+  },
+  {
+   "fieldname": "applicants",
+   "fieldtype": "Table",
+   "label": "Applicants",
+   "options": "ASC Appeal Applicant Table"
+  },
+  {
+   "fieldname": "select_applicant",
+   "fieldtype": "Button",
+   "label": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0437\u0430\u044f\u0432\u043d\u0438\u043a\u0430"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-25 23:56:29.652333",
+ "modified": "2024-01-07 01:23:36.158960",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC Appeal",

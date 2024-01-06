@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
  "autoname": "hash",
  "creation": "2023-10-24 21:02:06.530391",
@@ -79,9 +80,9 @@
  "is_published_field": "published",
  "links": [],
  "make_attachments_public": 1,
- "modified": "2023-10-25 01:11:08.395780",
+ "modified": "2024-01-06 10:26:27.392283",
  "modified_by": "Administrator",
- "module": "Asc Web",
+ "module": "ASC Web",
  "name": "ASC Regulatory Document",
  "naming_rule": "Random",
  "owner": "Administrator",

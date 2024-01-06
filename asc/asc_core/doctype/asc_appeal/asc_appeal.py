@@ -16,10 +16,12 @@ class ASCAppeal(Document):
     from typing import TYPE_CHECKING
 
     if TYPE_CHECKING:
+        from asc.asc_core.doctype.asc_appeal_applicant_table.asc_appeal_applicant_table import ASCAppealApplicantTable
         from frappe.types import DF
 
         answer_receive_datetime: DF.Datetime | None
         appeal_reg_date_time: DF.Datetime | None
+        applicants: DF.Table[ASCAppealApplicantTable]
         cnap_office: DF.Link | None
         is_consultation: DF.Check
         is_test: DF.Check

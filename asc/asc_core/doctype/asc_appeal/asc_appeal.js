@@ -6,7 +6,9 @@ function fill_default_office(frm) {
         args: { user: frappe.session.user },
         callback: (r) => {
             console.log(r);
-            frm.set_value("cnap_office", r.message.name);
+            if (r.message) {
+                frm.set_value("cnap_office", r.message.name);
+            }
         }
     });
 };
@@ -24,5 +26,28 @@ frappe.ui.form.on("ASC Appeal", {
         });
 
         fill_default_office(frm);
+    },
+    select_applicant: function (frm) {
+        new frappe.ui.form.MultiSelectDialog({
+            doctype: "ASC Applicant",
+            size: 'large',
+            target: frm,
+            add_filters_group: 1,
+            setters: [
+                {
+                    label: "День народження",
+                    fieldname: "birth_day",
+                    fieldtype: "Date"
+                },
+            ],
+            get_query() {
+                return {
+                    filters: {}
+                };
+            },
+            action(selections) {
+                console.log(selections);
+            }
+        })
     },
 });
