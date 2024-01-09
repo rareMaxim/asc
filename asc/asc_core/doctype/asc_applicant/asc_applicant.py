@@ -15,6 +15,7 @@ class ASCApplicant(Document):
         from frappe.types import DF
 
         birth_day: DF.Date | None
+        email: DF.Data | None
         first_name: DF.Data | None
         full_name: DF.Data | None
         inn: DF.Data | None
@@ -24,8 +25,9 @@ class ASCApplicant(Document):
         sex: DF.Link | None
         social_status: DF.Link | None
         unzr: DF.Data | None
-
+        серія_та_номер_паспорта: DF.Data | None
     # end: auto-generated types
+
     def split_fullname(self, index: int) -> str:
         """Split the applicant's name into parts"""
         data = self.full_name.split()
