@@ -7,33 +7,54 @@
  "field_order": [
   "employee",
   "ca_owner",
+  "uid",
+  "column_break_ohpq",
+  "cert_start",
   "cert_end"
  ],
  "fields": [
   {
    "fieldname": "employee",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "\u041a\u043e\u0440\u0438\u0441\u0442\u0443\u0432\u0430\u0447",
-   "options": "ASC Employees"
+   "options": "ASC Employees",
+   "reqd": 1
   },
   {
    "description": "\u0426\u0435\u043d\u0442\u0440 \u0441\u0435\u0440\u0442\u0438\u0444\u0456\u043a\u0430\u0446\u0456\u0457 \u043a\u043b\u044e\u0447\u0456\u0432",
    "fieldname": "ca_owner",
-   "fieldtype": "Data",
-   "label": "\u0426\u0421\u041a"
+   "fieldtype": "Link",
+   "label": "\u0426\u0421\u041a",
+   "options": "caOwner"
   },
   {
    "fieldname": "cert_end",
    "fieldtype": "Date",
-   "label": "\u041f\u043e\u0447\u0430\u0442\u043e\u043a \u0434\u0456\u0457"
+   "in_list_view": 1,
+   "label": "\u0417\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044f \u0441\u0442\u0440\u043e\u043a\u0443 \u0434\u0456\u0457"
+  },
+  {
+   "fieldname": "column_break_ohpq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "uid",
+   "fieldtype": "Data",
+   "label": "\u0420\u041d \u0421\u0435\u0440\u0442\u0438\u0444\u0456\u043a\u0430\u0442\u0443"
+  },
+  {
+   "fieldname": "cert_start",
+   "fieldtype": "Date",
+   "label": "\u041f\u043e\u0447\u0430\u0442\u043e\u043a \u0441\u0442\u0440\u043e\u043a\u0443 \u0434\u0456\u0457"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-01-15 17:14:44.878480",
+ "modified": "2024-01-15 22:15:38.250947",
  "modified_by": "Administrator",
  "module": "CA",
- "name": "ca-Token",
+ "name": "caToken",
  "owner": "Administrator",
  "permissions": [
   {
@@ -49,7 +70,10 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "uid",
+ "translated_doctype": 1
 }

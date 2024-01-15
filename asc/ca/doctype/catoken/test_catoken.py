@@ -5,5 +5,5 @@
 from frappe.tests.utils import FrappeTestCase
 
 
-class Testca-Token(FrappeTestCase):
+class TestcaToken(FrappeTestCase):
 	pass

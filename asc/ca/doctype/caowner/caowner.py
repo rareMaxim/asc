@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class ca-Token(Document):
+class caOwner(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,9 +14,7 @@ class ca-Token(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		ca_owner: DF.Data | None
-		cert_end: DF.Date | None
-		employee: DF.Link | None
+		title: DF.Data
 	# end: auto-generated types
 
 	pass
