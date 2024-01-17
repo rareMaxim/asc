@@ -16,13 +16,13 @@ class ASCEmployees(Document):
     if TYPE_CHECKING:
         from frappe.types import DF
 
+        codetax: DF.Data | None
         first_name: DF.Data | None
         full_name: DF.Data | None
         last_name: DF.Data | None
         middle_name: DF.Data | None
         office: DF.Link | None
         phone: DF.Data | None
-        rnokpp: DF.Data | None
         short_name: DF.Data | None
         status: DF.Literal["\u0420\u043e\u0431\u043e\u0447\u0456 \u0434\u043d\u0456", "\u0414\u0438\u0441\u0442\u0430\u043d\u0446\u0456\u0439\u043d\u043e", "\u041f\u0440\u043e\u0441\u0442\u0456\u0439", "\u041f\u0440\u0438\u0437\u0443\u043f\u0438\u043d\u0435\u043d\u043e", "\u0417\u0432\u0456\u043b\u044c\u043d\u0435\u043d\u043e"]
         user: DF.Link | None

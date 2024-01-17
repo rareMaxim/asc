@@ -21,13 +21,13 @@
   "first_name",
   "column_break_erug",
   "middle_name",
+  "tab_4_tab",
+  "codetax",
+  "tab_3_tab",
   "tab_2_tab",
   "full_name",
   "short_name",
-  "column_break_ntki",
-  "tab_3_tab",
-  "tab_4_tab",
-  "rnokpp"
+  "column_break_ntki"
  ],
  "fields": [
   {
@@ -131,14 +131,19 @@
    "label": "\u041f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u044c\u043d\u0430 \u0456\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0456\u044f"
   },
   {
-   "fieldname": "rnokpp",
+   "fieldname": "codetax",
    "fieldtype": "Data",
    "label": "\u0420\u041d\u041e\u041a\u041f\u041f"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-01-15 20:51:22.194094",
+ "links": [
+  {
+   "link_doctype": "caToken",
+   "link_fieldname": "employee"
+  }
+ ],
+ "modified": "2024-01-16 17:04:55.204783",
  "modified_by": "Administrator",
  "module": "ASC Web",
  "name": "ASC Employees",

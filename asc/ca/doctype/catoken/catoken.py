@@ -17,6 +17,7 @@ class caToken(Document):
 		ca_owner: DF.Link | None
 		cert_end: DF.Date | None
 		cert_start: DF.Date | None
+		codetax: DF.Data | None
 		employee: DF.Link
 		uid: DF.Data | None
 	# end: auto-generated types
