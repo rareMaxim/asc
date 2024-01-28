@@ -5,6 +5,7 @@
  "autoname": "field:asc_id",
  "creation": "2023-09-25 22:01:21.634468",
  "default_view": "List",
+ "description": "Test",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -283,7 +284,7 @@
    "link_fieldname": "office"
   }
  ],
- "modified": "2023-12-18 11:12:41.043166",
+ "modified": "2024-01-24 21:22:18.864899",
  "modified_by": "Administrator",
  "module": "ASC Web",
  "name": "ASC Office",

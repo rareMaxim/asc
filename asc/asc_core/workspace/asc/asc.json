@@ -129,12 +129,13 @@
    "is_query_report": 0,
    "label": "\u0426\u041d\u0410\u041f",
    "link_count": 2,
+   "link_type": "DocType",
    "onboard": 0,
    "type": "Card Break"
   },
   {
    "hidden": 0,
-   "is_query_report": 0,
+   "is_query_report": 1,
    "label": "\u0417\u0430\u044f\u0432\u043d\u0438\u043a\u0438",
    "link_count": 0,
    "link_to": "ASC Applicant",
@@ -153,7 +154,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-01-23 12:38:59.786771",
+ "modified": "2024-01-24 21:21:19.120209",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC",

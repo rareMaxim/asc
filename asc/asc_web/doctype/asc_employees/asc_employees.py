@@ -16,6 +16,7 @@ class ASCEmployees(Document):
     if TYPE_CHECKING:
         from frappe.types import DF
 
+        birthday: DF.Date | None
         codetax: DF.Data | None
         first_name: DF.Data | None
         full_name: DF.Data | None

@@ -8,7 +8,7 @@
 
 {% block page_content %}
   <div class="website-list" data-doctype="{{ doctype }}" data-txt="{{ txt or ('[notxt]'|e) }}">
-    <table class="table">
+    <table class="table result">
       <thead>
         <tr>
           <th scope="col">Назва</th>
@@ -24,9 +24,12 @@
         {% endfor %}
       </tbody>
     </table>
-    <div class="more-block py-6 {% if not show_more -%}{%- endif %}">
-      <button class="btn btn-light btn-more btn-sm">{{ _('More') }}</button>
-    </div>
+    {% if show_more -%}
+      {% set button_cls = 'btn btn-light btn-more btn' %}
+    {% else %}
+      {% set button_cls = 'btn btn-light btn-more btn hidden' %}
+    {%- endif %}
+    <button class="{{ button_cls }}">{{ _('Load More') }}</button>
   </div>
 {% endblock %}
 
@@ -64,9 +67,9 @@
 				btn.prop("disabled", false);
 			});
 		});
-		var toggle_more = function(show) {
+		function toggle_more(show) {
 			if (!show) {
-				$(".website-list .more-block").addClass("hide");
+				$(".btn-more").addClass("hide");
 			}
 		};
 	

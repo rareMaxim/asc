@@ -29,7 +29,7 @@ class ASCRegulatoryDocument(WebsiteGenerator):
     def make_route(self):
         if not self.route:
             return f'regulatory/{self.scrub(f"{str(self.convocation)}-{str(self.session)}-{str(self.number)}")}'
-            
+
     def get_context(self, context):
         context.no_breadcrumbs = False
         context.parents = [
@@ -40,8 +40,11 @@ class ASCRegulatoryDocument(WebsiteGenerator):
         return context
 
 
-def get_regulatory_list(doctype, txt, filters, limit_start, limit_page_length=2, order_by=None):
+def get_regulatory_list(
+    doctype, txt, filters, limit_start, limit_page_length=2, order_by=None
+):
     from frappe.www.list import get_list
+
     ignore_permissions = True
     if not filters:
         filters = {}
