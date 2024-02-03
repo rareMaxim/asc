@@ -1,0 +1,59 @@
+{% macro render_item(item, submenu=False, parent=False) %}
+{% if item.child_items %}
+{# ->if item.child_items #}
+{% if parent %}
+{# ->if item.child_items->if parent #}
+{%- set dropdown_id = 'id-' + frappe.utils.generate_hash(length=12) -%}
+<a class="nav-elem underline secondary-menu-anchor"><span>{{ _(item.label) }}</span></a>
+<div class="nav-secondary-menu">
+    <div class="navigation-grid">
+        <div class="item">
+            {% for child in item.child_items %}
+            {{ render_item(child, True) }}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% else %}
+{# ->if item.child_items->else parent #}
+{%- set dropdown_id = 'id-' + frappe.utils.generate_hash(length=12) -%}
+<li class="dropdown {% if submenu %} dropdown-submenu {% endif %}">
+    <a class="dropdown-item dropdown-toggle" href="#" id="{{ dropdown_id }}" role="button" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        {{ _(item.label) }}
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="{{ dropdown_id }}">
+        {% for child in item.child_items %}
+        {{ render_item(child, True) }}
+        {% endfor %}
+    </ul>
+</li>
+{% endif %}
+{# if item.child_items->endif parent #}
+{% else %}
+{# else item.child_items #}
+{% set url = item.url or '' %}
+{% set url = url if url.startswith('#') else url | abs_url %}
+{% if parent %}
+{# else item.child_items->if parent #}
+<a href="{{ url }}" {% if item.open_in_new_tab %} target="_blank" {% endif %} class="nav-elem underline">
+    <span>{{ _(item.label) }}</span>
+</a>
+{% else %}
+{# else item.child_items->else parent #}
+<a href="{{ url }}" class="nav-elem underline"><span>{{ _(item.label) }}</span></a>
+{% endif %}
+{# else item.child_items->endif parent #}
+{% endif %}
+{# endif item.child_items->endif parent #}
+{% endmacro %}
+
+{% if top_bar_items -%}
+<div class="nav-menu hide-mobile">
+    {%- for item in top_bar_items -%}
+    {% if not item.parent_label and not item.right -%}
+    {{ render_item(item, parent=True) }}
+    {%- endif -%}
+    {%- endfor %}
+</div>
+{%- endif %}

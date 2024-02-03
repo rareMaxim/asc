@@ -1,22 +1,18 @@
 {% extends 'templates/web.html' %}
 {% block title %}
-  {{ title }}
+{{ title }}
 {% endblock %}
 
 {% block page_content %}
-  <div class="website-list py-5" data-doctype="{{ doctype }}" data-txt="{{ txt or ('[notxt]'|e) }}">
-    <div class="container">
-      <div class="section-with-cards">
-        <h2 class="section-title">{{ title }}</h2>
-        <p class="section-description">Оберіть категорію, яка вас цікавить</p>
-        <div class="mt-6">
-          <div class="row mt-n6">
-            {% for item in result %}
-              {{ item }}
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-    </div>
+<section class="section-services colored">
+  <h2>{{ title }}</h2>
+  <div class="services-grid">
+
+
+    {% for item in result %}
+    {{ item }}
+    {% endfor %}
   </div>
+</section>
+
 {% endblock %}
