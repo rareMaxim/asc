@@ -13,6 +13,9 @@ website_route_rules = [
     # {"from_route": "/profile", "to_route": "me"},
     # {"from_route": "/app/<path:app_path>", "to_route": "app"},
 ]
+update_website_context = [
+	"asc.asc_web.api.update_website_context",
+]
 # required_apps = []
 
 # Includes in <head>

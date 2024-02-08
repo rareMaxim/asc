@@ -5,7 +5,7 @@
    "label": "Db size"
   }
  ],
- "content": "[{\"id\":\"BrMeznMfCu\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>\u0426\u041d\u0410\u041f \u043c. \u041c\u0435\u043b\u0456\u0442\u043e\u043f\u043e\u043b\u044c</b></span>\",\"col\":12}},{\"id\":\"YNlh9SmEeC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0414\u0456\u044f API\",\"col\":3}},{\"id\":\"vod-mrSmpx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u041e\u0444\u0456\u0441\u0438 \u0426\u041d\u0410\u041f\",\"col\":3}},{\"id\":\"tKEkc_WwCy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0421\u043f\u0456\u0432\u0440\u043e\u0431\u0456\u0442\u043d\u0438\u043a\u0438\",\"col\":3}},{\"id\":\"EdGBEQJqMt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0416\u0443\u0440\u043d\u0430\u043b \u0437\u0432\u0435\u0440\u043d\u0435\u043d\u044c\",\"col\":3}},{\"id\":\"kPOKDDeXtC\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0426\u041d\u0410\u041f\",\"col\":4}},{\"id\":\"RZd7JIEKs4\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0414\u043e\u0432\u0456\u0434\u043d\u0438\u043a\u0438 \u0414\u0456\u044f\",\"col\":4}},{\"id\":\"UeR6DzaKvv\",\"type\":\"card\",\"data\":{\"card_name\":\"\u041d\u043e\u0432\u0438\u043d\u0438\",\"col\":4}},{\"id\":\"2UHiFMsUEv\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Db size\",\"col\":12}}]",
+ "content": "[{\"id\":\"BrMeznMfCu\",\"type\":\"header\",\"data\":{\"text\":\"<span style=\\\"font-size: 18px; letter-spacing: 0.18px;\\\"><b>\u0426\u041d\u0410\u041f \u043c. \u041c\u0435\u043b\u0456\u0442\u043e\u043f\u043e\u043b\u044c</b></span>\",\"col\":12}},{\"id\":\"YNlh9SmEeC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0414\u0456\u044f API\",\"col\":3}},{\"id\":\"vod-mrSmpx\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u041e\u0444\u0456\u0441\u0438 \u0426\u041d\u0410\u041f\",\"col\":3}},{\"id\":\"tKEkc_WwCy\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0421\u043f\u0456\u0432\u0440\u043e\u0431\u0456\u0442\u043d\u0438\u043a\u0438\",\"col\":3}},{\"id\":\"EdGBEQJqMt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"\u0416\u0443\u0440\u043d\u0430\u043b \u0437\u0432\u0435\u0440\u043d\u0435\u043d\u044c\",\"col\":3}},{\"id\":\"8mhIOrBcHi\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"ASC Web Settings\",\"col\":3}},{\"id\":\"kPOKDDeXtC\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0426\u041d\u0410\u041f\",\"col\":4}},{\"id\":\"RZd7JIEKs4\",\"type\":\"card\",\"data\":{\"card_name\":\"\u0414\u043e\u0432\u0456\u0434\u043d\u0438\u043a\u0438 \u0414\u0456\u044f\",\"col\":4}},{\"id\":\"UeR6DzaKvv\",\"type\":\"card\",\"data\":{\"card_name\":\"\u041d\u043e\u0432\u0438\u043d\u0438\",\"col\":4}},{\"id\":\"2UHiFMsUEv\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Db size\",\"col\":12}}]",
  "creation": "2023-10-06 02:02:09.202837",
  "custom_blocks": [],
  "docstatus": 0,
@@ -154,7 +154,7 @@
    "type": "Link"
   }
  ],
- "modified": "2024-01-24 21:21:19.120209",
+ "modified": "2024-02-04 00:33:11.834875",
  "modified_by": "Administrator",
  "module": "Asc Core",
  "name": "ASC",
@@ -180,6 +180,13 @@
    "label": "\u041e\u0444\u0456\u0441\u0438 \u0426\u041d\u0410\u041f",
    "link_to": "ASC Office",
    "stats_filter": "{\"name\":[\"is\",\"set\"]}",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "ASC Web Settings",
+   "link_to": "ASC Web Settings",
    "type": "DocType"
   },
   {

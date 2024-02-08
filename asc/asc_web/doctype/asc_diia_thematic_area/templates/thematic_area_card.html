@@ -1,8 +1,11 @@
 {%- macro card(title, content, url, image) -%}
-<div class="service-item">
-  <a href="{{ url }}">
-    <h4>{{ title }}</h4>
-  </a>
-  <p>{{ content }}</p>
+<div class="mt-6 col-12 col-sm-6 col-lg-4">
+  <div class="card card-sm h-100">
+    <div class="card-body">
+      <h3 class="card-title mt-0">{{ title }}</h3>
+      <p class="card-text">{{ content }}</p>
+    </div>
+    <a class="stretched-link" href="{{ url }}"></a>
+  </div>
 </div>
 {%- endmacro -%}

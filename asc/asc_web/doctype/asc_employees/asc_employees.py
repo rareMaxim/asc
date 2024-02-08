@@ -18,8 +18,10 @@ class ASCEmployees(Document):
 
         birthday: DF.Date | None
         codetax: DF.Data | None
+        email: DF.Data | None
         first_name: DF.Data | None
         full_name: DF.Data | None
+        job_title: DF.Data | None
         last_name: DF.Data | None
         middle_name: DF.Data | None
         office: DF.Link | None

@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_rename": 1,
+ "creation": "2024-02-04 00:28:54.870958",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "start_page_tab",
+  "header_section",
+  "asc_title",
+  "header_tab",
+  "footer_tab",
+  "footer_section",
+  "left_items",
+  "section_break_urqd",
+  "social_links_column",
+  "table_social_links",
+  "tab_2_tab",
+  "route"
+ ],
+ "fields": [
+  {
+   "fieldname": "asc_title",
+   "fieldtype": "Data",
+   "label": "ASC Title"
+  },
+  {
+   "fieldname": "start_page_tab",
+   "fieldtype": "Tab Break",
+   "label": "Start Page"
+  },
+  {
+   "fieldname": "header_section",
+   "fieldtype": "Section Break",
+   "label": "Header"
+  },
+  {
+   "fieldname": "footer_section",
+   "fieldtype": "Section Break",
+   "label": "Footer Left Text"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Advanced"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "route"
+  },
+  {
+   "fieldname": "header_tab",
+   "fieldtype": "Tab Break",
+   "label": "Header"
+  },
+  {
+   "fieldname": "footer_tab",
+   "fieldtype": "Tab Break",
+   "label": "Footer"
+  },
+  {
+   "fieldname": "section_break_urqd",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "table_social_links",
+   "fieldtype": "Table",
+   "label": "Social Links",
+   "options": "ASC Web Social Links"
+  },
+  {
+   "fieldname": "social_links_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "left_items",
+   "fieldtype": "Table",
+   "label": "Left items",
+   "options": "ASC Web Footer Items"
+  }
+ ],
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2024-02-05 21:09:48.999062",
+ "modified_by": "Administrator",
+ "module": "ASC Web",
+ "name": "ASC Web Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "route",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

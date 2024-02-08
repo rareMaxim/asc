@@ -70,6 +70,7 @@ class ASCOffice(WebsiteGenerator):
         self_serv: DF.Check
         square_total: DF.Float
         status: DF.Literal["\u0414\u0456\u044e\u0447\u0438\u0439", "\u0422\u0438\u043c\u0447\u0430\u0441\u043e\u0432\u043e \u0437\u0430\u043a\u0440\u0438\u0442\u0438\u0439", "\u0417\u0430\u043a\u0440\u0438\u0442\u0438\u0439 \u043d\u0430\u0437\u0430\u0432\u0436\u0434\u0438"]
+        team_lead: DF.Link | None
         tel_consul: DF.Data | None
         timetable: DF.SmallText | None
         title: DF.Data | None
@@ -85,7 +86,7 @@ def get_list(doctype, txt, filters, limit_start, limit_page_length=20, order_by=
     user = frappe.session.user
     ignore_permissions = True
     if not filters:
-        filters = []
+        filters = [{"status": "Діючий"}]
     filters.append(("ASC Office", "published", "=", 1))
     return frappe.get_all(
         doctype,

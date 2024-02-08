@@ -13,6 +13,7 @@
   "asc_id",
   "title",
   "section_break_swsx",
+  "team_lead",
   "tel_consul",
   "onl_consul",
   "workers_total",
@@ -273,6 +274,13 @@
   {
    "fieldname": "column_break_tnvh",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "team_lead",
+   "fieldtype": "Link",
+   "label": "\u041a\u0435\u0440\u0456\u0432\u043d\u0438\u043a",
+   "link_filters": "[]",
+   "options": "ASC Employees"
   }
  ],
  "has_web_view": 1,
@@ -284,7 +292,7 @@
    "link_fieldname": "office"
   }
  ],
- "modified": "2024-01-24 21:22:18.864899",
+ "modified": "2024-02-06 12:40:15.769372",
  "modified_by": "Administrator",
  "module": "ASC Web",
  "name": "ASC Office",
